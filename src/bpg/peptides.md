@@ -49,7 +49,7 @@ _Methods in Molecular Biology._ Ed. Peng Zhou. Humana Press Inc. 221-239 (2015)
 
 * M. Trellet, A.S.J. Melquiond and **A.M.J.J. Bonvin**.
 [A Unified Conformational Selection and Induced Fit Approach to Protein-Peptide Docking](https://dx.plos.org/10.1371/journal.pone.0058769)
-_PLoS ONE_, *8(3)* e58769 (2013). --> [**ERRATUM**](https://milou.science.uu.nl/Files/ERRATUM_unified_conformational_selection.pdf)
+_PLoS ONE_, *8(3)* e58769 (2013).
 
 
 
@@ -60,19 +60,20 @@ _PLoS ONE_, *8(3)* e58769 (2013). --> [**ERRATUM**](https://milou.science.uu.nl/
 <style>
 table, th, td {
     padding: 5px;
-
 }
 </style>
 
 
 |<font size="4" color="#203A98">Parameter</font>|<font size="4" color="#203A98">run.cns name</font>| <font size="4" color="#203A98">default value</font>|<font size="4" color="#203A98">optimal value</font> |
 |-|:-:|:-:|:-:| 
-|**Clustering method** | <code>clust_meth</code>| FCC | **RMSD** |   
-|**Cutoff for clustering** | <code> clust_cutoff </code>| 0.6 | **5** |  
-|**Number of MD steps for rigid body high temperature TAD**| <code>initiosteps</code> | 500| **2000**|
-|**Number of MD steps during first rigid body cooling stage**| <code>cool1_steps</code> | 500| **2000**|
-|**Number of MD steps during second cooling stage with flexible side-chains at interface**|<code>cool2_steps</code> | 500 |**4000**|
-|**Number of MD steps during third cooling stage with fully flexible interface**| <code>cool3_steps</code> |500 | **4000**|
+|**Distance matrix calculation** | <code>[**ilrmsdmatrix**]</code>|  |  |
+|**Clustering method** | <code>[**clustrmsd**]</code>|  |  |   
+|**Cutoff for clustering** | <code> clust_cutoff </code>| 7.5 | **5** |  
+|**Flexible refinement** | <code> [**flexref**] </code>|  |  | 
+|**Number of MD steps for rigid body high temperature TAD**| <code>mdsteps_rigid</code> | 500| **2000**|
+|**Number of MD steps during first rigid body cooling stage**| <code>mdsteps_cool1</code> | 500| **2000**|
+|**Number of MD steps during second cooling stage with flexible side-chains at interface**|<code>mdsteps_cool2</code> | 500 |**4000**|
+|**Number of MD steps during third cooling stage with fully flexible interface**| <code>mdsteps_cool3</code> |500 | **4000**|
 
 More about optimal settings for different docking scenarios can be found [here](https://wenmr.science.uu.nl/haddock2.4/settings#optimal).
 
