@@ -1,0 +1,1 @@
+# haddock3-user-manual
