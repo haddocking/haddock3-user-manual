@@ -43,11 +43,11 @@ Here is an example configuration file snapshot performing glycine scanning on so
 ```toml
 # ...
 [mdref]
-ambig_fname = ambiguous_restraints.tbl
+ambig_fname = "ambiguous_restraints.tbl"
 [alascan]
 scan_residue = "GLY"
-resdic_A = [2,3]
-resdic_B = [24,25]
+resdic_A = [2, 3]
+resdic_B = [24, 25]
 
 # ...
 ```
