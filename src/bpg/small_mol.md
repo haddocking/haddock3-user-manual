@@ -40,6 +40,11 @@ In this scenario, multiple conformations can be generated as described [here](./
 
 ### Use of multiple ligands at once
 
+When using multiple ligands at once in the same docking run, several steps must be considered:
+- Atom types and residue names should not overlap with each other (nor with already existing definitions)
+- Topologies of different ligands must be merged into a single file and used in the `ligand_param_fname`.
+- Parameters of different ligands must be merged into a single file and used in the `ligand_top_fname`.
+
 
 
 <hr>
