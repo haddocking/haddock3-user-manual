@@ -27,7 +27,7 @@ To generate it, mdbook must be installed (see [how to install mdbook](https://ru
 Then run the following command, from the root directory:
 
 ```bash
-mdbook build src
+mdbook build .
 ```
 
 Once built, the book index can be found at `doc/index.html`
