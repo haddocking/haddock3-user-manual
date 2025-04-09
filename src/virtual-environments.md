@@ -1,4 +1,4 @@
-## Virtual environments
+# Virtual environments
 
 Haddock3 makes use of system variables as well as external libraries.
 To ensure a reproducible and stable functional version of haddock3, we strongly advise to intall it using a virual environment.
@@ -9,7 +9,7 @@ Two major environments managing system are effective and capable of installing h
 and [conda/mini-conda](https://conda.io/projects/conda/en/latest/user-guide/install/index.html).
 Below you will find the instructions on how to install them and set up a proper haddock3 environment.
 
-### venv
+## venv
 
 As the `venv` library is part of the python3 standard library, hence there is no need to install it, considering python3 is installed on your machine.
 By using `venv`, you will be able to set the python3 version you want (>=3.9 for haddock3).
@@ -34,7 +34,7 @@ Finally, you should activate the environment, and you are ready for the next ste
 source .haddock3-env/bin/activate
 ```
 
-### Anaconda / miniconda
+## Anaconda / miniconda
 
 For more details and troubleshooting with the `conda` library, have a look at [its documentation](https://conda.io/projects/conda/en/latest/user-guide/install/index.html)
 

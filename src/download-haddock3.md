@@ -1,4 +1,4 @@
-## Install via the Python Package Index (PyPI)
+# Install via the Python Package Index (PyPI)
 
 We have simplified the installation of Haddock3 by adding it to the Python Package Index.
 
@@ -40,7 +40,7 @@ source .haddock3-env/bin/activate
 # Install haddock3
 pip install .
 # DISCLAMER
-# By running this command, you will download a compiled executable 
+# By running this command, you will download a compiled executable
 # of CNS (Crystallographic and NMR System) which is free of use
 # for non-profit applications.
 # For commercial use it is your own responsibility to have a proper license.

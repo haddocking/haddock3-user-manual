@@ -1,4 +1,4 @@
-## Frequently Asked Questions
+# Frequently Asked Questions
 
 We collected here a list of frequently occurring problems and their solutions.
 The following topics are currently available:
@@ -17,14 +17,14 @@ If your problem falls outside of the topics, please see the [Getting support / H
 
 <hr>
 
-### What about missing atoms?
+## What about missing atoms?
 
 Missing atoms will be automatically detected (if part of the [HADDOCK library](https://wenmr.science.uu.nl/haddock2.4/library)) and re-generated when running the [`[topoaa]` module](./modules/topology.md#topoaa-module).
 For this reason, it is always used as the first module in a haddock3 workflow configuration file, not only to generate the topology of the input molecules but also to add and reconstruct missing atoms.
 
 <hr>
 
-### What about chain breaks?
+## What about chain breaks?
 
 In case of missing residues, chain breaks will be introduced.
 This might cause segments of your molecule to move with respect to each other during the refinement stages.
@@ -35,7 +35,7 @@ Those restraints can then be provided to haddock3 as unambiguous restraints for 
 
 <hr>
 
-### What about point mutations?  
+## What about point mutations?
 
 To introduce mutations in your input PDB files you can do the following:
 
@@ -50,7 +50,7 @@ Always check that the sequence of the various PDB files matches!
 
 <hr>
 
-### What about ions?
+## What about ions?
 
 Some proteins contain ions such as for example calcium.
 Their inclusion might be important for docking purposes, in particular for proper electrostatics!
@@ -58,19 +58,19 @@ In principle, they should be recognized when running the [`[topoaa]` module](./m
 
 <hr>
 
-### Domain definition for docking  
+## Domain definition for docking
 
 In general, it is recommended to remove any part of your system such as flexible linkers that are not involved in the interaction with the partner for docking.
 Keeping these might cause trouble in the sorting of solutions.
 For example, such a linker can make contact with the partner molecule, resulting in lower total energy, and, in that way, "bad" solutions could still be kept.
 
-The same applies to AlphaFold2 *spaghetti* like disordered regions that often surround the domain of interest.
+The same applies to AlphaFold2 _spaghetti_ like disordered regions that often surround the domain of interest.
 Indeed, these regions may induce van der Walls forces due to sterical clashes before the two domains of interest could even interact.
 Removing regions with low pLDDT (~< 60) can be an appropriate solution so use AlphaFold2 models for docking.
 
 <hr>
 
-### Clustering issues  
+## Clustering issues
 
 When performing RMSD clustering, two modules can be used to compute the RMSD matrix:
 
@@ -99,11 +99,11 @@ During the computational workflow, first, all the residue-residue contacts betwe
 This selection is then used to perform later structural alignment and RMSD computation.
 
 Those two modules must be followed by the `[clustrmsd]` module, otherwise, only the pair-wise RMSD matrix will be computed, and clustering not performed.
-**Note** that this is not an issue if fractions of common contact (FCC) clustering  ([`clustfcc`] module) is used as the matrix is computed within the clustering module directly (*as much faster*).
+**Note** that this is not an issue if fractions of common contact (FCC) clustering ([`clustfcc`] module) is used as the matrix is computed within the clustering module directly (_as much faster_).
 
 <hr>
 
-### Running HADDOCK on a cluster using a queuing system (e.g. Torque or Slurm)  
+## Running HADDOCK on a cluster using a queuing system (e.g. Torque or Slurm)
 
 In order to submit to the queuing system we typically use a wrapper script that will add some directives to the job files.
 
@@ -132,7 +132,7 @@ ncores = 40
 [caprieval]
 ```
 
-Here is one example of such a wrapper script (named `haddock3_run.job`) that would submit to the *slurm* queue:
+Here is one example of such a wrapper script (named `haddock3_run.job`) that would submit to the _slurm_ queue:
 
 ```bash
 #!/bin/bash
@@ -155,11 +155,11 @@ cd /path/to/workflow/
 haddock3 haddock_run.cfg
 ```
 
-**Note** here that we set up the number of cores for both the *haddock3* run (in `haddock_run.cfg`) and *slurm* job (in `haddock3_run.job`)to **40**
+**Note** here that we set up the number of cores for both the _haddock3_ run (in `haddock_run.cfg`) and _slurm_ job (in `haddock3_run.job`)to **40**
 
 <hr>
 
-### Cofactors / Small-ligand docking with HADDOCK  
+## Cofactors / Small-ligand docking with HADDOCK
 
 It's possible to dock small ligands or cofactor using haddock3, but for that topology and parameter files for the ligand should be provided in CNS format.
 
@@ -168,22 +168,23 @@ Several sources exist to find such files:
 - **ccp4-prodrg**: [`ccp4-prodrg`](https://www.ccp4.ac.uk/html/index.html).
 
 - the **PRODRG** server was maintained by Daan van Aalten at Dundee University: [https://prodrg2.dyndns.org](https://prodrg2.dyndns.org).
- This server allows you to draw your molecule or paste coordinates and will return topologies and parameter files in various formats, including CNS.
- You should turn on the electrostatic to obtain partial charges. Save the resulting PDB file and the corresponding CNS parameter and topology files to use in HADDOCK.  
+  This server allows you to draw your molecule or paste coordinates and will return topologies and parameter files in various formats, including CNS.
+  You should turn on the electrostatic to obtain partial charges. Save the resulting PDB file and the corresponding CNS parameter and topology files to use in HADDOCK.
 
-  **Important:** The generated parameter file contains a CNS `NBONds` statement which should be removed prior to their use in HADDOCK. Look in the parameter file for:  
+  **Important:** The generated parameter file contains a CNS `NBONds` statement which should be removed prior to their use in HADDOCK. Look in the parameter file for:
 
-  <pre style="background-color:#DAE4E7"> NBONds
+   <pre style="background-color:#DAE4E7"> NBONds
 
- CUTNB=7.0 WMIN=1.5
- REPEL=1.0 REXPONENT=4
- IREXPONENT=1 RCONST=16.0
- TOLERANCE=0.5 NBXMOD=5
- CTONNB=5.5 CTOFNB=6.0
- END
+CUTNB=7.0 WMIN=1.5
+REPEL=1.0 REXPONENT=4
+IREXPONENT=1 RCONST=16.0
+TOLERANCE=0.5 NBXMOD=5
+CTONNB=5.5 CTOFNB=6.0
+END
+
   </pre>
 
- and remove or comment it out (by adding ! before each line).  
+and remove or comment it out (by adding ! before each line).
 
 - the Automated Topology Builder (ATB) and Repository developed in Prof. Alan Mark's group at the University of Queensland in Brisbane: [https://atb.uq.edu.au/](https://atb.uq.edu.au/)  
   **Note**: we have not yet tested those parameters in HADDOCK.
@@ -203,7 +204,7 @@ Haddock3 comes with an [example for protein-ligand docking](./docking_scenarios/
 
 <hr>
 
-### Beads dummy atoms docking with haddock3
+## Beads dummy atoms docking with haddock3
 
 Dummy atoms can be used in haddock3 and can be useful as distance restraints can be built towards them.
 This is used, for example:
@@ -245,7 +246,7 @@ mol_shape_2 = true  # Defines second input molecule as `shape`
 mol_fix_origin_2 = true  # Fix origin/input coordinates of the second input molecule
 ```
 
-### Typical haddock3 error messages
+## Typical haddock3 error messages
 
 In some cases, the haddock3 execution can stop for a given reason.
 While we are already trying the handle possible errors, some of them will lead to critical failure, terminating the workflow.
@@ -262,7 +263,7 @@ Here is a list of the most common errors:
 
 - [tolerance issue](#tolerance-issue)
 
-#### Tolerance issue
+### Tolerance issue
 
 Here is a typical **tolerance issue** log error message:
 
