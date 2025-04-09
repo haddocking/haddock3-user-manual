@@ -1,4 +1,4 @@
-## Ambiguous Interaction Restraints
+# Ambiguous Interaction Restraints
 
 Before starting HADDOCK, <font color="RED">A</font>mbiguous <font color="RED">I</font>nteraction <font color="RED">R</font>estraints (<font color="RED">AIR</font>s) should be generated.
 For this, it is important to define the residues at the interface for each molecule based on NMR chemical shift perturbation data, mutagenesis data, or any kind of data that provides information on the interaction interface.  
