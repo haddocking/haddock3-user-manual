@@ -6,26 +6,26 @@ While this may have some negative impact for some inexperienced users, it is als
 
 To use the command line interface, you must open a terminal:
 
-* [iTerm / Terminal]: for Mac users, default terminals are available and fully functional.
-* [WindowsPowerShell]: The Windows solution to open a terminal.
-* [VSCode](): an integrated developing environment (IDE) that allows you to run command lines in the terminal.
+- [iTerm / Terminal]: for Mac users, default terminals are available and fully functional.
+- [WindowsPowerShell]: The Windows solution to open a terminal.
+- VSCode: an integrated developing environment (IDE) that allows you to run command lines in the terminal.
 
 Haddock3 comes with several Command Line Interfaces (CLIs), that are described and listed below:
 
-* [haddock3](#haddock3): Main CLI for running a workflow.
-* [haddock3-cfg](#haddock3-cfg): Obtain information about module parameters
-* [haddock3-restraints](#haddock3-restraints): Generation of restraints.
-* [haddock3-score](#haddock3-score): Scoring CLI.
-* [haddock3-analyse](#haddock3-analyse): Analysis of output.
-* [haddock3-traceback](#haddock3-analyse): Traceback of generated docking models.
-* [haddock3-re](#haddock3-re): Recomputing modules with different parameters.
-  * [haddock3-re score](#-re-score): To modify scoring function weights.
-  * [haddock3-re clustfcc](#-re-clustfcc): To modify `[clustfcc]` parameters.
-  * [haddock3-re clustrmsd](#-re-clustrmsd): To modify `[clustrmsd]` parameters.
-* [haddock3-copy](#haddock3-copy): To copy a haddock3 run.
-* [haddock3-clean](#haddock3-clean): Archiving a run.
-* [haddock3-unpack](#haddock3-unpack): Uncompressing an archived a run.
-* [haddock3-pp](#haddock3-pp): Pre-processing of input files.
+- [haddock3](#haddock3): Main CLI for running a workflow.
+- [haddock3-cfg](#haddock3-cfg): Obtain information about module parameters
+- [haddock3-restraints](#haddock3-restraints): Generation of restraints.
+- [haddock3-score](#haddock3-score): Scoring CLI.
+- [haddock3-analyse](#haddock3-analyse): Analysis of output.
+- [haddock3-traceback](#haddock3-analyse): Traceback of generated docking models.
+- [haddock3-re](#haddock3-re): Recomputing modules with different parameters.
+  - [haddock3-re score](#-re-score): To modify scoring function weights.
+  - [haddock3-re clustfcc](#-re-clustfcc): To modify `[clustfcc]` parameters.
+  - [haddock3-re clustrmsd](#-re-clustrmsd): To modify `[clustrmsd]` parameters.
+- [haddock3-copy](#haddock3-copy): To copy a haddock3 run.
+- [haddock3-clean](#haddock3-clean): Archiving a run.
+- [haddock3-unpack](#haddock3-unpack): Uncompressing an archived a run.
+- [haddock3-pp](#haddock3-pp): Pre-processing of input files.
 
 ## haddock3
 
@@ -38,8 +38,8 @@ haddock3 workflow.cfg
 
 Also, two optional arguments can be used:
 
-* `--restart <module_id>`: allows to restart the workflow restarting for the module id. Note that previously generated folders from the selected step onward will be deleted.
-* `--extend-run <run_directory>`: allows to start the new workflow from the last step of a previously computed run.
+- `--restart <module_id>`: allows to restart the workflow restarting for the module id. Note that previously generated folders from the selected step onward will be deleted.
+- `--extend-run <run_directory>`: allows to start the new workflow from the last step of a previously computed run.
 
 <hr>
 
@@ -65,11 +65,11 @@ Please note that all the parameters for each module are also available in the [o
 The CLI `haddock3-restraints` is made to generate restraints used either as ambiguous restraints or unambiguous ones.
 The `haddock3-restraints` CLI is composed of several sub-commands, each one dedicated to some specific actions, such as:
 
-* Searching for solvent-accessible residues
-* Gathering neighbors of a selection
-* Maintaining the conformation of a single chain with a potential gap
-* Generating ambiguous restraints from active and passive residues
-* Generating planes and corresponding restraints
+- Searching for solvent-accessible residues
+- Gathering neighbors of a selection
+- Maintaining the conformation of a single chain with a potential gap
+- Generating ambiguous restraints from active and passive residues
+- Generating planes and corresponding restraints
 
 As this CLI is more specialized, we have made a [special chapter in this manual](./restraints_cli.md) to explain all the functionalities.
 
@@ -93,11 +93,11 @@ Be aware that only parameters available for the `emscoring` module are accepted.
 
 To tune the haddock3 scoring function weights, there are basically only 5 parameters to be tuned.
 
-* **w_vdw**: to tune the weight of the Van der Waals term
-* **w_elec**: to tune the weight of the Electrostatic term
-* **w_desolv**: to tune the weight of the Desolvation term
-* **w_air**: to tune the weight of the Ambiguous Restraints term
-* **w_bsa**: to tune the weight of the Buried Surface Area term
+- **w_vdw**: to tune the weight of the Van der Waals term
+- **w_elec**: to tune the weight of the Electrostatic term
+- **w_desolv**: to tune the weight of the Desolvation term
+- **w_air**: to tune the weight of the Ambiguous Restraints term
+- **w_bsa**: to tune the weight of the Buried Surface Area term
 
 Note that, if a parameter is not tuned, the default scoring function weights are used.
 
@@ -155,7 +155,7 @@ while also adjusting the resolution with the `scale` parameter:
 haddock3-analyse -r my-run-folder -m 2 5 6 --format pdf --scale 2.0
 ```
 
-#### The analysis folder
+### The analysis folder
 
 After running `haddock3-analyse` you can check the content of the `analysis` directory in your run folder.
 If everything went successfully, one of the above commands should have produced an analysis folder structured as
@@ -215,11 +215,11 @@ haddock3-traceback my-run-folder
 `haddock3-traceback` creates a traceback subfolder within the `my-run-folder` directory, containing a `traceback.tsv` table:
 
 ```
-00_topo1     00_topo2        01_rigidbody            01_rigidbody_rank       04_seletopclusts        04_seletopclusts_rank   06_flexref      06_flexref_rank 
-4G6K.psf     4I1B.psf        rigidbody_10.pdb        3                       cluster_1_model_1.pdb   1                       flexref_1.pdb   2       
-4G6K.psf     4I1B.psf        rigidbody_11.pdb        10                      cluster_1_model_2.pdb   3                       flexref_3.pdb   1       
-4G6K.psf     4I1B.psf        rigidbody_18.pdb        4                       cluster_2_model_1.pdb   2                       flexref_2.pdb   4      
-4G6K.psf     4I1B.psf        rigidbody_20.pdb        15                      cluster_2_model_2.pdb   4                       flexref_4.pdb   3       
+00_topo1     00_topo2        01_rigidbody            01_rigidbody_rank       04_seletopclusts        04_seletopclusts_rank   06_flexref      06_flexref_rank
+4G6K.psf     4I1B.psf        rigidbody_10.pdb        3                       cluster_1_model_1.pdb   1                       flexref_1.pdb   2
+4G6K.psf     4I1B.psf        rigidbody_11.pdb        10                      cluster_1_model_2.pdb   3                       flexref_3.pdb   1
+4G6K.psf     4I1B.psf        rigidbody_18.pdb        4                       cluster_2_model_1.pdb   2                       flexref_2.pdb   4
+4G6K.psf     4I1B.psf        rigidbody_20.pdb        15                      cluster_2_model_2.pdb   4                       flexref_4.pdb   3
 ```
 
 In this table, each row represents a model that has been produced by the workflow.
@@ -269,8 +269,8 @@ This can be very useful as it allows us to fine-tune parameters and evaluate the
 
 `haddock3-re` takes two mandatory positional arguments:
 
-* **1:**The name of the subcommand
-* **2:**Path to the module on which to apply the modifications in your run
+- **1:**The name of the subcommand
+- **2:**Path to the module on which to apply the modifications in your run
 
 By running `haddock3-re`, a new directory will be created, with the `_interactive` suffix, where the new results are stored.
 Relaunching several times `haddock3-re` on the same directory will update the content in the `_interactive` one.
@@ -359,9 +359,9 @@ The `haddock3-copy` CLI allows one to copy the content of a run to another run d
 
 It takes three arguments:
 
-* **`-r run_directory`** is the directory of a previously computed haddock3 run.
-* **`-o new_run_directory`** is the new directory where to make to copy of the old run.
-* **`-m module_id_X module_id_Y`** is the list of modules you wish to copy (separated by spaces).
+- **`-r run_directory`** is the directory of a previously computed haddock3 run.
+- **`-o new_run_directory`** is the new directory where to make to copy of the old run.
+- **`-m module_id_X module_id_Y`** is the list of modules you wish to copy (separated by spaces).
 
 As an example, consider your previous run directory is named `run1` and contains the following modules:
 
@@ -384,9 +384,9 @@ haddock3-copy -r run1 -m 0 4 -o run2
 
 **Notes**:
 
-* the flag `-m` allows to define which modules must be copied, and modules `0` (for `0_topoaa`) and `4` (for `4_flexref`) are space separated.
-* in this case, we also copy the content of `0_topoaa`, this is because topologies are stored in this module directory, and we must have access to them if we are using another module requiring CNS topology to run.
-* it is often recommended to **always** copy the `topoaa` directory, as we will often require the topologies later in the workflow.
+- the flag `-m` allows to define which modules must be copied, and modules `0` (for `0_topoaa`) and `4` (for `4_flexref`) are space separated.
+- in this case, we also copy the content of `0_topoaa`, this is because topologies are stored in this module directory, and we must have access to them if we are using another module requiring CNS topology to run.
+- it is often recommended to **always** copy the `topoaa` directory, as we will often require the topologies later in the workflow.
 
 **WARNING**:
 To copy the content of a run and modify the paths, we are using the `sed` command, searching to replace the previous run directory name (`run1`) with the new one (`run2`) in all the generated files to make sure that paths will be functional in the new run directory.
@@ -394,10 +394,10 @@ In some cases, this can lead to some artifacts, such as the modification of attr
 
 Here is a list of run directory names **NOT** to use:
 
-* topology
-* score
-* emref
-* etc...
+- topology
+- score
+- emref
+- etc...
 
 The best solution is to always use a unique name that describes the content of the run.
 
