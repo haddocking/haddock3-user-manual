@@ -11,11 +11,13 @@ By default, no segments are defined as fully flexible.
 
 Flexibility can be defined in any of the CNS model refinement modules, namely: `[emref]`, `[flexref]`, and `[mdref]`.
 Check out schematic images of the refinement protocols employed in different [refinements modules](./modules/refinement.md):
+
 * [`[flexref]`](./modules/refinement.md#flexref-module-simulated-annealing-protocol-scheme)
 * [`[mdref]`](./modules/refinement.md#mdref-module-scheme)
 * [`[emref]`](./modules/refinement.md#emref-module-scheme)
 
 Below you can find explanations and examples on the definition of different types of segments:
+
 * [Automatic Definition of Rigid and Semi-Flexible Segments)](#automatic-definition-of-rigid-and-semi-flexible-segments)
 * [Manual definition:](#manual-definition)
   * [Rigid Molecule](#rigid-molecule)
@@ -31,6 +33,7 @@ As this behaviour is enabled by default, there is no need to add any parameters 
 Internally, this behaviour is controlled by the `nsegX` parameter, which specifies the number of semi-flexible segments for molecule X. Here, `X` corresponds to the sequential number of the molecule in the input, i.e. the order in which input PDB files are given.
 
 For example:
+
 * If no manual flexibility is defined and two docking partners are provided, Haddock3 will proceed with:
 `nseg1 = -1; nseg2 = -1`
 * For three docking partners, the parameters will be:
@@ -42,13 +45,16 @@ The default value of `-1` indicates that the semi-flexible and rigid segments ar
 <hr>
 
 ## Manual definition
+
 ### Rigid Molecule
+
 To keep an entire molecule rigid throughout the refinement, the `nsegX` parameter for that molecule should be set to 0.
 
 #### Example: Keeping the Protein Molecule Rigid
 
 Consider a docking protocol involving two molecules: DNA and protein, where DNA is the 1st molecule and protein is the 2nd by the order of the input. This order is important!  
 To treat the protein as a rigid body during flexible refinement, set the parameter nseg2 to 0. The corresponding .cfg file would look as follows:
+
 ```toml
 # Input molecules: DNA as the 1st molecule, and protein as the 2nd 
 molecules = ["DNA.pdb", "protein.pdb"]
@@ -68,13 +74,15 @@ nseg2 = 0
 
 To manually define a semi-flexible segment, the user must specify the first and last residues of the segment using the parameters `seg_sta_X_Y` and `seg_end_X_Y`, respectively.
 Parameter Details:
-* `X` is the sequential number of the molecule (i.e. position of the PDB file in the input) to which the segment belongs. This follows the same logic as `X` in `nsegX` parameter, explained above. 
+
+* `X` is the sequential number of the molecule (i.e. position of the PDB file in the input) to which the segment belongs. This follows the same logic as `X` in `nsegX` parameter, explained above.
 * `Y` is the sequential number of the segment being defined. This allows multiple semi-flexible segments to be defined within the same molecule.
 * The values of `seg_sta_X_Y` and `seg_end_X_Y` must be integers and must correspond to residue indices present in the corresponding input PDB file.
 
 #### Example: Two Semi-Flexible Segments of DNA
 
 Consider a docking scenario with two partners: a DNA molecule and a protein, where two segments of the DNA are manually defined as semi-flexible.
+
 * The first segment includes residues 2 to 19.
 * The second segment includes residues 22 to 39.
 
@@ -108,10 +116,10 @@ Fully Flexible Segment
 The manual definition of a fully flexible segment differs slightly from the definition of a semi-flexible segment. For fully flexible segments, the user must specify the first and last residues of the fully flexible segment using the parameters `fle_sta_Y` and `fle_end_Y`. On top of it, the user must define the chain ID (instead of the molecule's sequential number) using the parameter `fle_seg_Y`.
 
 Parameter Details:
+
 * `Y` defines the sequential number of the segment being defined. This allows multiple semi-flexible segments to be defined within the same chain.
 * The value of `fle_seg_Y` is a string and must correspond to the chainID/segemntID present in one of the input PDB files.
 * The values of `seg_sta_X_Y` and `seg_end_X_Y` must be integers and must correspond to residue indices present in chain/segment defined by `fle_seg_Y.
-
 
 #### Example: Fully Flexible Glycan
 
@@ -119,6 +127,7 @@ Let's consider a docking scenario involving two partners, namely a protein (chai
 
 Let's define the protein as the 1st docking partner and the glycan as the 2nd docking partner in `.cfg` file.
 Then, to define glycan as fully flexible, its entire chain should be treated a single segment, i.e.:
+
 * the chainID is set to 'B'
 * the starting residue is set to 1
 * the ending residue is set to 4

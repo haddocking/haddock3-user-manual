@@ -2,7 +2,6 @@
 
 Haddock3 is an open source software, and its source code can be downloaded from our [haddocking/haddock3 GitHub repository](https://github.com/haddocking/haddock3/).
 
-
 ## Haddock3 source code structure
 
 ```
@@ -43,7 +42,6 @@ haddock3
  `-- reference_structure.pdb
 ```
 
-
 ### Modules structure
 
 - [`__init__.py`](#__init__py)
@@ -55,6 +53,7 @@ haddock3
 
 This file contains all the parameter names and their default values.
 It also explains:
+
 - the `default` value to be used if the parameter is not defined in the configuration file.
 - the `type` of value to expect: string, integer, float, boolean, list
 - the allowed value range: `choices`, `minchars / maxchars`, `min / max`, `precision` (number of digits for floating points)

@@ -17,7 +17,6 @@ For this, simply click on the magnifying glass at the top-right for the forum, a
 <img width="75%" src="./images/AskBioExcel_search_engine.png" alt="a screenshot of the AskBioExcel forum search engine querying restraints">
 </figure>
 
-
 ## Code related issues
 
 For code related issues, please refere to the [GitHub repository issues](https://github.com/haddocking/haddock3/issues), which allows us as well as users to track known issues and their progress.

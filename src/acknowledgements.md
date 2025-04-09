@@ -7,13 +7,11 @@ This allows the HADDOCK team to ensure software quality, improvements, maintenan
 <img width="30%" src="./images/Bioexcel_logo.png" alt="bioexcel">
 </figure>
 
-
 ## User driven developments
 
 In Haddock3, not only do we try to provide a powerful docking tool that can handle a variety of biomolecular entities, but we are also developing new modules and functionalities based on user requests.
 On a yearly basis, we ask users to fill out a survey, allowing us to focus on several different directions to improve the tool and make it more suitable for the community.
 Feature requests can also be performed directly from our [GitHub repository issues](https://github.com/haddocking/haddock3/issues/new/choose).
-
 
 ## 20 years of HADDOCK
 

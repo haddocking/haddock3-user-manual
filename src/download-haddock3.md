@@ -26,7 +26,6 @@ We are hosting the code on a dedicated [GitHub repository](https://github.com/ha
 
 For usage tracking purposes (to avoid counting robots downloading the tool), we advise users to download it from our [lab page](https://www.bonvinlab.org/software/haddock3/#haddock3-distribution-download), as it eases the reporting tasks to authorities supporting the development of this project with grants.
 
-
 To install haddock3 from the source, we suggest running the following commands:
 
 ```bash
