@@ -7,7 +7,6 @@ Thus **the best practice guide shows how to run HADDOCK in a sensible and ration
 Which settings are best used in which scenario and which on the other hand are better avoided?
 This best practice guide will guide you through all possible scenarios with related settings linked with tutorials of the newest HADDOCK version, published articles, and protocols from our group.
 
-
 <hr>
 
 ## Before docking
@@ -20,10 +19,9 @@ This best practice guide will guide you through all possible scenarios with rela
 
 <a href="./bpg/restraints.md" title="Restraints preparation"> <center> <img width="300" src="./bpg/restraints.png" style="border-radius: 50%; border: dashed 2px black;"></center></a>
 
-
 <hr>
 
-##  Docking with HADDOCK
+## Docking with HADDOCK
 
 <style>
 table, th, td {
@@ -99,15 +97,11 @@ table, th, td {
   </tr>
  </table>
 
-
 <hr>
 
-##  [After docking: How to analyze docking results from HADDOCK or refine models?](./bpg/analysis.md)
-
+## [After docking: How to analyze docking results from HADDOCK or refine models?](./bpg/analysis.md)
 
 <a href="./bpg/analysis.md" title="Analysis">
 <center>
 <img width="300" src="./bpg/analysis.png" style="border-radius: 50%; border: dashed 2px black;" ></center>
 </a>
-
-

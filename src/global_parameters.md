@@ -3,10 +3,10 @@
 Global parameters must be defined before any use of `[modules]`, as they will act on every downstream `[modules]`.
 
 Three types of global parameters are defined:
+
 - [**Mandatory**](#mandatory-global-parameters): These global parameters must be defined for a configuration file to be valid and properly executed.
 - [**Execution**](#execution-global-parameters): The execution parameters are related to the execution mode of haddock3, enabling to either run with local cores, use schedulers (such as slurm or torque) or even spread the workload over multiple nodes using MPI.
 - [**Optional**](#optional-global-parameters): These optional parameters are mostly related to pre- and post-processing of the results.
-
 
 ## Mandatory global parameters
 
@@ -34,14 +34,12 @@ Various parameters are related to the execution modes:
 - `offline`: When set to `true`, completely isolate the haddock3 run and results from internet. This option is useful when no internet connection is available. Default is `false`.
 - `debug`: By setting it to `false`, reduces the amount of I/O operations, often speeding up the process. When set to `true`, input files, intermediate files and output files are generated and kept, which is useful when tracking potential errors. The default is `false`.
 
-
 ### Local mode
 
 Often the prefered execution mode if you submit a haddock3 run to a queuing system or run on your own computer.
 The `local` mode (targeted using the global parameter `mode = 'local'`), utilize the operating system device to perform the computations.
 Setting the `ncores` parameter allows to tune the number of CPU cores to use during the run.
 Note that if you set this value too high compared to your system capabilities, this value will be automatically scaled down to the maximum number of cores available on the machine.
-
 
 ### Batch mode
 
@@ -55,7 +53,6 @@ Utilise queuing system machinery to submit CNS runs.
 ### MPI mode
 
 Requires the installation of the `mpi4py` python library and `OpenMPI` to be installed on the operating system.
-
 
 ## Optional global parameters
 

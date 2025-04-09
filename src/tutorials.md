@@ -4,9 +4,7 @@ Haddock3 is not only a tool, but also a set of training materials, allowing new 
 
 The list of tutorials is available from our [BonvinLab website -> education -> haddock3 -> tutorials](https://www.bonvinlab.org/education/HADDOCK3/)
 
-
 Please note that we are constantly adding new tutorials, and therefore new ones may appear from time to time.
-
 
 ## Haddock2.X tutorial
 

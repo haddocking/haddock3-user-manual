@@ -15,7 +15,6 @@ This can be very useful when you know that the system you are working with conta
 Various symmetry restraints are already available in Haddock3.
 But custom symmetry restraints can also be provided. To learn more about them, read the [custom symmetry section](#custom-symmetry-restraints).
 
-
 ### Pre-defined symmetry restraints
 
 3 types of symmetry restraints have been implemented in haddock3:
@@ -28,8 +27,7 @@ They are described in more detail below.
 
 Here is a related research article describing some of the available symmetries in HADDOCK: E. Karaca, A.S.J. Melquiond, S.J. de Vries, P.L. Kastritis and A.M.J.J. Bonvin
 [Building macromolecular assemblies by information-driven docking: Introducing the HADDOCK multi-body docking server.](https://doi.org/doi:10.1074/mcp.M000051-MCP201)
-_Mol. Cell. Proteomics_, *9*, 1784-1794 (2010). Download the final author version <a href="https://utrechtuniversity.on.worldcat.org/atoztitles/link?sid=Entrez:PubMed&id=pmid:20305088">here</a>.
-
+_Mol. Cell. Proteomics_, _9_, 1784-1794 (2010). Download the final author version <a href="https://utrechtuniversity.on.worldcat.org/atoztitles/link?sid=Entrez:PubMed&id=pmid:20305088">here</a>.
 
 #### Non-crystallographic symmetry
 
@@ -55,6 +53,7 @@ Parameters used to define NCS restraints are always composed of 6 information (d
 It is also possible to tune the force constant for the NCS symmetries restraints using the `kncs` parameter.
 
 Here is an example on how to define a NCS restraints:
+
 ```toml
 # Activation of the NCS restraints
 ncs_on = true  # Very important, otherwise nothing will be considered
@@ -167,13 +166,11 @@ It is also possible to tune the force constant for the C**N** symmetries using t
 
 We are providing an example of protein-homotrimer docking using haddock3 [here](/software/haddock3/manual/docking_scenarios#protein-homotrimer).
 
-
 #### S3 symmetry
 
 To make use of S3 symmetry parameters, one should first activate the use of such restraints using the `sym_on = true` parameter!
 
 It is also possible to tune the force constant for the S3 symmetry using the `ksym` parameter.
-
 
 ## DNA & RNA restraints
 
@@ -183,8 +180,7 @@ Without any restraints, the pairing can fall apart when running semi-flexible re
 A dedicated parameter can be turned **on** to automatically discover base pairs and generate restraints between nucleotides to keep them together.
 For this, simply set the `dnarest_on` to true (`dnarest_on = true`) in the corresponding CNS modules (mainly `[flexref]` and `[mdref]`).
 
-*Note* that while the parameter name only contains DNA in its name, it is also functional for RNA!
-
+_Note_ that while the parameter name only contains DNA in its name, it is also functional for RNA!
 
 ## Contact restraints
 
@@ -205,4 +201,3 @@ This is performed by defining the path to this file using the `symtbl_fname = cu
 This parameter is available in `[rigidbody]`, `[flexref]`, `[emref]` and `[mdref]` modules.
 
 For more details on how to define symmetry restraints, please refer to the [Xplor documentation, Distance Symmetry Restraints](https://nmr.cit.nih.gov/xplor-nih/xplorMan/node393.html).
-

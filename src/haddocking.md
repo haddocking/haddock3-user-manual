@@ -12,7 +12,6 @@ Throughout the simulation, these active residues are restrained to be part of th
 Passive residues are those that contribute to the interaction but are deemed of less importance. If such a residue does not belong in the interface there is no scoring penalty.
 Hence, a careful selection of which residues are active and which are passive is critical for the success of the docking.
 
-
 ## HADDOCK scoring function
 
 CNS modules use the HADDOCK scoring function to score and rank generated models.
@@ -34,10 +33,10 @@ The scoring is performed according to the _weighted sum_ (HADDOCK score) of the 
 As the weights for each of the scoring function components differs for the various available CNS module, they will be described in each of the modules (see: [haddock3 modules](./modules.md)).
 
 Of course, these weights can be tuned by the user, by modifying their related parameters:
+
 * `w_elec`: to tune the electrostatic intermolecular energy weight
 * `w_vdw`: to tune the van der Waals intermolecular energy weight
 * `w_desolv`: to tune the desolvation energy weight
 * `w_bsa`: to tune the buried surface area weight
 * `w_air`: to tune the distance restraints energy (only unambiguous and AIR (ambig) restraints) weight
 * `w_sym`: to tune the symmetry restraints energy (NCS and C2/C3/C5 terms) weight
-
