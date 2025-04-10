@@ -21,7 +21,7 @@ Several sources exist to find/generate such files:
 
 * the **Automated Topology Builder (ATB)** and Repository developed in Prof. Alan Mark's group at the University of Queensland in Brisbane: [https://compbio.biosci.uq.edu.au/atb](https://compbio.biosci.uq.edu.au/atb)
 
-* Using OpenBabel and acpype: A simple set of two commands can generate CNS ready topology and parameters using both OpenBabel and acpype.
+* Using **OpenBabel** and **acpype**: A simple set of two commands can generate CNS ready topology and parameters using both OpenBabel and acpype.
 ```bash
 # Install OpenBabel and acpype
 pip install acpype==2023.10.27 openbabel-wheel==3.1.1.21
