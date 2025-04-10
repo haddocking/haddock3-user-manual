@@ -6,10 +6,9 @@ Here is the list of research articles related to haddock3:
 
 - **Description of haddock3**: (soon!)
 - **Haddock3 web-application**: (soon!)
-- **Benchmarks**: 
+- **Benchmarks**:
   - Focused Antibody-Antigen docking:
-  - Glycan docking: 
-
+  - Glycan docking:
 
 ## Citing haddock3 source-code
 
@@ -19,4 +18,3 @@ For this, go to [https://github.com/haddocking/haddock3](https://github.com/hadd
 <figure align="center">
   <img src="./images/cite_haddock3_github_repo.png">
 </figure>
-

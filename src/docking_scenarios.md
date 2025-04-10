@@ -14,16 +14,15 @@ These examples are encompassing a wide range of applications, such as:
 - [Scoring workflow](./docking_scenarios/scorings.md)
 - [Analysis pipelines](./docking_scenarios/analyses.md)
 
-
 Alternatively, up-to-date examples can also be found:
+
 - in your local installation of haddock3: `haddock3/examples/`.
 - online, on our [GitHub repository `haddock3/examples/`](https://github.com/haddocking/haddock3/tree/main/examples).
 
-
 Please note the extension scheme we are using in the provided configuration file examples:
+
 - __*-full.cfg__: we are using the `*-full.cfg` suffix on protocols that have proper sampling, and therefore could be used in production. These are nice baseline workflows with appropriate parameters, but will obviously require more time to terminate the run. Examples making use of MPI are also provided in some cases, together with an associated job file that should be submitted to the slurm batch system (__*-full-mpi.cfg__ and __*-full-mpi.job__). Make sure to adapt the full config files to your own system.
 - __*-test.cfg__: we are using the `*-test.cfg` suffix on protocols that have low sampling, allowing for fast test of the functionalities present in the workflow. Of note, on a daily basis, we are running most of the `*-test.cfg` configuration files to make sure the `main` branch of haddock3 is functional.
-
 
 # Web-application pre-defined scenario
 

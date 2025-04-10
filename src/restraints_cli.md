@@ -21,15 +21,14 @@ For the list of arguments for a given task, run:
 haddock3-restraints <TASK_NAME> -h
 ```
 
-
 This CLI holds multiple sub-commands, listed and explained below:
+
 - [calc_accessibility](#calc-accessibility): Compute solvent-accessible residues from an input PDB file.
 - [passive_from_active](#passive-form-active): Generates a list of solvent-accessible residues near a list of residues.
 - [active_passive_to_ambig](#active-passive-to-ambig): Generates a ambiguous/unambiguous restraints file from two *active/passive* residue selections.
 - [restrain_bodies](#restrain-bodies): Generates restraints within the same chain. Useful when chain breaks are present or multiple proteins are defined as a single chain.
 - [z_surface_restraints](#z-surface-restraints): Generates surfaces and restraints selected residues to it.
 - [validate_tbl](#validate-tbl): Validate the content of an ambiguous/unambiguous restraints file.
-
 
 ## Calc Accessibility
 
@@ -47,6 +46,7 @@ haddock3-restraints calc_accessibility <input_pdb_file> [-c <cutoff>] [--log_lev
 ```
 
 **Arguments**:
+
 ```bash
 positional arguments:
   input_pdb_file        input PDB structure.
@@ -75,6 +75,7 @@ haddock3-restraints passive_from_active <pdb_file> <active_list> [-c <chain_id>]
 ```
 
 **Arguments**:
+
 ```bash
 positional arguments:
   structure             input PDB structure.
@@ -90,20 +91,20 @@ options:
 
 This command is useful if few active residues are known and you want to enlarge the possible interface by adding passive residues.
 
-
 ## Active passive to ambig
 
 Given two files containing active (in the first line) and passive (second line) residues to be used by HADDOCK, `active_passive_to_ambig` gives in output the corresponding `ambig.tbl` file.
 
 **Usage:**
-```bash 
+
+```bash
 haddock3-restraints active_passive_to_ambig file_actpass_one file_actpass_two [--segid-one] [--segid-two]
 ```
 
 Here `file_actpass_one` and `file_actpass_two` are the files containing the active and passive residues for the first and second molecule, respectively. The two optional arguments (`--segid-one` and `--segid-two`) are used to specify the segment ID of the residues in the output `ambig.tbl` file.
 
-
 **Arguments**:
+
 ```bash
 positional arguments:
   actpass_one           First actpass file
@@ -119,18 +120,20 @@ options:
 
 ## Restrain bodies
 
-The `restrain_bodies` subcommand creates distance restraints to lock several 
+The `restrain_bodies` subcommand creates distance restraints to lock several
 chains together. It is useful to avoid unnatural flexibility or movement due to
 sequence/numbering gaps.
 
 As an example, this subcommand is crucial when docking an antibody to its cognate antigen (see for example [this tutorial](www.bonvinlab.org/education/HADDOCK3/HADDOCK3-antibody-antigen/#additional-restraints-for-multi-chain-proteins)), as the hypervariable region of an antibody is formed by two chains that are not covalently linked.
 
 **Usage:**
+
 ```bash
 haddock3-restraints restrain_bodies <structure> [--exclude] [--verbose]
 ```
 
 **Arguments**:
+
 ```bash
 positional arguments:
   structure             The PDB structure to be restrained.
@@ -147,11 +150,12 @@ One can exclude some chains from this calculation using the `--exclude` option.
 
 ## Z surface restraints
 
-The `z_surface_restraints` subcommand generates both z-surfaces (x,y plans at a given z coordinate) 
+The `z_surface_restraints` subcommand generates both z-surfaces (x,y plans at a given z coordinate)
 and corresponding based on input PDB structure and residue selection.
 This is useful to mimic membranes and make sure the protein will stay in the plan.
 
 **Usage:**
+
 ```bash
 haddock3-restraints z_surface_restraints --pdb <structure> --residues 7,50,53,71 --output z_restraints
 ```
@@ -161,8 +165,8 @@ This command will generate a plan at x,y plan at z==0 (`z_restraints_beads.pdb`)
 Note that you can have multiple sets of comma-separated residues (e.g: `7,50,53,71 1,2,3`) by separating them by spaces.
 If you do so, multiple surfaces will be generated and each residue selections will be restraints to a plan.
 
-
 **Arguments**:
+
 ```bash
 options:
   -h, --help            show this help message and exit
@@ -186,11 +190,13 @@ options:
 A simple subcommand to validate the content of a tbl file.
 
 **Usage:**
+
 ```bash
 haddock3-restraints validate_tbl <tbl_file> [--silent] [--quick]
 ```
 
 **Arguments**:
+
 ```bash
 positional arguments:
   tbl_file    TBL file to be validated
@@ -203,7 +209,6 @@ options:
 ```
 
 The `--silent` option will suppress the output of the validation (in case of success), while the `--quick` option will first check the global formatting first, before getting into the context.
-
 
 # New version of the haddock-restraints
 

@@ -1,4 +1,4 @@
-## Fundings
+# Fundings
 
 The development of Haddock3 is made possible thanks to the financial support from Horizon 2020, projects [BioExcel](https://www.bioexcel.eu) [823830](https://cordis.europa.eu/project/id/823830) and [101093290](https://cordis.europa.eu/project/id/101093290), EGI-ACE [101017567](https://cordis.europa.eu/project/id/101017567), and from the Netherlands e-Science Center (027.020.G13), that provided and still provides substantial fundings for software development.
 This allows the HADDOCK team to ensure software quality, improvements, maintenance, and user support.
@@ -7,13 +7,11 @@ This allows the HADDOCK team to ensure software quality, improvements, maintenan
 <img width="30%" src="./images/Bioexcel_logo.png" alt="bioexcel">
 </figure>
 
-
 ## User driven developments
 
 In Haddock3, not only do we try to provide a powerful docking tool that can handle a variety of biomolecular entities, but we are also developing new modules and functionalities based on user requests.
 On a yearly basis, we ask users to fill out a survey, allowing us to focus on several different directions to improve the tool and make it more suitable for the community.
 Feature requests can also be performed directly from our [GitHub repository issues](https://github.com/haddocking/haddock3/issues/new/choose).
-
 
 ## 20 years of HADDOCK
 

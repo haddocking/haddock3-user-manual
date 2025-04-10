@@ -1,5 +1,9 @@
 # Haddock3 user manual
 
+[![build](https://github.com/haddocking/haddock3-user-manual/actions/workflows/build.yml/badge.svg)](https://github.com/haddocking/haddock3-user-manual/actions/workflows/build.yml)
+[![deploy book](https://github.com/haddocking/haddock3-user-manual/actions/workflows/mdbook.yml/badge.svg)](https://github.com/haddocking/haddock3-user-manual/actions/workflows/mdbook.yml)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/ec845bd05cbc4e499df24e70ebe6c6d9)](https://app.codacy.com/gh/haddocking/haddock3-user-manual/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+
 This repository holds the MarkDown files and assets used to compile the Haddock3 user manual !
 
 Thanks to github actions, this book is compiled on pull request and directly published online, accessible at: [https://www.bonvinlab.org/haddock3-user-manual](https://www.bonvinlab.org/haddock3-user-manual)

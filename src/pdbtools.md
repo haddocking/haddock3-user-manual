@@ -20,7 +20,7 @@ Here is a list of all available command line interface installed together with h
 - [pdb_rplresname](#pdb_rplresname): Performs in-place replacement of a residue name by another.
 - [pdb_selmodel](#pdb_selmodel): Extracts one or more models from a PDB file.
 - [pdb_splitseg](#pdb_splitseg): Splits a PDB file into several, each containing one segment.
-- [pdb_chainbows](#pdb_chainbows): 
+- [pdb_chainbows](#pdb_chainbows):
 - [pdb_delresname](#pdb_delresname): Removes all residues matching the given name in the PDB file.
 - [pdb_keepcoord](#pdb_keepcoord): Removes all non-coordinate records from the file.
 - [pdb_seg](#pdb_seg): Modifies the segment identifier column of a PDB file (default is an empty segment).
@@ -38,7 +38,7 @@ Here is a list of all available command line interface installed together with h
 - [pdb_selaltloc](#pdb_selaltloc): Selects altloc labels for the entire PDB file.
 - [pdb_selseg](#pdb_selseg): Selects all atoms matching the given segment identifier.
 - [pdb_tofasta](#pdb_tofasta): Extracts the residue sequence in a PDB file to FASTA format.
-- [pdb_delchain](#pdb_delchain): Deletes all atoms matching specific chains in the PDB file. 
+- [pdb_delchain](#pdb_delchain): Deletes all atoms matching specific chains in the PDB file.
 - [pdb_fixinsert](#pdb_fixinsert): Fixes insertion codes in a PDB file.
 - [pdb_occ](#pdb_occ): Modifies the occupancy column of a PDB file (default 1.0).
 - [pdb_selatom](#pdb_selatom): Selects all atoms matching the given name in the PDB file.
@@ -57,8 +57,6 @@ Here is a list of all available command line interface installed together with h
 - [pdb_splitchain](#pdb_splitchain): Splits a PDB file into several, each containing one chain.
 - [pdb_wc](#pdb_wc): Summarizes the contents of a PDB file, like the wc command in UNIX.
 
-
-
 ## pdb_b
 
 Modifies the temperature factor column of a PDB file (default 10.0).
@@ -70,8 +68,6 @@ Usage:
 Example:
     python pdb_b.py -10.0 1CTF.pdb
 ```
-
-
 
 ## pdb_head
 
@@ -85,7 +81,6 @@ Example:
     python pdb_head.py -100 1CTF.pdb  # first 100 ATOM/HETATM lines of the file
 ```
 
-
 ## pdb_rplchain
 
 Performs in-place replacement of a chain identifier by another.
@@ -97,7 +92,6 @@ Usage:
 Example:
     python pdb_rplchain.py -A:B 1CTF.pdb # Replaces chain A for chain B
 ```
-
 
 ## pdb_selhetatm
 
@@ -111,7 +105,6 @@ Example:
     python pdb_selhetatm.py 1CTF.pdb
 ```
 
-
 ## pdb_splitmodel
 
 Splits a PDB file into several, each containing one MODEL.
@@ -124,7 +117,6 @@ Example:
     python pdb_splitmodel.py 1CTF.pdb
 ```
 
-
 ## pdb_chain
 
 Modifies the chain identifier column of a PDB file (default is an empty chain).
@@ -136,7 +128,6 @@ Usage:
 Example:
     python pdb_chain.py -C 1CTF.pdb
 ```
-
 
 ## pdb_delres
 
@@ -161,7 +152,6 @@ Example:
     python pdb_delres.py -1:10:5 1CTF.pdb # Deletes every 5th residue from 1 to 10
 ```
 
-
 ## pdb_intersect
 
 Returns a new PDB file only with atoms in common to all input PDB files.
@@ -178,7 +168,6 @@ Example:
     python pdb_intersect.py 1XYZ.pdb 1ABC.pdb
 ```
 
-
 ## pdb_rplresname
 
 Performs in-place replacement of a residue name by another.
@@ -192,7 +181,6 @@ Usage:
 Example:
     python pdb_rplresname.py -HIP:HIS 1CTF.pdb  # changes all HIP residues to HIS
 ```
-
 
 ## pdb_selmodel
 
@@ -209,7 +197,6 @@ Example:
     python pdb_selmodel.py -1,3 1GGR.pdb  # selects models 1 and 3
 ```
 
-
 ## pdb_splitseg
 
 Splits a PDB file into several, each containing one segment.
@@ -221,7 +208,6 @@ Usage:
 Example:
     python pdb_splitseg.py 1CTF.pdb
 ```
-
 
 ## pdb_chainbows
 
@@ -239,7 +225,6 @@ Example:
     python pdb_chainbows.py 1CTF.pdb
 ```
 
-
 ## pdb_delresname
 
 Removes all residues matching the given name in the PDB file.
@@ -255,7 +240,6 @@ Example:
     python pdb_delresname.py -ASP,GLU 1CTF.pdb  # removes (-) charged residues
 ```
 
-
 ## pdb_keepcoord
 
 Removes all non-coordinate records from the file.
@@ -270,7 +254,6 @@ Example:
     python pdb_keepcoord.py 1CTF.pdb
 ```
 
-
 ## pdb_seg
 
 Modifies the segment identifier column of a PDB file (default is an empty segment).
@@ -282,7 +265,6 @@ Usage:
 Example:
     python pdb_seg.py -C 1CTF.pdb
 ```
-
 
 ## pdb_selres
 
@@ -305,7 +287,6 @@ Example:
     python pdb_selres.py -::5 1CTF.pdb # Extracts every 5th residue
     python pdb_selres.py -1:10:5 1CTF.pdb # Extracts every 5th residue from 1 to 10
 ```
-
 
 ## pdb_tidy
 
@@ -330,7 +311,6 @@ Example:
     python pdb_tidy.py -strict 1CTF.pdb  # does not add TER on chain breaks
 ```
 
-
 ## pdb_chainxseg
 
 Swaps the segment identifier for the chain identifier.
@@ -343,7 +323,6 @@ Example:
     python pdb_chainxseg.py 1CTF.pdb
 ```
 
-
 ## pdb_element
 
 Assigns the elements in the PDB file from atom names.
@@ -355,7 +334,6 @@ Usage:
 Example:
     python pdb_element.py 1CTF.pdb
 ```
-
 
 ## pdb_merge
 
@@ -372,7 +350,6 @@ Example:
     python pdb_merge.py 1ABC.pdb 1XYZ.pdb
 ```
 
-
 ## pdb_segxchain
 
 Swaps the chain identifier by the segment identifier.
@@ -387,7 +364,6 @@ Usage:
 Example:
     python pdb_segxchain.py 1CTF.pdb
 ```
-
 
 ## pdb_selresname
 
@@ -404,7 +380,6 @@ Example:
     python pdb_selresname.py -ASP,GLU 1CTF.pdb  # keeps (-) charged residues
 ```
 
-
 ## pdb_tocif
 
 Rudimentarily converts the PDB file to mmCIF format.
@@ -419,7 +394,6 @@ Example:
     python pdb_tocif.py 1CTF.pdb
 ```
 
-
 ## pdb_chkensemble
 
 Checks all models in a multi-model PDB file have the same composition.
@@ -433,7 +407,6 @@ Usage:
 Example:
     python pdb_chkensemble.py 1CTF.pdb
 ```
-
 
 ## pdb_fetch
 
@@ -450,7 +423,6 @@ Example:
     python pdb_fetch.py -biounit 1brs  # downloads biounit, 2 chains
 ```
 
-
 ## pdb_mkensemble
 
 Merges several PDB files into one multi-model (ensemble) file.
@@ -465,7 +437,6 @@ Usage:
 Example:
     python pdb_mkensemble.py 1ABC.pdb 1XYZ.pdb
 ```
-
 
 ## pdb_selaltloc
 
@@ -488,7 +459,6 @@ Example:
     python pdb_selaltloc.py -A 1CTF.pdb  # picks alternate locations labelled 'A'
 ```
 
-
 ## pdb_selseg
 
 Selects all atoms matching the given segment identifier.
@@ -501,7 +471,6 @@ Example:
     python pdb_selseg.py -C 1CTF.pdb  # selects segment C
     python pdb_selseg.py -C,D 1CTF.pdb  # selects segments C and D
 ```
-
 
 ## pdb_tofasta
 
@@ -521,7 +490,6 @@ Example:
     python pdb_tofasta.py 1CTF.pdb
 ```
 
-
 ## pdb_delchain
 
 Deletes all atoms matching specific chains in the PDB file.
@@ -534,7 +502,6 @@ Example:
     python pdb_delchain.py -A 1CTF.pdb  # removes chain A from PDB file
     python pdb_delchain.py -A,B 1CTF.pdb  # removes chains A and B from PDB file
 ```
-
 
 ## pdb_fixinsert
 
@@ -553,7 +520,6 @@ Example:
                                               # 9 of chain A and 12 of chain B.
 ```
 
-
 ## pdb_occ
 
 Modifies the occupancy column of a PDB file (default 1.0).
@@ -565,7 +531,6 @@ Usage:
 Example:
     python pdb_occ.py -1.0 1CTF.pdb
 ```
-
 
 ## pdb_selatom
 
@@ -582,7 +547,6 @@ Example:
     python pdb_selatom.py -CA,C,N,O 1CTF.pdb  # keeps only backbone atoms
 ```
 
-
 ## pdb_shiftres
 
 Shifts the residue numbers in the PDB file by a constant value.
@@ -595,7 +559,6 @@ Example:
     python pdb_shiftres.py -10 1CTF.pdb  # adds 10 to the original numbering
     python pdb_shiftres.py --5 1CTF.pdb  # subtracts 5 from the original numbering
 ```
-
 
 ## pdb_uniqname
 
@@ -610,7 +573,6 @@ Usage:
 Example:
     python pdb_uniqname.py 1CTF.pdb
 ```
-
 
 ## pdb_delelem
 
@@ -628,7 +590,6 @@ Example:
     python pdb_delelem.py -H,N 1CTF.pdb  # deletes all protons and nitrogens
 ```
 
-
 ## pdb_fromcif
 
 Rudimentarily converts a mmCIF file to the PDB format.
@@ -644,7 +605,6 @@ Example:
     python pdb_fromcif.py 1CTF.pdb
 ```
 
-
 ## pdb_reatom
 
 Renumbers atom serials in the PDB file starting from a given value (default 1).
@@ -657,7 +617,6 @@ Example:
     python pdb_reatom.py -10 1CTF.pdb  # renumbers from 10
     python pdb_reatom.py --1 1CTF.pdb  # renumbers from -1
 ```
-
 
 ## pdb_selchain
 
@@ -672,7 +631,6 @@ Example:
     python pdb_selchain.py -A,C 1CTF.pdb  # selects chains A and C
 ```
 
-
 ## pdb_sort
 
 Sorts the ATOM/HETATM/ANISOU/CONECT records in a PDB file.
@@ -685,6 +643,7 @@ Residues are sorted according to their residue sequence number and then by their
 Chains are sorted by their chain identifier.
 
 Finally, the file is sorted by all keys, and the records are placed in the following order:
+
 - ATOM/ANISOU, intercalated if the latter exist
 - HETATM
 - CONECT, sorted by the serial number of the central (first) atom
@@ -704,7 +663,6 @@ Example:
     python pdb_sort.py -R 1CTF.pdb  # sorts by residue number/icode only
 ```
 
-
 ## pdb_validate
 
 Validates the PDB file ATOM/HETATM lines according to the format specifications.
@@ -719,7 +677,6 @@ Example:
     python pdb_validate.py 1CTF.pdb
 ```
 
-
 ## pdb_delhetatm
 
 Removes all HETATM records in the PDB file.
@@ -731,7 +688,6 @@ Usage:
 Example:
     python pdb_delhetatm.py 1CTF.pdb
 ```
-
 
 ## pdb_gap
 
@@ -748,7 +704,6 @@ Example:
     python pdb_gap.py 1CTF.pdb
 ```
 
-
 ## pdb_reres
 
 Renumbers the residues of the PDB file starting from a given number (default 1).
@@ -761,7 +716,6 @@ Example:
     python pdb_reres.py -10 1CTF.pdb  # renumbers from 10
     python pdb_reres.py --1 1CTF.pdb  # renumbers from -1
 ```
-
 
 ## pdb_selelem
 
@@ -779,7 +733,6 @@ Example:
     python pdb_selelem.py -H,N 1CTF.pdb  # selects all protons and nitrogens
 ```
 
-
 ## pdb_splitchain
 
 Splits a PDB file into several, each containing one chain.
@@ -792,13 +745,13 @@ Example:
     python pdb_splitchain.py 1CTF.pdb
 ```
 
-
 ## pdb_wc
 
 Summarizes the contents of a PDB file, like the wc command in UNIX.
 
 By default, this tool produces a general summary, but you can use several
 options to produce focused but more detailed summaries:
+
 - [m] - no. of models.
 - [c] - no. of chains (plus per-model if multi-model file).
 - [r] - no. of residues (plus per-model if multi-model file).
@@ -823,4 +776,3 @@ Options:
 Example:
     python pdb_wc.py 1CTF.pdb
 ```
-
