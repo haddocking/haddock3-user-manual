@@ -185,6 +185,7 @@ Here is a short description of the module's workflow:
 
 
 Note that this module:
+
 - **cannot** make use of ambiguous restraints.
 
 - will refine all models coming from the previous workflow step and send them to the next step in the workflow. If you want to use other modules such as `[flexref]` or `[emref]` after the `[openmm]` module, you need to recreate the topologies by simply adding a `[topoaa]` step in the workflow.
