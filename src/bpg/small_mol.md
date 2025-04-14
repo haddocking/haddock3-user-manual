@@ -22,6 +22,7 @@ Several sources exist to find/generate such files:
 * the **Automated Topology Builder (ATB)** and Repository developed in Prof. Alan Mark's group at the University of Queensland in Brisbane: [https://compbio.biosci.uq.edu.au/atb](https://compbio.biosci.uq.edu.au/atb)
 
 * Using **OpenBabel** and **acpype**: A simple set of two commands can generate CNS ready topology and parameters using both OpenBabel and acpype.
+
 ```bash
 # Install OpenBabel and acpype
 pip install acpype==2023.10.27 openbabel-wheel==3.1.1.21
@@ -41,6 +42,7 @@ In this scenario, multiple conformations can be generated as described [here](./
 ### Use of multiple ligands at once
 
 When using multiple ligands at once in the same docking run, several steps must be considered:
+
 * Atom types and residue names should not overlap with each other (nor with already existing definitions)
 
 * Topologies of different ligands must be merged into a single file and used in the `ligand_param_fname`.
@@ -111,6 +113,7 @@ More about optimal settings for different docking scenarios can be found [here](
 Any more questions about small molecule docking with HADDOCK?
 
 Have a look at:
+
 - [F.A.Q](../faq.md)
 - [Ask for help / find support](../info.md)
  

@@ -97,10 +97,11 @@ For this, you will need to use dedicated tools, such as `acpype` or [`ccp4-prodr
 
 Here are some useful resources on how to generate those:
 
-- **BioBB using acpype**: The [BioExcel BioBuildingBlock (BioBB)](https://mmb.irbbarcelona.org/biobb/) library is hosting several tutorials on how to perform computations with a variety of different tools.
+* **BioBB using acpype**: The [BioExcel BioBuildingBlock (BioBB)](https://mmb.irbbarcelona.org/biobb/) library is hosting several tutorials on how to perform computations with a variety of different tools.
  Here is a link to the workflow used to parametrize ligands: [https://mmb.irbbarcelona.org/biobb/workflows/tutorials/biobb_wf_ligand_parameterization](https://mmb.irbbarcelona.org/biobb/workflows/tutorials/biobb_wf_ligand_parameterization).
-- **Automated Topology Builder (ATB)**: Repository developed in Prof. Alan Mark's group at the University of Queensland in Brisbane: [https://atb.uq.edu.au/](https://atb.uq.edu.au/).
-- **Using OpenBabel and acpype**: A simple set of two commands can generate CNS ready topology and parameters using both OpenBabel and acpype.
+* **Automated Topology Builder (ATB)**: Repository developed in Prof. Alan Mark's group at the University of Queensland in Brisbane: [https://atb.uq.edu.au/](https://atb.uq.edu.au/).
+* **Using OpenBabel and acpype**: A simple set of two commands can generate CNS ready topology and parameters using both OpenBabel and acpype.
+
 ```bash
 # Install OpenBabel and acpype
 pip install acpype==2023.10.27 openbabel-wheel==3.1.1.21
