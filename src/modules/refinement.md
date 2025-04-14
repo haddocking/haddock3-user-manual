@@ -138,9 +138,13 @@ The default HADDOCK scoring function in the `[mdref]` module is the following:
 The most important parameters for the `[mdref]` module are:
 
 - `ambig_fname`: file containing the ambiguous interaction restraints (AIRs, optional)
+
 - `unambig_fname`: file containing the unambiguous interaction restraints (optional)
+
 - `waterheatsteps`: number of MD steps for heating up the system (default: 100)
+
 - `watersteps`: number of MD steps at 300K (default: 1250)
+
 - `watercoolsteps` : number of MD steps for cooling down the system (default: 500)
 
 More information about `[mdref]` parameters is available [here](https://bonvinlab.org/haddock3/modules/refinement/haddock.modules.refinement.mdref.html#default-parameters) or retrieved by running:
@@ -159,23 +163,30 @@ The `[openmm]` modules makes use of the [OpenMM](https://openmm.org/) molecular 
 
 The potential of OpenMM can be exploited to perform different tasks, such as:
 
-* Run MD simulation for each model from previous step;
-* Refine the models in the middle of a docking run. For example, it can be used
+- Run MD simulation for each model from previous step;
+
+- Refine the models in the middle of a docking run. For example, it can be used
   to refine the models coming from a `[rigidbody]` module before `[flexref]` is
   executed, or to replace the `[mdref]` step.
-* Generate conformers prior to their use in a thorough docking run.
+
+- Generate conformers prior to their use in a thorough docking run.
 
 Here is a short description of the module's workflow:
 
-* Generate openmm topology and fix atoms
-* Build solvation box (water + ions) arround input structure
-* Equilibration solvation box restraining the protein heavy atoms
-* Run MD simulation: increase temperature, run MD, reduce temperature.
-* Either generate an ensemble of multiple frames or return the last frame.
+- Generate openmm topology and fix atoms
+
+- Build solvation box (water + ions) arround input structure
+
+- Equilibration solvation box restraining the protein heavy atoms
+
+- Run MD simulation: increase temperature, run MD, reduce temperature.
+
+- Either generate an ensemble of multiple frames or return the last frame.
 
 
 Note that this module:
 - **cannot** make use of ambiguous restraints.
+
 - will refine all models coming from the previous workflow step and send them to the next step in the workflow. If you want to use other modules such as `[flexref]` or `[emref]` after the `[openmm]` module, you need to recreate the topologies by simply adding a `[topoaa]` step in the workflow.
 
 We provide some examples on our GitHub repository: [haddock3 examples/thirdparty/openmm](https://github.com/haddocking/haddock3/tree/main/examples/thirdparty/openmm).
