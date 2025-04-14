@@ -81,6 +81,7 @@ This module performs scoring of protein-protein complexes using PRODIGY ([PyPI p
 Note that this approach is limitted to protein-protein intreactions containing standard amino-acids, and any usage outside of this scope will results in failures.
 
 For a detailed explanation about the PRODIGY method can be found in published research articles:
+
 - Xue L, Rodrigues J, Kastritis P, Bonvin A.M.J.J, Vangone A.: PRODIGY: a web server for predicting the binding affinity of protein-protein complexes. Bioinformatics (2016) ([10.1093/bioinformatics/btw514](https://doi.org/10.1093/bioinformatics/btw514))
 - Anna Vangone and Alexandre M.J.J. Bonvin: Contacts-based prediction of binding affinity in protein-protein complexes. eLife, e07454 (2015) ([10.7554/eLife.07454](https://doi.org/10.7554/elife.07454))
 - Panagiotis L. Kastritis , João P.G.L.M. Rodrigues, Gert E. Folkers, Rolf Boelens, Alexandre M.J.J. Bonvin: Proteins Feel More Than They See: Fine-Tuning of Binding Affinity by Properties of the Non-Interacting Surface. Journal of Molecular Biology, 14, 2632–2652 (2014). ([10.1016/j.jmb.2014.04.017](https://doi.org/10.1016/j.jmb.2014.04.017))
@@ -109,7 +110,9 @@ haddock3-cfg -m prodigyprotein
 This module performs scoring of protein-ligand complexes using PRODIGY-lig ([PyPI package](https://pypi.org/project/prodigy-lig/)).
 
 For a detailed explanation about the PRODIGY-lig method can be found in published research articles:
+
 - Vangone A, Schaarschmidt J, Koukos P, Geng C, Citro N, Trellet M, Xue L, Bonvin A.: [Large-scale prediction of binding affinity in protein-small ligand complexes: the PRODIGY-LIG web server.](https://doi.org/10.1093/bioinformatics/bty816) Bioinformatics
+
 - Kurkcuoglu Z, Koukos P, Citro N, Trellet M, Rodrigues J, Moreira I, Roel-Touris J, Melquiond A, Geng C, Schaarschmidt J, Xue L, Vangone A, Bonvin AMJJ.: [Performance of HADDOCK and a simple contact-based protein-ligand binding affinity predictor in the D3R Grand Challenge 2.](https://link.springer.com/article/10.1007/s10822-017-0049-y) J Comput Aided Mol Des 32(1):175-185 (2017).
 
 
@@ -118,8 +121,11 @@ For a detailed explanation about the PRODIGY-lig method can be found in publishe
 The most important parameters for the `[prodigyligand]` module are:
 
 - `receptor_chain`: Defines the chain ID of the receptor.
+
 - `ligand_chain`: Defines the chain ID where the ligand/small-molecule is part of.
+
 - `ligand_resname`: Defines the name of the residue in `ligand_chain` to be considered.
+
 - `to_pkd`: Converts predicted binding affinity values to pKd values.
 
 
