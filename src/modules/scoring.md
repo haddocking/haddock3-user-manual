@@ -67,7 +67,7 @@ haddock3-cfg -m mdscoring
 ## PRODIGY scoring modules
 
 Two modules are using the PRODIGY methods for the evaluation of binding affinity.
-As this scoring is specific to either proteins or ligands, two modules are available, and should be used accordingly to the system you are working on:
+As this scoring is specific to either proteins or ligands, two modules are available, and should be used depending on which system you are working on:
 - [`[prodigyprotein]`](#prodigyprotein-module): for the prediction of protein-protein binding affinities using PRODIGY
 - [`[prodigyligand]`](#prodigyligand-module): for the prediction of protein-ligand binding affinities using PRODIGY-lig
 
