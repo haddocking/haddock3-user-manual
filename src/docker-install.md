@@ -1,10 +1,10 @@
-# Installing HADDOCK3 using docker
+# Using HADDOCK3 through its docker image
 
-As part of the possible installation procedure, we also provide a `docker` version of HADDOCK3, where tools and packages are already installed.
+As part of the possible usage of HADDOCK3, we also provide a ready to use `docker` image of HADDOCK3, where tools and packages are already installed.
 
 ## DOCKER
 
-To be able to build or use a provided image, you first need to have `docker` installed.
+To be able to use a provided image, you first need to have `docker` installed.
 Please follow the instructions you can find there: [https://www.docker.com/](https://www.docker.com/).
 
 

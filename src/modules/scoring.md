@@ -76,7 +76,7 @@ As this scoring is specific to either proteins or ligands, two modules are avail
 
 Protein-protein binding affinity prediction using PRODIGY.
 
-This module performs scoring of protein-protein complexes using PRODIGY ([PyPI package](https://pypi.org/project/prodigy-prot/)).
+This module performs scoring of protein-protein complexes using PRODIGY ([GitHub](https://github.com/haddocking/prodigy), [PyPI package](https://pypi.org/project/prodigy-prot/)).
 
 Note that this approach is limitted to protein-protein intreactions containing standard amino-acids, and any usage outside of this scope will results in failures.
 
@@ -107,7 +107,7 @@ haddock3-cfg -m prodigyprotein
 
 ### `[prodigyligand]` module
 
-This module performs scoring of protein-ligand complexes using PRODIGY-lig ([PyPI package](https://pypi.org/project/prodigy-lig/)).
+This module performs binding affinity prediction of protein-ligand complexes using PRODIGY-lig ([GitHub](https://github.com/haddocking/prodigy-lig), [PyPI package](https://pypi.org/project/prodigy-lig/)).
 
 For a detailed explanation about the PRODIGY-lig method can be found in published research articles:
 
