@@ -319,19 +319,22 @@ refinement stage(s).
 #### Notable parameters
 
 The most important parameters for the ``[seletopclusts]`` module are:
-- `top_cluster`: the number of top clusters to consider
+- `top_clusters`: the number of top clusters to consider
 - `top_models`: the number of top models to select from each cluster
 
 Here an example selection of the top 10 models of the top 50 clusters after ``[rigidbody]`` docking:
 
 ```toml
-# ...
+run_dir = "example_seletopclusts"
+molecules = ["protein1.pdb", "protein2.pdb"]
 [topoaa]
 [rigidbody]
-ambig_fname = ambiguous_restraints.tbl
+ambig_fname = "ambiguous_restraints.tbl"
 [clustfcc]
 [seletopclusts]
-top_cluster = 50
+# Selecting the top 50 best (score based) clusters
+top_clusters = 50
+# Extracting only the top 10 models from each selected clusters
 top_models = 10
 # ...
 ```
