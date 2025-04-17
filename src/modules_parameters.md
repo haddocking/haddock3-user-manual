@@ -50,7 +50,7 @@ The `defaults.yaml` file is not only used to check if the parameter name exists 
 ## Set of available modules
 
 Below is presented the list of available modules.
-For detailed explanation of each module and their respective parameters, please refer to [the online documentation](https://bonvinlab/haddock3/).
+For detailed explanation of each module and their respective parameters, please refer to [the online documentation](www.bonvinlab.org/haddock3/).
 You can also use the `haddock3-cfg` command line to get information on each module and their parameters ([documentation here](./clis.md#haddock3-cfg)).
 
 ### Topology modules

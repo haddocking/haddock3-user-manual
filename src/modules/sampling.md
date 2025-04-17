@@ -27,7 +27,7 @@ In _ab-initio_ mode, however, very diverse solutions will be obtained and the sa
 <b><i>See animation of the rigidbody protocol:</i></b>
 </summary>
 <figure align="center">
-  <img src="./images/haddock_mini.gif" alt="">
+  <img src="images/haddock_mini.gif" alt="">
 </figure>
 </details>
 <br>
@@ -62,7 +62,7 @@ The most important parameters for the `[rigidbody]` module are:
 - `cmrest`: whether or not to use center of mass restraints (default: False)
 - `sampling`: number of rigid body models to generate (default: 1000)
 
-More information about `[rigidbody]` parameters can be accessed [here](https://www/bonvinlab.org/haddock3/modules/sampling/haddock.modules.sampling.rigidbody.html#default-parameters) or retrieved by running:
+More information about `[rigidbody]` parameters can be accessed [here](www.bonvinlab.org/haddock3/modules/sampling/haddock.modules.sampling.rigidbody.html#default-parameters) or retrieved by running:
 
 ```bash
 haddock3-cfg -m rigidbody

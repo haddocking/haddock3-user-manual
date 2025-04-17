@@ -6,7 +6,7 @@ Here we provide various examples using the standard HADDOCK2.X workflows, now we
 The final set of complexes is later clustered using Fraction of Common Contacts clustering (FCC) with the `[clustfcc]` module.
 
 The protein-protein docking example makes use of the NMR chemical shift perturbation data providing information on the residues of binding site to guide the docking.
-The NMR-identified residues are defined as active with their surface neighbors as passive (the corresponding AIRs are defined in the [e2a-hpr_air.tbl](../examples/docking-protein-protein/data/e2a-hpr_air.tbl) file in the `data` directory).
+The NMR-identified residues are defined as active with their surface neighbors as passive (the corresponding AIRs are defined in the [e2a-hpr_air.tbl](https://github.com/haddocking/haddock3/blob/main/examples/docking-protein-protein/data/e2a-hpr_air.tbl) file in the `data` directory).
 This system is the same as described in our [HADDOCK2.4 basic protein-protein docking tutorial](https://www.bonvinlab.org/education/HADDOCK24/HADDOCK24-protein-protein-basic/).
 For the second molecule (HPR), an ensemble of 10 conformations (taken from the NMR solution structure of this protein) is used as starting point for the docking.
 Refer to above tutorial for more details about the system and restraints.
@@ -23,8 +23,8 @@ Here is an example with an intermediate clustering step after the `[rigidbody]` 
 
 The homotimer docking scenario, [available here](https://github.com/haddocking/haddock3/tree/main/examples/docking-protein-homotrimer), is first performing `[rigidbody]` docking, followed by `[flexref]` refinement and a final `[emref]` energy minimisation step of the complexe.
 It also makes use of two types of symmetry restraints:
-- [non-crystallographic symmetry restraints](../symmetry_restraints.md#non-crystallographic-symmetry): to make sure the three chains are having the same conformation.
-- [C3 symmetry restraints](../symmetry_restraints.md#rotational-symmetry): to obtain solutions respecting the C3 symmetry.
+- [non-crystallographic symmetry restraints](../automated_restraints.md#non-crystallographic-symmetry): to make sure the three chains are having the same conformation.
+- [C3 symmetry restraints](../automated_restraints.md#rotational-symmetry): to obtain solutions respecting the C3 symmetry.
 
 
 ### Multiple ambiguous files
