@@ -90,9 +90,9 @@ The module `[seletopcluts]` can be used to select clusters and their members.
 Therefore, this module should be used after a clustering step (either `[clustrmsd]` or `[clustfcc]`).
 
 This module holds three parameters:
-- `top_cluster`: how many clusters should be selected
+- `top_clusters`: how many clusters should be selected
 - `top_models`: how many models in each selected cluster must be forwarded to the next step
-- `sortby`: How to sort clusters, by HADDOCK score or size
+- `sortby`: How to sort clusters, by HADDOCK score or cluster size
 
 Full documentation about `[seletopcluts]` module is accessible [here](../modules/analysis.md#seletopclusts-module).
 

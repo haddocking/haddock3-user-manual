@@ -16,3 +16,15 @@ For details refer to [the DISCLAIMER file](https://github.com/haddocking/haddock
 ### Compiling CNS on your own
 
 Please see the [up-to-date installation procedure of CNS here](https://github.com/haddocking/haddock3/blob/main/docs/CNS.md), where you will find specific guides and troubleshooting sections.
+
+Once compiled, you need to replace the executable located in the haddock package in virtual environnement (`haddock/bin/`).
+
+Here is an example:
+```bash
+# Given you have created a virtual env named .haddock3-env
+python3.12 -m venv .haddock3-env
+# and already installed haddock3
+pip install .
+# You can replace the cns executable by your own newly generated executable in the site-packages/haddock/bin/ directory
+cp my-own-cns-executable .haddock3-env/lib/python3.12/site-packages/haddock/bin/cns
+```

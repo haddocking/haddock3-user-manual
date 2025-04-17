@@ -138,11 +138,11 @@ haddock3-analyse -r my-run-folder -m 2 5 6 -p reference_fname my_ref.pdb recepto
 
 Here the `-p` key tells the code that you are about to insert `[caprieval]` parameters, whose name should match the parameter name of the module. Each parameter name and the corresponding value must be separated by a space character.
 
-Another parameter that can be specified is `top_cluster`, which defines how many of the first N clusters will be considered in the analysis.
+Another parameter that can be specified is `top_clusters`, which defines how many of the first N clusters will be considered in the analysis.
 This value is set to 10 by default.
 
 ```
-haddock3-analyse -r my-run-folder -m 2 5 6 --top_cluster 12
+haddock3-analyse -r my-run-folder -m 2 5 6 --top_clusters 12
 ```
 
 This number is meaningless when dealing with models with no cluster information, that is, models that have never been clustered before.
