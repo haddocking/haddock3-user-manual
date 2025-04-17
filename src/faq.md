@@ -167,7 +167,7 @@ Several sources exist to find such files:
 
 - **ccp4-prodrg**: [`ccp4-prodrg`](https://www.ccp4.ac.uk/html/index.html).
 
-- the **PRODRG** server was maintained by Daan van Aalten at Dundee University: [https://prodrg2.dyndns.org](https://prodrg2.dyndns.org).
+- the **PRODRG** server was maintained by Daan van Aalten at Dundee University.
   This server allows you to draw your molecule or paste coordinates and will return topologies and parameter files in various formats, including CNS.
   You should turn on the electrostatic to obtain partial charges. Save the resulting PDB file and the corresponding CNS parameter and topology files to use in HADDOCK.
 

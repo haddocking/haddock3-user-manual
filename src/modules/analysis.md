@@ -81,7 +81,7 @@ The following files are generated:
 - **capri_ss.tsv**: a table with the CAPRI metrics for each model.
 - **capri_clt.tsv**: a table with the CAPRI metrics for each cluster of models (if clustering information is available).
 
-These files are at the core of the [analysis report produced by HADDOCK3](https://bonvinlab.org/software/haddock3/manual/clis.md#the-report).
+These files are at the core of the [analysis report produced by HADDOCK3](../clis.md#the-report).
 
 #### Notable parameters
 
