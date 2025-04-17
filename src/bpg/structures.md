@@ -79,7 +79,6 @@ To prevent this, try to energy minimize the structure and remove *spaghetti* aro
 
 * [Pymol](https://pymol.org/2/) is an almost irreplaceable tool in the every-day life of a computational chemist. Pymol is often used in a number of HADDOCK tutorials for structure preparations as well as analysis of docking results. 
     * Pymol offers a lot of handy plugins that extend its usability, for example, peptide-building ,some of them can be found here:  
-        <!--* [http://pldserver1.biochem.queensu.ca/~rlc/work/pymol/](http://pldserver1.biochem.queensu.ca/~rlc/work/pymol/)-->
         * [https://github.com/Pymol-Scripts/Pymol-script-repo](http://pldserver1.biochem.queensu.ca/~rlc/work/pymol/)
     * Pymol offers an option to mutate residues and choose the side chain conformation manually. 
     * Modelling of peptides using Pymol modeling scripts is described [here](/education/molmod/simulation/).  
@@ -109,7 +108,7 @@ To prevent this, try to energy minimize the structure and remove *spaghetti* aro
 
     * **ccp4-prodrg**: [`ccp4-prodrg`](https://www.ccp4.ac.uk/html/index.html)
 
-    * the **Automated Topology Builder (ATB)** and Repository developed in the group of Prof. Alan Mark at the University of Queensland in Brisbane: [https://compbio.biosci.uq.edu.au/atb](https://compbio.biosci.uq.edu.au/atb)  
+    * the **Automated Topology Builder (ATB)** and Repository developed in the group of Prof. Alan Mark at the University of Queensland in Brisbane: [https://atb.uq.edu.au/](https://atb.uq.edu.au/)
 
     * **BioBB using acpype**: The [BioExcel BioBuildingBlock (BioBB)](https://mmb.irbbarcelona.org/biobb/) library is hosting several tutorials on how to perform computations with a variety of different tools.
  Here is a link to the workflow used to parametrize ligands: [https://mmb.irbbarcelona.org/biobb/workflows/tutorials/biobb_wf_ligand_parameterization](https://mmb.irbbarcelona.org/biobb/workflows/tutorials/biobb_wf_ligand_parameterization).

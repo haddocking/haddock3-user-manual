@@ -221,7 +221,7 @@ More about optimal settings for different docking scenarios can be found [here](
 Several methods can allow you to generate restraints for haddock3:
 
 - [locally using the `haddock3-restraints` command line interface](../restraints_cli.md): Holds multiple subcommands that should cover the majority of the usages.
-- online using [GenTBL server](https://wenmr.science.uu.nl/services/GenTBL/)
+- online using [GenTBL server](https://rascar.science.uu.nl/gentbl/)
 
 <hr>
 

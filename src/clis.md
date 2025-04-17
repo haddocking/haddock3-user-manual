@@ -172,10 +172,10 @@ Each subfolder contains all the analysis plots related to that specific step of 
 
 By default `haddock3-analyse` produces a set of scatter plots that compare each HADDOCK energy term
 (i.e., the HADDOCK score and its components) to the different metrics used to evaluate the quality of a model,
-such as the interface-RMSD, Fnat, DOCKQ, and so on. An example is available [here](https://www.bonvinlab.org/education/HADDOCK3/HADDOCK3-antibody-antigen/plots/scenario1-surface/irmsd_score.html).
+such as the interface-RMSD, Fnat, DOCKQ, and so on. An example is available [here](https://www.bonvinlab.org/education/HADDOCK3/HADDOCK3-antibody-antigen/plots/irmsd_score.html).
 
 For each of the energy components and the metrics mentioned above `haddock3-analyse` produces also a box plot, in which each cluster
-is considered separately. An example is available [here](www.bonvinlab.org/education/HADDOCK3/HADDOCK3-antibody-antigen/plots/scenario1-surface/score_clt.html).
+is considered separately. An example is available [here](https://www.bonvinlab.org/education/HADDOCK3/HADDOCK3-antibody-antigen/plots/scenario1-surface/score_clt.html).
 
 #### The report
 
@@ -198,7 +198,7 @@ python -m http.server --directory path-to-my-run
 ```
 
 In the browser, you can navigate to each analysis subfolder and open the `report.html` file. If you are not interested in
-visualizing the models, you can simply open the `report.html` file in a standard browser. An example report can be visualized [here](www.bonvinlab.org/education/HADDOCK3/HADDOCK3-protein-glycan/plots/report.html).
+visualizing the models, you can simply open the `report.html` file in a standard browser. An example report can be visualized [here](https://www.bonvinlab.org/education/HADDOCK3/HADDOCK3-protein-glycan/plots/report.html).
 
 <hr>
 
