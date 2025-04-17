@@ -39,7 +39,7 @@ Some online tools for **homolog search** are here:
 
 * [UniPROT](https://www.uniprot.org/blast/)
 
-* [HMMER](https://www.ebi.ac.uk/Tools/hmmer/search/phmmer)
+* [HMMER](https://www.ebi.ac.uk/Tools/hmmer)
 
 Once one finds the protein homologs, some freely available software for **homology model building** are here:
 
