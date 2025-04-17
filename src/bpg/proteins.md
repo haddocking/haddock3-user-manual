@@ -81,7 +81,7 @@ _Methods in Molecular Biology: Molecular Modelling of Proteins._ Ed. Andreas Kok
 _Methods in Molecular Biology: Protein Structure Prediction._ Ed. Daisuke Kihara. Humana Press Inc., 163-179 (2014).
 
 * **A.M.J.J. Bonvin**, M. van Dijk, E. Karaca, P.L. Kastritis, A.S.J. Melquiond, C. Schmitz and S.J. de Vries
-[HADDOCK](https://www.springer.com/life+sciences/biochemistry+%26+biophysics/book/978-3-642-16711-9)
+[HADDOCK](https://link.springer.com/referenceworkentry/10.1007/978-3-642-16712-6_330)
 In Encyclopedia of Biophysics, Ed. G.C.K. Roberts, Springer-Verlag Berlin Heidelberg (2013).
 
 * C. Schmitz, A.S.J. Melquiond, S.J. de Vries, E. Karaca, M. van Dijk, P.L. Kastritis and **A.M.J.J. Bonvin**

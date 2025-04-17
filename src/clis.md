@@ -175,7 +175,7 @@ By default `haddock3-analyse` produces a set of scatter plots that compare each 
 such as the interface-RMSD, Fnat, DOCKQ, and so on. An example is available [here](https://www.bonvinlab.org/education/HADDOCK3/HADDOCK3-antibody-antigen/plots/irmsd_score.html).
 
 For each of the energy components and the metrics mentioned above `haddock3-analyse` produces also a box plot, in which each cluster
-is considered separately. An example is available [here](https://www.bonvinlab.org/education/HADDOCK3/HADDOCK3-antibody-antigen/plots/scenario1-surface/score_clt.html).
+is considered separately. An example is available [here](https://www.bonvinlab.org/education/HADDOCK3/HADDOCK3-antibody-antigen/plots/score_clt.html).
 
 #### The report
 
