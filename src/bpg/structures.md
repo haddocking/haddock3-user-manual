@@ -21,13 +21,13 @@ All crystallographic, NMR, or cryo-EM structures protein structures are deposite
 
 * Worldwide Protein Data Bank [wwPDB](http://www.wwpdb.org)
 
-* Protein Data Bank in Europe [PDBe](https://www.ebi.ac.uk/pdbe/node/1)
+* Protein Data Bank in Europe [PDBe](https://www.ebi.ac.uk/pdbe)
 
 * The Research Collaboratory for Structural Bioinformatics Protein Data Bank [RCSB PDB](https://www.rcsb.org)
 
 * Protein Data Bank Japan [PDBj](https://pdbj.org)
 
-* Biological Magnetic Resonance Data Bank [BMRB](http://www.bmrb.wisc.edu)
+* Biological Magnetic Resonance Data Bank [BMRB](https://bmrb.io/)
 
 
 
@@ -79,7 +79,7 @@ To prevent this, try to energy minimize the structure and remove *spaghetti* aro
 
 * [Pymol](https://pymol.org/2/) is an almost irreplaceable tool in the every-day life of a computational chemist. Pymol is often used in a number of HADDOCK tutorials for structure preparations as well as analysis of docking results. 
     * Pymol offers a lot of handy plugins that extend its usability, for example, peptide-building ,some of them can be found here:  
-        * [http://pldserver1.biochem.queensu.ca/~rlc/work/pymol/](http://pldserver1.biochem.queensu.ca/~rlc/work/pymol/)  
+        <!--* [http://pldserver1.biochem.queensu.ca/~rlc/work/pymol/](http://pldserver1.biochem.queensu.ca/~rlc/work/pymol/)-->
         * [https://github.com/Pymol-Scripts/Pymol-script-repo](http://pldserver1.biochem.queensu.ca/~rlc/work/pymol/)
     * Pymol offers an option to mutate residues and choose the side chain conformation manually. 
     * Modelling of peptides using Pymol modeling scripts is described [here](/education/molmod/simulation/).  
