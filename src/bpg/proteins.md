@@ -81,7 +81,7 @@ _Methods in Molecular Biology: Molecular Modelling of Proteins._ Ed. Andreas Kok
 _Methods in Molecular Biology: Protein Structure Prediction._ Ed. Daisuke Kihara. Humana Press Inc., 163-179 (2014).
 
 * **A.M.J.J. Bonvin**, M. van Dijk, E. Karaca, P.L. Kastritis, A.S.J. Melquiond, C. Schmitz and S.J. de Vries
-[HADDOCK](https://www.springer.com/life+sciences/biochemistry+%26+biophysics/book/978-3-642-16711-9)
+[HADDOCK](https://link.springer.com/referenceworkentry/10.1007/978-3-642-16712-6_330)
 In Encyclopedia of Biophysics, Ed. G.C.K. Roberts, Springer-Verlag Berlin Heidelberg (2013).
 
 * C. Schmitz, A.S.J. Melquiond, S.J. de Vries, E. Karaca, M. van Dijk, P.L. Kastritis and **A.M.J.J. Bonvin**
@@ -103,13 +103,13 @@ _Prot. Sci._, *20*, 482-41 (2011).
 
 
 * A.S.J. Melquiond and **A.M.J.J. Bonvin**
-[Data-driven docking: using external information to spark the biomolecular rendez-vous.](https://www.icpress.co.uk/lifesci/p618.html)
+[Data-driven docking: using external information to spark the biomolecular rendez-vous.](https://www.worldscientific.com/doi/10.1142/9781848163409_0007?srsltid=AfmBOoo-vPidDyQXw5q_IVR1t0hj9xQuAmCd5envFFl9RL0WsH87oThx)
 In: Protein-protein complexes: analysis, modelling and drug design. Edited by M. Zacharrias, Imperial College Press, 2010. p 183-209.
 
 
 * E. Karaca, A.S.J. Melquiond, S.J. de Vries, P.L. Kastritis and **A.M.J.J. Bonvin**
 [Building macromolecular assemblies by information-driven docking: Introducing the HADDOCK multi-body docking server.](https://doi.org/doi:10.1074/mcp.M000051-MCP201)
-_Mol. Cell. Proteomics_, *9*, 1784-1794 (2010). Download the final author version <a href="https://igitur-archive.library.uu.nl/chem/2011-0314-200254/UUindex.html">here</a>.
+_Mol. Cell. Proteomics_, *9*, 1784-1794 (2010).
 
 
 
@@ -126,7 +126,7 @@ In: Prediction of Protein Structures, Functions, and Interactions (ed J. M. Bujn
 
 
 * S. de Vries and **A.M.J.J. Bonvin**
-[How proteins get in touch: Interface prediction in the study of biomolecular complexes.](https://www.bentham-direct.org/pages/content.php?CPPS/2008/00000009/00000004/0005K.SGM)
+[How proteins get in touch: Interface prediction in the study of biomolecular complexes.](https://www.eurekaselect.com/article/28006)
 _Curr. Pept. and Prot. Research_, *9*, 394-406 (2008).
 
 

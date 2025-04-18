@@ -14,10 +14,10 @@ Several sources exist to find such files:
 
 * **ccp4-prodrg**: [`ccp4-prodrg`](https://www.ccp4.ac.uk/html/index.html)
 
-* the **PRODGR** server maintained by Daan van Aalten at Dundee University: [https://prodrg2.dyndns.org](https://prodrg2.dyndns.org)  
+* the **PRODGR** server maintained by Daan van Aalten at Dundee University.
  This server allows you to draw your molecule or paste coordinates and will return topologies and parameter files in various formats, including CNS. You should turn on the electrostatic to obtain partial charges.
 
-* the **Automated Topology Builder (ATB)** and Repository developed in Prof. Alan Mark's group at the University of Queensland in Brisbane: [https://compbio.biosci.uq.edu.au/atb](https://compbio.biosci.uq.edu.au/atb)
+* the **Automated Topology Builder (ATB)** and Repository developed in Prof. Alan Mark's group at the University of Queensland in Brisbane: [https://atb.uq.edu.au/](https://atb.uq.edu.au/)
 
 
 A more detailed description is written in the [protein-ligand docking example](../docking_scenarios/prot-ligand.md).

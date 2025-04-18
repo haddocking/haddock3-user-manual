@@ -81,7 +81,7 @@ The following files are generated:
 - **capri_ss.tsv**: a table with the CAPRI metrics for each model.
 - **capri_clt.tsv**: a table with the CAPRI metrics for each cluster of models (if clustering information is available).
 
-These files are at the core of the [analysis report produced by HADDOCK3](https://bonvinlab.org/software/haddock3/manual/clis#the-report).
+These files are at the core of the [analysis report produced by HADDOCK3](../clis.md#the-report).
 
 #### Notable parameters
 
@@ -112,7 +112,7 @@ For more details please check *Rodrigues, J. P. et al. Proteins: Struct. Funct. 
 Typically, the module is run at the end of the docking protocol to cluster the
 models and identify the best clusters. Alternatively, ``[clustfcc]`` can also be
 used to cluster models generated in a sampling step (such as ``[rigidbody]``) to 
-perform a [cluster-based selection](#seletopclusts-module) before proceeding to the next steps (e.g. [refinement modules](./refinement)).
+perform a [cluster-based selection](#seletopclusts-module) before proceeding to the next steps (e.g. [refinement modules](./refinement.md)).
 
 #### Notable parameters
 
