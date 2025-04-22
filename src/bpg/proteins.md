@@ -86,7 +86,7 @@ In Encyclopedia of Biophysics, Ed. G.C.K. Roberts, Springer-Verlag Berlin Heidel
 
 * C. Schmitz, A.S.J. Melquiond, S.J. de Vries, E. Karaca, M. van Dijk, P.L. Kastritis and **A.M.J.J. Bonvin**
 Protein-protein docking with HADDOCK
-In: <a href="https://eu.wiley.com/WileyCDA/WileyTitle/productCd-3527328505,subjectCd-CH17.html">NMR in Mechanistic Systems Biology</a>. Ed. I. Bertini, K.S. McGreevy and G. Parigi, Wiley-Blackwell, 512-535.
+In: <a href="https://onlinelibrary.wiley.com/doi/10.1002/9783527644506.ch32">NMR in Mechanistic Systems Biology</a>. Ed. I. Bertini, K.S. McGreevy and G. Parigi, Wiley-Blackwell, 512-535.
 
 * P.L. Kastritis, A.D.J. van Dijk and **A.M.J.J. Bonvin**
 [Explicit Treatment of Water Molecules in Data-Driven Protein-Protein Docking: The Solvated HADDOCKing Approach](https://doi.org/doi:10.1007/978-1-61779-465-0_22)
