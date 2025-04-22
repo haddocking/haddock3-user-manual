@@ -125,7 +125,7 @@ The next step consists of filtering those residues according to their solvent ac
 
 ### Filtering active residues with solvent accessibility
 
-An important parameter in defining AIRs consists of the relative residue solvent accessibility. It can be calculated with the program [NACCESS](https://wolf.bms.umist.ac.uk/naccess){:target="\_blank"} or [FreeSASA](https://freesasa.github.io/){:target="\_blank"} (see [software links](/software/haddock2.4/software){:target="\_blank"}).
+An important parameter in defining AIRs consists of the relative residue solvent accessibility. It can be calculated with the program [NACCESS](http://www.bioinf.manchester.ac.uk/naccess/){:target="\_blank"} or [FreeSASA](https://freesasa.github.io/){:target="\_blank"} (see [software links](/software/haddock2.4/software){:target="\_blank"}).
 
 Both software will output a file with extension _.rsa_ containing the per-residue solvent accessibilities divided into various classes:
 
@@ -169,7 +169,7 @@ If you perform the docking from an ensemble of structures, the solvent accessibi
 **ASAav + SD > 40%**
 
 where SD corresponds to the standard deviation.  
-We are providing in the $HADDOCKTOOLS directory a csh script called `calc_ave_asa.csh` that will allow you to calculate the average accessibilities from an ensemble of structures using [NACCESS](https://wolf.bms.umist.ac.uk/naccess){:target="\_blank"}.  
+We are providing in the $HADDOCKTOOLS directory a csh script called `calc_ave_asa.csh` that will allow you to calculate the average accessibilities from an ensemble of structures using [NACCESS](http://www.bioinf.manchester.ac.uk/naccess/){:target="\_blank"}.  
 To do so, you should split your pdb file into different files containing each structure and then use calc_ave_rsa.csh:
 
 <pre style="background-color:#DAE4E7" >
@@ -206,4 +206,4 @@ Once you have defined your active and passive residues you can use our [GenTBL o
 "Copy and paste" the output in your favorite text editor or save it as a simple text to disk by clicking on the "DOWNLOAD" button (default name will be `ambig.tbl`).
 Make sure the saved file contains the proper data since some browsers might cause problems with this service.
 
-Alternatively, you can also generate those directly following the instructions and using the scripts described in our [online HADDOCK2.4 installation tutorial](education/HADDOCK24/HADDOCK24-local-tutorial/#defining-restraints-for-docking).
+Alternatively, you can also generate those directly following the instructions and using the scripts described in our [online HADDOCK2.4 installation tutorial](https://www.bonvinlab.org/education/HADDOCK24/HADDOCK24-local-tutorial/#defining-restraints-for-docking).

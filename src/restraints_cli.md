@@ -124,7 +124,7 @@ The `restrain_bodies` subcommand creates distance restraints to lock several
 chains together. It is useful to avoid unnatural flexibility or movement due to
 sequence/numbering gaps.
 
-As an example, this subcommand is crucial when docking an antibody to its cognate antigen (see for example [this tutorial](www.bonvinlab.org/education/HADDOCK3/HADDOCK3-antibody-antigen/#additional-restraints-for-multi-chain-proteins)), as the hypervariable region of an antibody is formed by two chains that are not covalently linked.
+As an example, this subcommand is crucial when docking an antibody to its cognate antigen (see for example [this tutorial](https://www.bonvinlab.org/education/HADDOCK3/HADDOCK3-antibody-antigen/#additional-restraints-for-multi-chain-proteins)), as the hypervariable region of an antibody is formed by two chains that are not covalently linked.
 
 **Usage:**
 
