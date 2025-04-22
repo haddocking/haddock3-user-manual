@@ -78,9 +78,9 @@ Protein-protein binding affinity prediction using PRODIGY.
 
 This module performs scoring of protein-protein complexes using PRODIGY ([GitHub](https://github.com/haddocking/prodigy), [PyPI package](https://pypi.org/project/prodigy-prot/)).
 
-Note that this approach is limitted to protein-protein intreactions containing standard amino-acids, and any usage outside of this scope will results in failures.
+Note that this approach is limited to protein-protein interactions containing standard amino-acids.
 
-For a detailed explanation about the PRODIGY method can be found in published research articles:
+A detailed explanation about PRODIGY can be found in published research articles:
 
 - Xue L, Rodrigues J, Kastritis P, Bonvin A.M.J.J, Vangone A.: PRODIGY: a web server for predicting the binding affinity of protein-protein complexes. Bioinformatics (2016) ([10.1093/bioinformatics/btw514](https://doi.org/10.1093/bioinformatics/btw514))
 - Anna Vangone and Alexandre M.J.J. Bonvin: Contacts-based prediction of binding affinity in protein-protein complexes. eLife, e07454 (2015) ([10.7554/eLife.07454](https://doi.org/10.7554/elife.07454))
@@ -109,7 +109,7 @@ haddock3-cfg -m prodigyprotein
 
 This module performs binding affinity prediction of protein-ligand complexes using PRODIGY-lig ([GitHub](https://github.com/haddocking/prodigy-lig), [PyPI package](https://pypi.org/project/prodigy-lig/)).
 
-For a detailed explanation about the PRODIGY-lig method can be found in published research articles:
+A detailed explanation about PRODIGY-lig can be found in published research articles:
 
 - Vangone A, Schaarschmidt J, Koukos P, Geng C, Citro N, Trellet M, Xue L, Bonvin A.: [Large-scale prediction of binding affinity in protein-small ligand complexes: the PRODIGY-LIG web server.](https://doi.org/10.1093/bioinformatics/bty816) Bioinformatics
 
