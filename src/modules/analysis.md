@@ -5,6 +5,7 @@
 - [`[clustfcc]` module](#clustfcc-module)
 - [`[clustrmsd]` module](#clustrmsd-module)
 - [`[contactmap]` module](#contactmap-module)
+- [`[filter]` module](#filter-module) 
 - [`[ilrmsdmatrix]` module](#ilrmsdmatrix-module)
 - [`[rmsdmatrix]` module](#rmsdmatrix-module)
 - [`[seletop]` module](#seletop-module)
@@ -187,6 +188,29 @@ residues (both intramolecular and intermolecular).
 **Chordcharts** are describing only intermolecular contacts in circles,
 connecting with *chords* the two residues that are contacting.
 
+<hr>
+
+## `[filter]` module
+
+Filter models based on their score.
+
+This module filters the input models based on their score using a threshold
+value. Models having higher score than the threshold value are filtered out.
+
+The number of models to be selected is unknown, and is the set of models that
+have a score below the defined threshold.
+For this module to be functional, a score must be first computed. This can be
+performed by running a CNS module or a [scoring module](./scoring.md). If scores are not
+accessible, the workflow will terminate with an error message.
+
+If the threshold value is too stringent, resulting in no models passed to the
+next module, the workflow will stop with an error message.
+
+#### Notable parameters
+
+The most important parameters for the `[filter]` module is:
+
+- `threshold`: The score threshold value above which models will be filtered out. Models with score equal or lower than the threshold value will be forwarded to the next module. (default: 0.0).
 
 <hr>
 
