@@ -10,6 +10,7 @@
   - [Virtual environments (conda / venv)](./virtual-environments.md)
   - [Obtaining HADDOCK](./download-haddock3.md)
   - [CNS](./install-cns.md)
+  - [Using pre-installed containers](./docker-install.md)
 
 - [Command Line Interfaces](./clis.md)
 
