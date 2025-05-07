@@ -93,6 +93,7 @@ You can also use the `haddock3-cfg` command line to get information on each modu
 - Selection:
   - [`[seletop]`](./modules/analysis.md#seletop-module): Select the top N models from the previous step.
   - [`[seletopclusts]`](./modules/analysis.md#seletopclusts-module): Selects top N clusters from the previous step.
+  - [`[filter]`](./modules/analysis.md#filter-module): Filter models based on their score and a defined threshold value.
 
 ## Developing a new module
 

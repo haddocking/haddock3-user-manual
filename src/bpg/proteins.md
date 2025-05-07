@@ -14,7 +14,16 @@ You can read more about protein-protein docking in the following sections:
 
 ### [Tutorials](../tutorials.md)
 
+#### HADDOCK3 versions
+
+You can find tutorial using HADDOCK3:
+
+- Online, at [https://www.bonvinlab.org/education/HADDOCK3/](https://www.bonvinlab.org/education/HADDOCK3/)
+- In this manual, at [tutorials](../tutorials.md)
+
 #### HADDOCK2.4 versions
+
+This section holds links to tutorials using the HADDOCK2.X software.
 
 - [**HADDOCK2.4 local installation tutorial**](/education/HADDOCK24/HADDOCK24-local-tutorial):
   A tutorial demonstrating the installation and use of a local installation of HADDOCK2.4. It demonstrates various docking scenarios.
@@ -42,12 +51,13 @@ You can read more about protein-protein docking in the following sections:
 - [**HADDOCK2.4 ab-initio, multi-body symmetrical docking tutorial**](/education/HADDOCK24/HADDOCK24-CASP-CAPRI-T70):
   A tutorial demonstrating multi-body docking with HADDOCK using its ab-initio mode with symmetry restraints.
   It is based on a former CASP-CAPRI target (T70).
+
 - [**HADDOCK2.4 antibody-antigen docking tutorial**](/education/HADDOCK24/HADDOCK24-antibody-antigen):
   This tutorial demonstrates the use of HADDOCK2.4 for predicting the structure of an antibody-antigen complex using information
   about the hypervariable loops of the antibody and either the entire surface of the antigen or a loose definition of the epitope.
   This tutorial does not require any Linux expertise and only makes use of our web servers and [PyMol](https://www.pymol.org) for visualization/analysis.
 
-<HR>
+<hr>
 
 ### [Publications](../publications.md)
 
@@ -57,9 +67,13 @@ You can read more about protein-protein docking in the following sections:
   J.P.G.L.M. Rodrigues, J. Schaarschmidt, C. Schmitz, J. Roel-Touris, M.E. Trellet, S. de Vries, A. Vangone, L. Xue, G.C.P. van Zundert
   [HADDOCK](https://doi.org/10.1007/978-3-642-35943-9_330-1). In _Encyclopedia of Biophysics_, In press (2018).
 
-- G.C.P van Zundert, J.P.G.L.M. Rodrigues, M. Trellet, C. Schmitz, P.L. Kastritis, E. Karaca, A.S.J. Melquiond, M. van Dijk, S.J. de Vries and **A.M.J.J. Bonvin**.
+- G.C.P van Zundert, J.P.G.L.M. Rodrigues, M. Trellet, C. Schmitz, P.L. Kastritis, E. Karaca, A.S.J. Melquiond, M. van Dijk, S.J. de Vries and  **A.M.J.J. Bonvin**.
   [The HADDOCK2.2 webserver: User-friendly integrative modeling of biomolecular complexes](https://doi.org/doi:10.1016/j.jmb.2015.09.014).
-  _J. Mol. Biol._, _428_, 720-725 (2016).
+  _J. Mol. Biol._, *428*, 720-725 (2016).
+
+- G.C.P. van Zundert, A.S.J. Melquiond and **A.M.J.J. Bonvin**.
+  [Integrative modeling of biomolecular complexes: HADDOCKing with Cryo-EM data.](https://doi.org/10.1016/j.str.2015.03.014)
+  _Structure._ *23*, 949-960 (2015).
 
 - G.C.P. van Zundert, A.S.J. Melquiond and **A.M.J.J. Bonvin**.
   [Integrative modeling of biomolecular complexes: HADDOCKing with Cryo-EM data.](https://doi.org/10.1016/j.str.2015.03.014)

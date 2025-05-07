@@ -65,7 +65,7 @@ Haddock3 currently supports up to 20 separate input molecules, thus allowing mul
 Each input molecule can be composed of an [ensemble of conformations](#conformational-ensemble), allowing to implicitly represent the conformational sampling.
 Input molecules can also be composed of multiple chains, allowing for their evaluation using scoring and analysis modules.
 
-To input molecules, use the [global parameter](/software/haddock3/manual/global_parameters) `molecules = ["path/to/mol1.pdb", "path/to/mol2.pdb"]`.
+To input molecules, use the [global parameter](./global_parameters.md) `molecules = ["path/to/mol1.pdb", "path/to/mol2.pdb"]`.
 
 ## Definition of a chain
 
@@ -100,3 +100,13 @@ Here are some useful resources on how to generate those:
 * **BioBB using acpype**: The [BioExcel BioBuildingBlock (BioBB)](https://mmb.irbbarcelona.org/biobb/) library is hosting several tutorials on how to perform computations with a variety of different tools.
  Here is a link to the workflow used to parametrize ligands: [https://mmb.irbbarcelona.org/biobb/workflows/tutorials/biobb_wf_ligand_parameterization](https://mmb.irbbarcelona.org/biobb/workflows/tutorials/biobb_wf_ligand_parameterization).
 * **Automated Topology Builder (ATB)**: Repository developed in Prof. Alan Mark's group at the University of Queensland in Brisbane: [https://atb.uq.edu.au/](https://atb.uq.edu.au/).
+* **Using OpenBabel and acpype**: A simple set of two commands can generate CNS ready topology and parameters using both OpenBabel and acpype.
+
+```bash
+# Install OpenBabel and acpype
+pip install acpype==2023.10.27 openbabel-wheel==3.1.1.21
+# First standardise and add hydrogens to your pdb file using OpenBabel
+obabel -ipdb <input_file.pdb> -opdb -O ligand.pdb -h
+# Use acpype to generate cns parameters and topology
+acpype -i ligand.pdb -o cns -t -j -a ambe
+```
