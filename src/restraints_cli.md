@@ -30,6 +30,7 @@ This CLI holds multiple sub-commands, listed and explained below:
 - [z_surface_restraints](#z-surface-restraints): Generates surfaces and restraints selected residues to it.
 - [validate_tbl](#validate-tbl): Validate the content of an ambiguous/unambiguous restraints file.
 
+
 ## Calc Accessibility
 
 Given a PDB file, `calc_accessibility` will calculate the relative accessibility of
@@ -209,6 +210,39 @@ options:
 ```
 
 The `--silent` option will suppress the output of the validation (in case of success), while the `--quick` option will first check the global formatting first, before getting into the context.
+
+## Random removal
+
+Given an input ambiguous file (.tbl), the `random_removal` subcommand will generate an archive containing multiple tbl files, each containing a subset of the initial ones.
+
+The subset is tuned by the optional argument `--ratio` (`-r`), a floating number between 0 and 1 defining the ratio of restraints to be removed.
+The number of generated files in the archive is tuned by the argument `--nb-tbl` (`-n`).
+The random seed can be tuned using `--seed` (`-s`), for reproducibility issues.
+
+**Usage:**
+
+```bash
+haddock3-restraints random_removal <tbl_file> [-r RATIO] [-n NB_TBL] [-s SEED]
+```
+
+**Arguments**:
+
+```bash
+positional arguments:
+  tblfile               input tbl restraint file.
+
+options:
+  -h, --help            show this help message and exit
+  -r RATIO, --ratio RATIO
+                        Ratio of restraints to be
+                        randomly removed. (default: 0.5)
+  -s SEED, --seed SEED  Pseudo-random seed. (default:
+                        917)
+  -n NB_TBL, --nb-tbl NB_TBL
+                        Number of ambiguous files to
+                        generate in the archive.
+                        (default: 10)
+```
 
 # New version of the haddock-restraints
 
