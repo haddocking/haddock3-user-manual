@@ -29,6 +29,7 @@ This CLI holds multiple sub-commands, listed and explained below:
 - [restrain_bodies](#restrain-bodies): Generates restraints within the same chain. Useful when chain breaks are present or multiple proteins are defined as a single chain.
 - [z_surface_restraints](#z-surface-restraints): Generates surfaces and restraints selected residues to it.
 - [validate_tbl](#validate-tbl): Validate the content of an ambiguous/unambiguous restraints file.
+- [random_removal](#random-removal): Allow to perform random removal from an input ambiguous restraints file.
 
 
 ## Calc Accessibility
