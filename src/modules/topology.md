@@ -53,11 +53,16 @@ hise_1 = 15
 The `[topoaa.mol1]` in square brackets is **not** as module, but allows to specify `topoaa` parameters for a given molecule.
 In this case (`mol1`), the parameters will be applied to the first molecule in the list of input molecules (`"1abc.pdb"`).
 
-#### Notable parameters
+### Notable parameters
+
+- `autohis`: If set to `false`, you will need to specify the protonation states of histidines manually. 
+
+#### Parameters specific to each molecule
 
 - `[topoaa.molX]`: Allows the definition of specific `topoaa` parameters for molecule X.
   - `nhisd`, `nhise` allow to define the number of `HISD`, `HISE` in the molecule.
   - `hisd_Y`, `hise_Y`, allow to define which residue needs to be modified (e.g: `hisd_1 = 3` means that we are defining the first HISD residue, and this residue has residue index of 3 in the file).
   - `charged_nter`, `charged_cter` allow to define the state of Nter and Cter residues.
+  - `5_phosphate`: Allows to define the state of the 5' end of nucleic acids sequences. If set to `true`, 5' end will be a phosphate group. Otherwise it will be an OH. (default false).
 
 <hr>
