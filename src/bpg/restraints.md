@@ -67,7 +67,7 @@ In general, an AIR is defined as an ambiguous intermolecular distance between an
 This procedure can be performed:
 
 - locally using the `haddock3-restraints active_passive_to_ambig` command line
-- online using [`Generate restraints` online web server](https://wenmr.science.uu.nl/haddock-restraints/)
+- online using [HADDOCK Restraints Generator web server](https://wenmr.science.uu.nl/haddock-restraints/)
 
 Using ambiguous restraints for docking is described in several tutorials:
 
