@@ -28,25 +28,28 @@ Here an example configuration file snapshot of a typical execution of the
 residues:
 
 ```toml
-# ...
+# Definition of 
+run_dir = "example"
 molecules = [
+ "DNA_structure.pdb",
  "1abc.pdb",
- "2xyz.pdb"
 ]
 
 [topoaa]
 autohis = false
+# Specify molecule 1 specific parameters
 [topoaa.mol1]
-nhisd = 0
-nhise = 1
-hise_1 = 75
+5_phosphate = true
+# Specify molecule 2 specific parameters
 [topoaa.mol2]
 nhisd = 1
 hisd_1 = 76
 nhise = 1
 hise_1 = 15
+charged_nter = true
+charged_cter = false
 
-# Workflow continues
+# Workflow continues with other modules
 # ...
 ```
 
