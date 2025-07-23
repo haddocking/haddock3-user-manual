@@ -281,3 +281,5 @@ options:
 A new version of the haddock3-restraints is currently being developed.
 This new implementation using *rust* will allow better maintainability as well as its deployment on various operating systems as well as on web-browser using WebAssembly.
 Not yet part of the haddock3 intallation, you can already find it in its dedicated repository at [https://github.com/haddocking/haddock-restraints](https://github.com/haddocking/haddock-restraints).
+
+Please tryout our [online HADDOCK Restraints Generator web service at https://wenmr.science.uu.nl/haddock-restraints/](https://wenmr.science.uu.nl/haddock-restraints/), to generate a CNS-formatted ambiguous interaction restraints file, and more...
