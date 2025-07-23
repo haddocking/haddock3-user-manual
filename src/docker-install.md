@@ -11,11 +11,22 @@ Please follow the instructions you can find there: [https://www.docker.com/](htt
 ## Installing HADDOCK3 from provided image
 
 ```bash
-# Run the latest haddock3 version
-docker run ghcr.io/haddocking/haddock3:latest
+# Install the latest haddock3 version
+docker pull ghcr.io/haddocking/haddock3:latest
+docker tag ghcr.io/haddocking/haddock3:latest haddock3
 
 ## OR
 
-# Run a haddock3 specific version (e.g: 2024.12.0b7)
+# Install a haddock3 specific version (e.g: 2024.12.0b7)
 docker run ghcr.io/haddocking/haddock3:2024.12.0b7
+docker tag ghcr.io/haddocking/haddock3:2024.12.0b7 haddock3
+
+# Run HADDOCK with a workflow file, e.g. myworkflow.cfg
+docker run \
+    -v $(pwd):/cwd  \
+    --workdir /cwd \
+    -u $(id -u)  \
+    haddock3 \
+    myworkflow.cfg
+
 ```
