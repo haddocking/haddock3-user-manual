@@ -67,7 +67,7 @@ In general, an AIR is defined as an ambiguous intermolecular distance between an
 This procedure can be performed:
 
 - locally using the `haddock3-restraints active_passive_to_ambig` command line
-- online using [GenTBL server](https://rascar.science.uu.nl/gentbl/)
+- online using [HADDOCK Restraints Generator web server](https://wenmr.science.uu.nl/haddock-restraints/)
 
 Using ambiguous restraints for docking is described in several tutorials:
 
@@ -247,7 +247,7 @@ In [BonvinLab](https://www.bonvinlab.org), a number of complementary web servers
 
 [ARCTIC-3D](https://wenmr.science.uu.nl/arctic3d/), standing for Automatic Retrieval and Clustering of Interfaces in Complexes, is a data mining algorithm that searches for experimental interfaces in the PDB and cluster interaction sites together. It is also able to directly generate AIRs for haddock3.
 
-### [CPORT](http://alcazar.science.uu.nl/services/CPORT/)
+### [CPORT](https://wenmr.science.uu.nl/services/CPORT/)
 
 [CPORT](http://alcazar.science.uu.nl/services/CPORT/) is an algorithm for the prediction of protein-protein interface residues. It combines six interface prediction methods into a consensus predictor.
 

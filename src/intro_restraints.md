@@ -5,6 +5,13 @@ Various types of restraints are available, namely **Ambiguous**, **Unambiguous**
 Restraints are defined using the CNS syntax, basically defining two selections and a pseudo-distance that must be satisfied.
 In case of unsatisfied restraints, a pseudo-energetical penalty is applied to the HADDOCK scoring function, therefore enabling to rank lower complexes that do not respect the restraints.
 
+Table of content:
+
+- [Definition of distance restraints in CNS](#distance-restraints)
+- [Ambiguous interaction restraints (AIRs)](#ambiguous-distance-restraints)
+- [*Un*ambiguous interaction restraints](#unambiguous-distance-restraints)
+- [Hydrogen distance restraints](#hydrogen-distance-restraints)
+
 ## Distance restraints
 
 In the definition of restraints, we define two type of selection, *active* (first selection) and *passive* (second selection) and a pseudo-distance to be satisfied.
@@ -22,8 +29,8 @@ Where:
 * `active selection`: is the first selection statement.
 * `passive selection`: is the second selection statement.
 * `distance`: is the pseudo-distance where we hope to find the two selections together
-* `lower_boundary`:
-* `upper_boundary`: is the upper
+* `lower_boundary`: value by which the distance can be lowered and still be in the acceptable range
+* `upper_boundary`: value by which the distance can be increased and still be in the acceptable range
 
 Basically, a restraint is satisfied if the pseudo-distance is found between `distance - lower_boundary` and `distance + upper_boundary` (`distance - lower_boundary` <= pseudo-distance <= `distance - upper_boundary`).
 
@@ -33,7 +40,7 @@ By default, we usually use the following values:
 * lower_boundary = 2.0
 * upper_boundary = 0.0
 
-therefore expecting the find the pseudo-distance under 2.0 between the two selections for a restraint to be satisfied.
+therefore expecting the find the pseudo-distance under 2.0 A between the two selections for a restraint to be satisfied.
 
 For a detailed explanation of the distance restraints, please refer to the following articles:
 
