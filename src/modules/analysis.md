@@ -333,12 +333,15 @@ select = 400
 
 Select models from the top clusters.
 
-This module selects a number of models from a number of clusters. The
-selection is based on the score of the models within the clusters.
+This module selects a number of models from a number of clusters.
+By default, the selection is based on the score of the models within the clusters.
+PDB files are renamed based on their cluster rank and model rank within each cluster (e.g: second best model from cluster rank 5 will be named `cluster_5_model_2.pdb`).
 
-In the standard HADDOCK analysis, the top 4 models of the top 10 clusters are shown.
-In case `[seletopclusts]` is run after a sampling module, we can keep a few models from all the clusters to have more diversity at the
-refinement stage(s).
+In the last analysis made in HADDOCK2.X webservice, the top 4 models of the top 10 clusters are shown.
+
+While often used to select best culster, the `[seletopclusts]` module can be used after a sampling module (e.g.: `[rigidbody]`), hence allowing to keep a few models from all the clusters to have more diversity at the refinement stage(s).
+
+It is important to note that the `[seletopclusts]` module can only be used once models have been clustered (after a clustering module).
 
 #### Notable parameters
 
