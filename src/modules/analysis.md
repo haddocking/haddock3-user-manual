@@ -92,8 +92,9 @@ The most important parameters for the ``[caprieval]`` module are:
 - `reference_fname`: the reference structure to compare the models to. It can be the reference structure of the complex or another model (for example, an Alphafold model).
 - `receptor_chain`: the chain to be considered as the receptor (default: A)
 - `ligand_chains`: the chains to be considered as the ligands (default: all but the receptor chain)
+- `keep_hetatm`: when set to `true`, this parameter allows to keep HETATM from the input reference file. Otherwise they are removed.
 
-More information about ``[caprieval]`` parameters can be accessed [here](https://bonvinlab.org/haddock3/modules/analysis/haddock.modules.analysis.caprieval.html#default-parameters) or retrieved by running
+More information about `[caprieval]` parameters can be accessed [here](https://bonvinlab.org/haddock3/modules/analysis/haddock.modules.analysis.caprieval.html#default-parameters) or retrieved by running
 ```bash
 haddock3-cfg -m caprieval
 ```
