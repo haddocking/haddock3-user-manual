@@ -19,11 +19,15 @@ To calculate the upper distance limit for the restraints, the height, width, and
 
 - If `cmtight=true`: The 'molecule distance' for each molecule is calculated as the average of the two smallest dimensions, each divided by 2. For example:
 
-![equ](https://latex.codecogs.com/gif.latex?Molecule\;Distance = \frac{1}{2} \left( \frac{\text{width}}{2} + \frac{\text{depth}}{2} \right))
+<figure style="text-align: center;">
+<img width="100%" src="./images/cmrest_cmtight_true.png">
+</figure>
 
 - If `cmtight=false`: The 'molecule distance' is the average of all three half-dimensions:
 
-![equ](https://latex.codecogs.com/gif.latex?Molecule\;Distance = \frac{1}{3} \left( \frac{\text{height}}{2} + \frac{\text{width}}{2} + \frac{\text{depth}}{2} \right))
+<figure style="text-align: center;">
+<img width="100%" src="./images/cmrest_cmtight_false.png">
+</figure>
 
 
 - For DNA, RNA, small ligands, or glycans: The 'molecule distance' is set to 0.  

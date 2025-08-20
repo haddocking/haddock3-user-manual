@@ -23,14 +23,16 @@ haddock3-restraints <TASK_NAME> -h
 
 This CLI holds multiple sub-commands, listed and explained below:
 
-- [calc_accessibility](#calc-accessibility): Compute solvent-accessible residues from an input PDB file.
+- [calc_accessibility](#surface-accessibility-computation): Compute solvent-accessible residues from an input PDB file.
 - [passive_from_active](#passive-form-active): Generates a list of solvent-accessible residues near a list of residues.
 - [active_passive_to_ambig](#active-passive-to-ambig): Generates a ambiguous/unambiguous restraints file from two *active/passive* residue selections.
 - [restrain_bodies](#restrain-bodies): Generates restraints within the same chain. Useful when chain breaks are present or multiple proteins are defined as a single chain.
 - [z_surface_restraints](#z-surface-restraints): Generates surfaces and restraints selected residues to it.
 - [validate_tbl](#validate-tbl): Validate the content of an ambiguous/unambiguous restraints file.
+- [random_removal](#random-removal): Allow to perform random removal from an input ambiguous restraints file.
+- [restrain_ligand](#ligand-restrain): Generate restraints to keep a ligand/cofactor in its place.
 
-## Calc Accessibility
+## Surface accessibility computation
 
 Given a PDB file, `calc_accessibility` will calculate the relative accessibility of
 the side chains and return a list of surface-exposed residues.
@@ -210,8 +212,74 @@ options:
 
 The `--silent` option will suppress the output of the validation (in case of success), while the `--quick` option will first check the global formatting first, before getting into the context.
 
-# New version of the haddock-restraints
+## Random removal
+
+Given an input ambiguous file (.tbl), the `random_removal` subcommand will generate an archive containing multiple tbl files, each containing a subset of the initial ones.
+
+The subset is tuned by the optional argument `--ratio` (`-r`), a floating number between 0 and 1 defining the ratio of restraints to be removed.
+The number of generated files in the archive is tuned by the argument `--nb-tbl` (`-n`).
+The random seed can be tuned using `--seed` (`-s`), for reproducibility issues.
+
+**Usage:**
+
+```bash
+haddock3-restraints random_removal <tbl_file> [-r RATIO] [-n NB_TBL] [-s SEED]
+```
+
+**Arguments**:
+
+```bash
+positional arguments:
+  tblfile               input tbl restraint file.
+
+options:
+  -h, --help            show this help message and exit
+  -r RATIO, --ratio RATIO
+                        Ratio of restraints to be
+                        randomly removed. (default: 0.5)
+  -s SEED, --seed SEED  Pseudo-random seed. (default:
+                        917)
+  -n NB_TBL, --nb-tbl NB_TBL
+                        Number of ambiguous files to
+                        generate in the archive.
+                        (default: 10)
+```
+
+## Ligand restraints
+
+The `restrain_ligand` sub-command allows to generate unambiguous restraints made to keep a ligand / cofactor / a residue in its place.
+This is performed by computing atomic distances found in the input structure and outputing CNS distance restraints corresponding to those.
+
+This can be handy especially when dealing with cofactors (e.g.: ATP, ions, etc, ...) that should not be docked but rather stay in their original conformation.
+
+**Usage:**
+
+```bash
+haddock3-restraints restrain_ligand <pdb_file> <ligand_name> -r <radius> -d <deviation> -n <max_nb_restraints>
+```
+
+**Arguments**:
+
+```bash
+positional arguments:
+  pdb_file              Input PDB file.
+  ligand_name           Residue name.
+
+options:
+  -h, --help            show this help message and exit
+  -r RADIUS, --radius RADIUS
+                        Radius used for neighbors search around center of mass of ligand.
+                        (default: 10.0)
+  -n MAX_RESTRAINTS, --max-restraints MAX_RESTRAINTS
+                        Maximum number of restraints to return. (default: 200)
+  -d DEVIATION, --deviation DEVIATION
+                        Allowed deviation from actual distance. (default: 1.0)
+```
+
+# RUST version of the haddock-restraints
 
 A new version of the haddock3-restraints is currently being developed.
 This new implementation using *rust* will allow better maintainability as well as its deployment on various operating systems as well as on web-browser using WebAssembly.
 Not yet part of the haddock3 intallation, you can already find it in its dedicated repository at [https://github.com/haddocking/haddock-restraints](https://github.com/haddocking/haddock-restraints).
+
+Please tryout our [online HADDOCK Restraints Generator web service at https://wenmr.science.uu.nl/haddock-restraints/](https://wenmr.science.uu.nl/haddock-restraints/), to generate a CNS-formatted ambiguous interaction restraints file, and more...

@@ -92,8 +92,9 @@ The most important parameters for the ``[caprieval]`` module are:
 - `reference_fname`: the reference structure to compare the models to. It can be the reference structure of the complex or another model (for example, an Alphafold model).
 - `receptor_chain`: the chain to be considered as the receptor (default: A)
 - `ligand_chains`: the chains to be considered as the ligands (default: all but the receptor chain)
+- `keep_hetatm`: when set to `true`, this parameter allows to keep HETATM from the input reference file. Otherwise they are removed.
 
-More information about ``[caprieval]`` parameters can be accessed [here](https://bonvinlab.org/haddock3/modules/analysis/haddock.modules.analysis.caprieval.html#default-parameters) or retrieved by running
+More information about `[caprieval]` parameters can be accessed [here](https://bonvinlab.org/haddock3/modules/analysis/haddock.modules.analysis.caprieval.html#default-parameters) or retrieved by running
 ```bash
 haddock3-cfg -m caprieval
 ```
@@ -333,12 +334,15 @@ select = 400
 
 Select models from the top clusters.
 
-This module selects a number of models from a number of clusters. The
-selection is based on the score of the models within the clusters.
+This module selects a number of models from a number of clusters.
+By default, the selection is based on the score of the models within the clusters.
+PDB files are renamed based on their cluster rank and model rank within each cluster (e.g: second best model from cluster rank 5 will be named `cluster_5_model_2.pdb`).
 
-In the standard HADDOCK analysis, the top 4 models of the top 10 clusters are shown.
-In case `[seletopclusts]` is run after a sampling module, we can keep a few models from all the clusters to have more diversity at the
-refinement stage(s).
+In the last analysis made in HADDOCK2.X webservice, the top 4 models of the top 10 clusters are shown.
+
+While often used to select best culster, the `[seletopclusts]` module can be used after a sampling module (e.g.: `[rigidbody]`), hence allowing to keep a few models from all the clusters to have more diversity at the refinement stage(s).
+
+It is important to note that the `[seletopclusts]` module can only be used once models have been clustered (after a clustering module).
 
 #### Notable parameters
 

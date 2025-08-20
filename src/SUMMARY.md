@@ -20,8 +20,9 @@
   - [Tools to manipulate structures](./pdbtools.md)
 
 - [Generating restraints for HADDOCK](./intro_restraints.md)
-
-  - [haddock3-restraints](./restraints_cli.md)
+  - [Introduction to restraints in HADDOCK](./intro_restraints.md)
+  - [Obtaining a set of interacting residues](./obtain_active_resiudes.md)
+  - [The haddock3-restraints CLI](./restraints_cli.md)
   - [Automated restraints generation](./automated_restraints.md)
     - [Symmetry restraints](./automated_restraints.md)
     - [DNA & RNA restraints](./automated_restraints.md)
