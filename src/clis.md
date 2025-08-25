@@ -15,6 +15,7 @@ Haddock3 comes with several Command Line Interfaces (CLIs), that are described a
 - [haddock3](#haddock3): Main CLI for running a workflow.
 - [haddock3-cfg](#haddock3-cfg): Obtain information about module parameters
 - [haddock3-restraints](#haddock3-restraints): Generation of restraints.
+- [haddock-restraints](#haddock-restraints): Generation of restraints with the standalone application
 - [haddock3-score](#haddock3-score): Scoring CLI.
 - [haddock3-analyse](#haddock3-analyse): Analysis of output.
 - [haddock3-traceback](#haddock3-analyse): Traceback of generated docking models.
@@ -74,6 +75,10 @@ The `haddock3-restraints` CLI is composed of several sub-commands, each one dedi
 As this CLI is more specialized, we have made a [special chapter in this manual](./restraints_cli.md) to explain all the functionalities.
 
 <hr>
+
+## haddock-restraints
+
+The CLI `haddock-restraints` has its own documentation, please see: [bonvinlab.org/haddock-restraints](https://bonvinlab.org/haddock-restraints)
 
 ## haddock3-score
 
