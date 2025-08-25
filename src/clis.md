@@ -78,7 +78,7 @@ As this CLI is more specialized, we have made a [special chapter in this manual]
 
 ## haddock-restraints
 
-The CLI `haddock-restraints` has its own documentation, please see: [bonvinlab.org/haddock-restraints](https://bonvinlab.org/haddock-restraints)
+The CLI `haddock-restraints` has its own documentation, please see: [bonvinlab.org/haddock-restraints](https://bonvinlab.org/haddock-restraints) and also the online interface at [wenmr.science.uu.nl/haddock-restraints](https://wenmr.science.uu.nl/haddock-restraints)
 
 ## haddock3-score
 
