@@ -80,6 +80,10 @@ As this CLI is more specialized, we have made a [special chapter in this manual]
 
 The CLI `haddock-restraints` has its own documentation, please see: [bonvinlab.org/haddock-restraints](https://bonvinlab.org/haddock-restraints) and also the online interface at [wenmr.science.uu.nl/haddock-restraints](https://wenmr.science.uu.nl/haddock-restraints)
 
+It is composed of subcommands and can generate simple and complex restraints files. You define active/passive residues and can filter residues that are buried, define passive residues around the active ones, keep molecules together during docking (or keep a ligand in place), define "true-interface" restraints, list residues that are in the interface, define z-coordinate restraints (useful for membranes) and also generate unambigous restraints - a more strict type of true interface restraints.
+
+By passing the `--pml` argument you can also generate a PyMol script for easy visualization of the restraints.
+
 ## haddock3-score
 
 The `haddock3-score` is a CLI made for scoring a single complex.
