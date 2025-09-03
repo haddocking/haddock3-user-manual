@@ -4,7 +4,10 @@ Haddock3 is not only a tool, but also a set of training materials, allowing new 
 
 The list of tutorials is available from our [BonvinLab website -> education -> haddock3 -> tutorials](https://www.bonvinlab.org/education/HADDOCK3/)
 
+We have now also added a Jupyter notebooks directory to the source code. Those can be directly started on Google Colab or on your own resource. Visit [https://github.com/haddocking/haddock3/notebooks](https://github.com/haddocking/haddock3/notebooks) for instructions.
+
 Please note that we are constantly adding new tutorials, and therefore new ones may appear from time to time.
+
 
 ## Haddock2.X tutorial
 
