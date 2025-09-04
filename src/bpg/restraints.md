@@ -46,7 +46,7 @@ These can be for example:
 - MS crosslink data ([tutorial](https://www.bonvinlab.org/education/HADDOCK24/HADDOCK24-Xlinks/))
 - cryo-EM connectivity data ([tutorial](https://www.bonvinlab.org/education/HADDOCK24/RNA-Pol-III/))
 
-#### <font color="RED">A</font>mbiguous <font color="RED">I</font>nteraction <font color="RED">R</font>estraints (<font color="RED">AIR</font>s)``
+#### <font color="RED">A</font>mbiguous <font color="RED">I</font>nteraction <font color="RED">R</font>estraints (<font color="RED">AIR</font>s)
 
 Nevertheless, as in life, in science one also needs to be somewhat critical to the data one works with.
 If you are not 100% sure about the interaction information and want to be cautious while incorporating it into your docking, use [**ambiguous interaction restraints**](../intro_restraints.md#ambiguous-distance-restraints) (using the `ambig_fname` parameter).
