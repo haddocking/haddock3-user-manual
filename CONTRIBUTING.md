@@ -27,7 +27,6 @@ This manual is built with [mdbook](https://rust-lang.github.io/mdBook/). To test
 - Follow the existing markdown style
 - Update `src/SUMMARY.md` if adding new pages
 - Automated checks will run on your PR:
-  - Markdown linting
   - Link validation
   - Book build verification
 
