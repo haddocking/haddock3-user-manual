@@ -63,6 +63,6 @@ Requires the installation of the `mpi4py` python library and `OpenMPI` to be ins
 
 #### GRID MODE
 
-Requires the installation of the `DIRAC` client and the binaries to be in your `$PATH`. You will also need to be authenticated with it.
+Requires the installation of the `DIRAC` client and the binaries to be in your `$PATH`, check their [documentation](https://dirac.diracgrid.org) for up-to-date instructions. After installation, you will also need to be authenticated with it.
 
 When running `haddock3` in this mode you need to set a `HADDOCK3_GRID_JOB_TYPE` system variable that will be used in the `.jdl` file as the `JobType`.
