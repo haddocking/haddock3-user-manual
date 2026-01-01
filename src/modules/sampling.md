@@ -2,7 +2,6 @@
 
 - [`[rigidbody]` module](#rigidbody-module)
 - [`[lightdock]` module](#lightdock-module)
-- [`[gdock]` module](#gdock-module)
 
 ## `[rigidbody]` module
 
@@ -92,8 +91,3 @@ sampling = 2000 # higher sampling if information is limited
 ## `[lightdock]` module
 
 <hr>
-
-## `[gdock]` module
-
-<hr>
-
