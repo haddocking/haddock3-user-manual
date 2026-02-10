@@ -19,12 +19,15 @@ echo "Hostname             = $(hostname -s)"
 echo "Working Directory    = $(pwd)"
 echo "Submit Directory     = $SLURM_SUBMIT_DIR"
 
+
 # Load necessary environment (optional depending on your HPC setup)
 source /lustre/oneApi/setvars.sh
 export OMP_NUM_THREADS=1
 
 # Run HADDOCK3 via Apptainer
 cd "${WORK_DIR}"
+
+#For MPI runs, ensure that the `.cfg` file reflects the allocated resources,with `ncore` set to the total number of available cores (e.g. 3 × 120 = 360) and the execution mode set to `mpi`
 
 # Ensure the working directory is set correctly
 apptainer run
