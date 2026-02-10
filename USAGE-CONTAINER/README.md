@@ -89,8 +89,7 @@ A ready-to-use `HADDOCK3.def` is provided in the ([recipe/](https://github.com/h
 - **Host**: Linux system with Docker or Apptainer/Singularity installed for building container images (e.g. a local machine or Linux environment via WSL2).
 - **Disk**: ≥ 2 GB free for building
 - **Python**: 3.10+ (inside container)
-- **Permissions:** Root (sudo) privileges are required to build Apptainer images locally.  
-
+- **Permissions:** Root (sudo) privileges are required to build Apptainer images locally,but not to execute them.  
 ---
 
 ##  Documentation
