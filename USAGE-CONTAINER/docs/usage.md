@@ -54,7 +54,9 @@ ncores = 8
 ```
 
 This enables HADDOCK3 to distribute workloads efficiently across all allocated CPUs.
-
+<pre>
+<strong>Note:</strong> When running multiple CPUs on a single node, MPI mode is not required; HADDOCK3 can be run in local mode.
+</pre>
 ---
 
 ## 4. Requirements
