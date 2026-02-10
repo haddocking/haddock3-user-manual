@@ -17,10 +17,10 @@ To use this as the foundation for HPC-friendly SIF images, build **Apptainer** o
 
 ```bash
 # Build Apptainer image
-apptainer build haddock3_mpi.sif docker://ghcr.io/haddocking/haddock3:2025.8.0
+apptainer build haddock3_mpi.sif docker://ghcr.io/haddocking/haddock3:2025.11.0
 
   ```
-**Note:** Refer to the [**usage.md**](https://github.com/haddocking/haddock3/blob/main/usage-container/docs/usage.md) and the example SLURM script available in the `scripts` folder for detailed instructions on how to run HADDOCK3 jobs in an HPC environment.
+**Note:** Refer to the [**usage.md**](https://github.com/haddocking/haddock3/blob/main/usage-container/docs/usage.md) and the example SLURM script available in the `scripts` folder for detailed instructions on how to run HADDOCK3 jobs in an HPC environment.On many HPC systems, building Apptainer images requires elevated privileges and may be restricted. In such cases, users can build the SIF image on a local system where Apptainer is installed and then transfer it to the HPC system for use.
 <pre> <strong>Version updates:</strong> The HADDOCK3 image is regularly updated. Please check the tags at <a href="https://github.com/haddocking/haddock3/pkgs/container/haddock3">ghcr.io/haddocking/haddock3</a> for the latest version. </pre>
 
 ---
@@ -55,7 +55,7 @@ A ready-to-use `HADDOCK3.def` is provided in the ([recipe/](https://github.com/h
 
    ```bash
    
-   apptainer build --build-arg HADDOCK_VERSION=1.0.0 \
+   apptainer build --build-arg HADDOCK_VERSION=2025.11.0 \
    haddock3_mpi.sif \
    haddock3_mpi.def \
 
@@ -86,7 +86,7 @@ A ready-to-use `HADDOCK3.def` is provided in the ([recipe/](https://github.com/h
 
 ##  Requirements
 
-- **Host**: Linux with Apptainer or Singularity installed (local machine or HPC environment)
+- **Host**: Linux system with Docker or Apptainer/Singularity installed for building container images (e.g. a local machine or Linux environment via WSL2).
 - **Disk**: ≥ 2 GB free for building
 - **Python**: 3.10+ (inside container)
 - **Permissions:** Root (sudo) privileges are required to build Apptainer images locally.  
