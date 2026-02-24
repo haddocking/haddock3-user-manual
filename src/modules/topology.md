@@ -59,6 +59,7 @@ In this case (`mol1`), the parameters will be applied to the first molecule in t
 ### Notable parameters
 
 - `autohis`: If set to `false`, you will need to specify the protonation states of histidines manually. 
+- `ligand_param_fname` and `ligand_top_fname`: Use this parameters to specify a custom ligand topology and parameters for your small molecules. If your input contains unknown residues but these parameters are not defined - haddock will try to create automated topologies and paramters for it using PRODRG.
 
 #### Parameters specific to each molecule
 
