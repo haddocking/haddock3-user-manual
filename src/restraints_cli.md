@@ -56,7 +56,7 @@ positional arguments:
 options:
   -h, --help            show this help message and exit
   -c CUTOFF, --cutoff CUTOFF
-                        Relative cutoff for sidechain accessibility
+                        Relative cutoff for sidechain accessibility (default: 0.15) 
   --log_level {DEBUG,INFO,WARNING,ERROR,CRITICAL}
                         Logging level
   --export_to_actpass   Export the exposed residues as passive to an actpass file
