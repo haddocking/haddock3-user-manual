@@ -1,8 +1,11 @@
 ## Small molecule docking
 
 Small molecule docking can also be performed using haddock3.
-It requires the use of custom topology and paramter files for the ligand, as it they are out of the scope of the OPLS force-field.
+It requires the use of custom topology and paramter files for the ligand.
 To generate them, please refere to the section: [How to generate topology and parameters for my ligand ?](../structure_requirements.md#How-to-generate-topology-and-parameters-for-my-ligand)
+
+The latest version of HADDOCK3 (as of release 2026.3.0) does have an option to automatically generate the topology and parameter files for ligands using PRODRG.
+To activate this option add the following paramter to the `[topoaa]` module: `autotoppar = true`.
 
 Two protocols have been proposed:
 - [By homology docking using experimental template](#template-based-shape-docking)
@@ -42,9 +45,12 @@ For the flexible refinement only the ligand is defined as active and the binding
 
 The [docking-protein-ligand-full.cfg](https://github.com/haddocking/haddock3/tree/main/examples/docking-protein-ligand/docking-protein-ligand-full.cfg) workflow consists of the generation of 1000 rigidbody docking models, selection of top200 and flexible refinement of those.
 
-__Note__ the modified weight of the Van der Waals energy term for the scoring of the `[rigidbody]` docking models (`w_vdw = 1.0`) and the skipping of the high temperature first two stages of the simulated annealing protocol during the `[flexref]` refinement (`mdsteps_rigid = 0` and `mdsteps_cool1 = 0`).
+__Note__ The modified weight of the Van der Waals energy term for the scoring of the `[rigidbody]` docking models (`w_vdw = 1.0`) and the skipping of the high temperature first two stages of the simulated annealing protocol during the `[flexref]` refinement (`mdsteps_rigid = 0` and `mdsteps_cool1 = 0`).
 Parameter and topology files must be provided for the ligand (`ligand_param_fname = "data/ligand.param"` and `ligand_top_fname = "data/ligand.top"`).
 Those were obtained with a local version of PRODRG ([Schüttelkopf and van Aalten Acta Crystallogr. D 60, 1355−1363 (2004)](http://scripts.iucr.org/cgi-bin/paper?S0907444904011679)).
 
+__Note__ A similar workflow, but with automatic topology and parameter definition for the ligand, is defined as [docking-protein-ligand-autotoppar-full.cfg](https://github.com/haddocking/haddock3/tree/main/examples/docking-protein-ligand/docking-protein-ligand-autotoppar-full.cfg).
+
 The `[caprieval]` module is called at various stages during the workflow to assess the quality of the models with respect to the known reference structure.
 
+The clustering of models is based on the interface-ligand-RMSD (`[ilrmsdmatrix]`, which is the RMSD calculated on the ligand molecule after fitting on the interface of the receptor.
