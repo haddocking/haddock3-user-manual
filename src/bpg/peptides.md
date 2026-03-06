@@ -16,7 +16,7 @@ More documentation about peptide docking with HADDOCK is in the following sectio
 
 ### [Tutorials](../tutorials.md)
 
-* [**HADDOCKing of the p53 N-terminal peptide to MDM2**](/education/molmod/docking/):
+* [**HADDOCKing of the p53 N-terminal peptide to MDM2**](./education/molmod/docking/):
  This tutorial introduces protein-peptide docking using the HADDOCK web server. It also introduces the CPORT web server for interface prediction, based on evolutionary conservation and other biophysical properties.  
 
 
