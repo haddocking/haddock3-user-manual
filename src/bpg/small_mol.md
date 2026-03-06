@@ -60,7 +60,7 @@ When using multiple ligands at once in the same docking run, several steps must 
  The information from the ab-initio run is then used to setup a binding pocket-targeted protein-ligand docking run.
  We use as an example the multidrug exporter AcrB. 
 
-* [**Metadynamics**](/education/biomolecular-simulations-2020/Metadynamics_tutorial):
+* [**Metadynamics**](./education/biomolecular-simulations-2020/Metadynamics_tutorial):
  This tutorial highlights the benefits of enhanced sampling using metadynamics to improve the predictive power of molecular docking for protein-small molecule targets, in the case of binding sites undergoing conformational changes. For this, we will first generate an ensemble of conformers for the target protein using [GROMACS](http://www.gromacs.org/) and [PLUMED](http://www.plumed.org/), before proceeding with the docking using [HADDOCK](http://www.bonvinlab.org/software/haddock2.4/).
 
 * [**HADDOCK covalent binding**](https://www.bonvinlab.org/education/biomolecular-simulations-2018/HADDOCK_tutorial):
