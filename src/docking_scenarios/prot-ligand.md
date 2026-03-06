@@ -4,7 +4,7 @@ Small molecule docking can also be performed using haddock3.
 It requires the use of custom topology and paramter files for the ligand.
 To generate them, please refere to the section: [How to generate topology and parameters for my ligand ?](../structure_requirements.md#How-to-generate-topology-and-parameters-for-my-ligand)
 
-The latest version of HADDOCK3 (as of release 2026.3.0) does have an option to automatically generate the topology and parameter files for ligands using PRODRG.
+From release v2026.3.0, HADDOCK3 does have an option to automatically generate the topology and parameter files for ligands using PRODRG.
 To activate this option add the following paramter to the `[topoaa]` module: `autotoppar = true`.
 
 Two protocols have been proposed:
