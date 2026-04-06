@@ -130,7 +130,7 @@ The most important parameters for the ``[clustfcc]`` module are:
 
 RMSD clustering module.
 
-This module takes in input the [RMSD](#rmsdmatrix-module) (or the [ILRMSD](#ilrmsdmatrix-module)) matrix calculated in the previous step and
+This module takes in input the [RMSD](#rmsdmatrix-module) (or the [ILRMSD](#ilrmsdmatrix-module)) matrix **calculated in the previous step** and
 performs a hierarchical clustering procedure on it, leveraging [scipy routines](https://docs.scipy.org/doc/scipy/reference/cluster.hierarchy.html) for this purpose.
 
 Essentially, the procedure amounts at lumping the input models in a
@@ -142,12 +142,17 @@ as most models will share a consistent fraction of contacts, while still being s
 In [this paper](https://www.biorxiv.org/content/10.1101/2024.07.31.605986v1), we show that, in the context of protein-glycan docking, RMSD clustering performed after 
 ``[rigidbody]`` docking increases the success rate. A detailed tutorial on this specific case is available [here](https://www.bonvinlab.org/education/HADDOCK3/HADDOCK3-protein-glycan/).
 
-Example application of the ``[clustrmsd]`` module after rigid-body docking, retrieving 50 clusters:
+Example application of the ``[clustrmsd]`` module:
+- after rigid-body docking
+- computes the RMSDmatrix
+- then cluster the matrix into 50 clusters
+
+Here is the corresponding configuration file example that corresponds to the above sequence of modules:
 
 ```toml
 # ...
 [rigidbody]
-ambig_fname = ambiguous_restraints.tbl
+ambig_fname = "ambiguous_restraints.tbl"
 [rmsdmatrix]
 resdic_A = [1,2,3,4]
 resdic_B = [2,3,4,5]
@@ -225,9 +230,13 @@ the models generated in the previous step.
 As all the pairwise ilRMSD calculations are independent, the module distributes
 them over all the available cores in an optimal way.
 
-**IMPORTANT**: the module assumes coherent numbering for all the receptor and ligand
+**IMPORTANT**:
+- the module assumes coherent numbering for all the receptor and ligand
 chains, as no sequence alignment is performed. The user must ensure that the numbering
 is coherent.
+- this module is **only** computing the interface-ligand-RMSD matrix, but does not
+perform any kind of clustering. To perform RMSD clustering, one should first run
+this module, then use the [`[clustrmsd]` module](#clustrmsd-module).
 
 #### Notable parameters
 
@@ -267,11 +276,16 @@ generated in the previous step.
 As all the pairwise RMSD calculations are independent, the module distributes
 them over all the available cores in an optimal way.
 
-**IMPORTANT**: the module assumes coherent numbering for all the receptor and ligand
+**IMPORTANT**:
+- the module assumes coherent numbering for all the receptor and ligand
 chains, as no sequence alignment is performed. The user must ensure that the numbering
 is coherent.
+- this module is **only** computing the RMSD matrix, but does not
+perform any kind of clustering. To perform RMSD clustering, one should first run
+this module, then use the [`[clustrmsd]` module](#clustrmsd-module).
 
 #### Notable parameters
+
 - `allatoms`: whether to use all the atoms for the ILRMSD calculation (default: False)
 - `resdic_` : an expandable parameter to specify which residues must be
  considered for the alignment and the RMSD calculation. If there are
