@@ -110,6 +110,11 @@ seg_sta_1_2 = 22
 seg_end_1_2 = 39
 ```
 
+Check out schematic images of the refinement protocols employed in different [refinements modules](./modules/refinement.md):
+* [`[flexref]`](./modules/refinement.md#flexref-module-simulated-annealing-protocol-scheme)
+* [`[mdref]`](./modules/refinement.md#mdref-module-scheme)
+* [`[emref]`](./modules/refinement.md#emref-module-scheme)
+
 ### Fully flexible Segment
 
 Fully Flexible Segment
@@ -150,3 +155,8 @@ fle_sta_1 = 1
 # Define the last residue for the 1st fully flexible segment 
 fle_end_1 = 4
 ```
+
+Check out schematic images of the refinement protocols employed in different [refinements modules](./modules/refinement.md):
+* [`[flexref]`](./modules/refinement.md#flexref-module-simulated-annealing-protocol-scheme)
+* [`[mdref]`](./modules/refinement.md#mdref-module-scheme)
+* [`[emref]`](./modules/refinement.md#emref-module-scheme)
