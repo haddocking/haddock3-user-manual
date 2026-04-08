@@ -139,13 +139,14 @@ progressively coarser hierarchy of clusters, called the dendrogram.
 Typically, the module is run at the end of a protein-small molecule docking protocol to cluster the
 models and identify the best clusters. In these workflows, ``[clustrmsd]`` is more appropriate than ``[clustfcc]`` 
 as most models will share a consistent fraction of contacts, while still being structurally different.
-In [this paper](https://www.biorxiv.org/content/10.1101/2024.07.31.605986v1), we show that, in the context of protein-glycan docking, RMSD clustering performed after 
-``[rigidbody]`` docking increases the success rate. A detailed tutorial on this specific case is available [here](https://www.bonvinlab.org/education/HADDOCK3/HADDOCK3-protein-glycan/).
+In [this paper](https://pubs.acs.org/doi/10.1021/acs.jcim.4c01372)([BioRxiv](https://www.biorxiv.org/content/10.1101/2024.07.31.605986v1)),
+we show that, in the context of protein-glycan docking, RMSD clustering performed after ``[rigidbody]`` docking increases the success rate.
+A detailed tutorial on this specific case is available [here](https://www.bonvinlab.org/education/HADDOCK3/HADDOCK3-protein-glycan/).
 
 Example application of the ``[clustrmsd]`` module:
-- after rigid-body docking
-- computes the RMSDmatrix
-- then cluster the matrix into 50 clusters
+- after performing rigid-body docking
+- computes the RMSD matrix, focused on a particular set of residues from chain A and B
+- apply RMSD-based clustering to the matrix to obtain **50** clusters
 
 Here is the corresponding configuration file example that corresponds to the above sequence of modules:
 
