@@ -232,9 +232,9 @@ As all the pairwise ilRMSD calculations are independent, the module distributes
 them over all the available cores in an optimal way.
 
 **IMPORTANT**:
-- the module assumes coherent numbering for all the receptor and ligand
-chains, as no sequence alignment is performed. The user must ensure that the numbering
-is coherent.
+- the module assumes coherent numbering for all the receptor and ligand chains,
+as no sequence alignment is performed. The user must ensure that the numbering
+is coherent (same chains, same sequences and residue ids accross all models).
 - this module is **only** computing the interface-ligand-RMSD matrix, but does not
 perform any kind of clustering. To perform RMSD clustering, one should first run
 this module, then use the [`[clustrmsd]` module](#clustrmsd-module).
@@ -278,9 +278,9 @@ As all the pairwise RMSD calculations are independent, the module distributes
 them over all the available cores in an optimal way.
 
 **IMPORTANT**:
-- the module assumes coherent numbering for all the receptor and ligand
-chains, as no sequence alignment is performed. The user must ensure that the numbering
-is coherent.
+- the module assumes coherent numbering for all the receptor and ligand chains,
+as no sequence alignment is performed. The user must ensure that the numbering
+is coherent (same chains, same sequences and residue ids accross all models).
 - this module is **only** computing the RMSD matrix, but does not
 perform any kind of clustering. To perform RMSD clustering, one should first run
 this module, then use the [`[clustrmsd]` module](#clustrmsd-module).
