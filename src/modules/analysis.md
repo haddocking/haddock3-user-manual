@@ -145,7 +145,7 @@ A detailed tutorial on this specific case is available [here](https://www.bonvin
 
 Example application of the ``[clustrmsd]`` module:
 - after performing rigid-body docking
-- computes the RMSD matrix, focused on a particular set of residues from chain A and B
+- compute the RMSD matrix, focusing on a particular set of residues from chains A and B
 - apply RMSD-based clustering to the matrix to obtain **50** clusters
 
 Here is the corresponding configuration file example that corresponds to the above sequence of modules:
