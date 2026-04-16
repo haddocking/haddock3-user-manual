@@ -60,7 +60,7 @@ In this case (`mol1`), the parameters will be applied to the first molecule in t
 
 - `autohis`: If set to `false`, you will need to specify the protonation states of histidines manually. 
 - `autotoppar`: If set to `true` haddock will try to create automated topologies and paramters for unknown atoms using PRODRG.
-- `ligand_param_fname` and `ligand_top_fname`: Use this parameters to specify a custom ligand topology and parameters for your small molecules.
+- `ligand_param_fname` and `ligand_top_fname`: Use these parameters to specify a custom ligand topology and parameters for your small molecules.
 - `hydrogen_build`: Use this parameter to control which hydrogen atoms will be (re)built (`all` (default) or only `unknown`). The `unknown` option might be useful for small ligands, or for very large systems in cases where the molecule already contains all hydrogens. For example, when it has already passed through HADDOCK.
 
 #### Parameters specific to each molecule
