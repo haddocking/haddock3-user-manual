@@ -67,8 +67,8 @@ In this case (`mol1`), the parameters will be applied to the first molecule in t
 
 HADDOCK3 supports various cyclisation options:
 
-1) Through a peptide bond - defined at the molecule level (see below) through the `cyclicpept` parameter.
-2) Through an N-acetylated N-terminus to CYS bond - automatically checked for using the distance cutoff defined by the `acecys_dist` parameter (default 4Å).
+1) Through a peptide bond - defined at the molecule level (see below). Only checked if the `cyclicpept` parameter is set to `true`.
+2) Through an N-acetylated N-terminus to CYS bond detected using a minumum distance cutoff defined by the `acecys_dist` parameter (default 4Å). Only checked if the `cyclicpept` parameter is set to `true`
 3) Through disulphide bonds. These are automatically detected using a distance cutoff of 2.2Å, which can be changed with the `disulphide_dist` parameter in the `topoaa` module.
 
 #### Parameters specific to each molecule
