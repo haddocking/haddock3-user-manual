@@ -63,6 +63,14 @@ In this case (`mol1`), the parameters will be applied to the first molecule in t
 - `ligand_param_fname` and `ligand_top_fname`: Use these parameters to specify a custom ligand topology and parameters for your small molecules.
 - `hydrogen_build`: Use this parameter to control which hydrogen atoms will be (re)built (`all` (default) or only `unknown`). The `unknown` option might be useful for small ligands, or for very large systems in cases where the molecule already contains all hydrogens. For example, when it has already passed through HADDOCK.
 
+### Peptide cyclisation options
+
+HADDOCK3 supports various cyclisation options:
+
+1) Through a peptide bond - defined at the molecule level (see below) through the `cyclicpept` parameter.
+2) Through an N-acetylated N-terminus to CYS bond - automatically checked for using the distance cutoff defined by the `acecys_dist` parameter (default 4Å).
+3) Through disulphide bonds. These are automatically detected using a distance cutoff of 2.2Å, which can be changed with the `disulphide_dist` parameter in the `topoaa` module.
+
 #### Parameters specific to each molecule
 
 - `[topoaa.molX]`: Allows the definition of specific `topoaa` parameters for molecule X.
@@ -70,5 +78,6 @@ In this case (`mol1`), the parameters will be applied to the first molecule in t
   - `hisd_Y`, `hise_Y`, allow to define which residue needs to be modified (e.g: `hisd_1 = 3` means that we are defining the first HISD residue, and this residue has residue index of 3 in the file).
   - `charged_nter`, `charged_cter` allow to define the state of Nter and Cter residues. Note that chain breaks are not evaluated as termini residues.
   - `5_phosphate`: Allows to define the state of the 5' end of nucleic acids sequences. If set to `true`, 5' end will be a phosphate group. Otherwise it will be an OH. (default false). Note that chain breaks are not evaluated as 5' ends.
+  - `cyclicpept`: Allows to define that a molecule (peptide) is cyclized through a peptide bond. If set to `true` the module will check for the proximity of N- and C-ter and if within the cutoff distance defined by `cyclicpept_dist` it will create the peptide bond.
 
 <hr>
