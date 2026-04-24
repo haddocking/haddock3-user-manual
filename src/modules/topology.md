@@ -75,11 +75,14 @@ In this case (`mol1`), the parameters will be applied to the first molecule in t
 
 ## `[topocg]` module
 
-The `[topocg]` module is dedicated to the mapping of the all-atom (AA) structures from the `[topoaa]` into coarse-grained (CGn) MARTINI2 topologies. The associated CNS compatible topologies (.psf) are built for each of the input structures, as well as the necessary tables for backmapping (_cg_to_aa.tbl).
+The `[topocg]` module is dedicated to the mapping of the all-atom (AA) structures from the `[topoaa]` into coarse-grained (CG) MARTINI2 topologies. The associated CNS compatible topologies (.psf) are built for each of the input structures, as well as the necessary tables for backmapping (_cg_to_aa.tbl).
 
 It will:
-- Build the CG structure from the AA, based on the MARTINI mapping
-- Build and write out topologies (`.psf`) and coordinates (`.pdb`) files
+- Build the CG structure from the AA, based on the MARTINI mapping (`.pdb`) files
+- Build and write out topologies (`.psf`)
+- Build and write out distance restraint files (`_cg_to_aa.tbl`) necessary for mapping the CG structures back to AA.
+
+The restraints created define atom-to-bead restraints, with one restraint per bead set to 0 Å between the bead and the geometric center of its corresponding atoms (see the [cgtoaa] module for further details).
 
 This module is a prerequisite when running CG docking.
 The topologies built are necessary for the subsequent EM/MD steps.
@@ -107,7 +110,11 @@ molecules = [
 [topoaa]
 autohis = false
 [topocg]
+cgffversion = "martini2"
 
 # Workflow continues with other modules
 # ...
 ```
+
+The most important parameter for the `[topocg]` module is:
+- `cgffversion`: defines the force-field version for the CG mapping and parameters.
