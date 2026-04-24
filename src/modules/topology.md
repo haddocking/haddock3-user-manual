@@ -71,3 +71,43 @@ In this case (`mol1`), the parameters will be applied to the first molecule in t
   - `5_phosphate`: Allows to define the state of the 5' end of nucleic acids sequences. If set to `true`, 5' end will be a phosphate group. Otherwise it will be an OH. (default false). Note that chain breaks are not evaluated as 5' ends.
 
 <hr>
+
+
+## `[topocg]` module
+
+The `[topocg]` module is dedicated to the mapping of the all-atom (AA) structures from the `[topoaa]` into coarse-grained (CGn) MARTINI2 topologies. The associated CNS compatible topologies (.psf) are built for each of the input structures, as well as the necessary tables for backmapping (_cg_to_aa.tbl).
+
+It will:
+- Build the CG structure from the AA, based on the MARTINI mapping
+- Build and write out topologies (`.psf`) and coordinates (`.pdb`) files
+
+This module is a prerequisite when running CG docking.
+The topologies built are necessary for the subsequent EM/MD steps.
+Therefore, if the goal is to run a CG docking pipeline, it is necessary to run this module after the `[topoaa]` module (second step of the workflow).
+
+Note that currently the module foes not support non-standard bio-molecules (apart from standard amino-acids, DNA, RNA), such as small-molecules and coarbohydrates, parameters and topology must be obtained and provided by the user, as there is currently no available MARTINI2 force-field parameters.
+
+More information about `[topoaa]` parameters can be accessed [here](https://bonvinlab.org/haddock3/modules/topology/haddock.modules.topology.topocg.html#default-parameters) or retrieved by running:
+
+```bash
+haddock3-cfg -m topocg
+```
+
+Here an example configuration file snapshot of a typical execution of the
+`[topocg]` module:
+
+```toml
+# Definition of
+run_dir = "example"
+molecules = [
+ "1abc.pdb",
+ "2abc.pdb",
+]
+
+[topoaa]
+autohis = false
+[topocg]
+
+# Workflow continues with other modules
+# ...
+```
