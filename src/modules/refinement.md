@@ -167,7 +167,7 @@ During the initial CG mapping stage in `[topocg]`, atoms-to-bead restraints are 
 These restraints are used to morph the starting respective AA single structures onto the CG modelled complex. 
 
 This back-mapping protocol consists of three main steps: 
-- (i) An initial fitting of the single AA structures onto their CG counterparts by restrained energy minimisation using the atoms-to-bead distance restraints, downscaling the intermolecular interactions to avoid clashes between molecules;  
+- (i) An initial fitting of the single AA structures onto their CG counterparts by restrained energy minimisation using the atoms-to-bead distance restraints, downscaling the intermolecular interactions to avoid high energies due to clashes between molecules;  
 - (ii) short cycles of restrained minimization and molecular dynamics introducing conformational changes into the AA structures to match the conformation of the CG model, gradually increasing the interaction strength between molecules and; 
 - (iii) final optimisation and clash removal through additional rounds of minimization and brief MD. 
 
