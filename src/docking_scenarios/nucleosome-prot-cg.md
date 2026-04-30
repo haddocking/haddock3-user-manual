@@ -32,8 +32,7 @@ ed) can be found in the `data` directory:
 
 The restraints files in the `data` directory are:
 
-* `ambig.tbl`: The ambiguous interaction restraints (AIR) file used to drive the docking created based on the mutagenesis data and the solv
-ent accessible residues of the histones)
+* `ambig.tbl`: The ambiguous interaction restraints (AIR) file used to drive the docking created based on the mutagenesis data and the solvent accessible residues of the histones
 * `lys-cys-linkage.tbl`: The restraint defining the linkage between the catalytic cystein of PRC1 and the NZ atom of Lysines 602 or 603 (HA
 DDOCK-ready residue numbering).
 * `unambig.tbl`: Restraints defined to keep bodies connected during the flexible refinement (generated using the `haddock3 restrain_bodies`
@@ -42,9 +41,9 @@ DDOCK-ready residue numbering).
 
 Three workflow examples are provided:
 
-* `docking-nucleosome-PRC1-AA-full.cfg`: Full docking workflow in all atom mode
-* `docking-nucleosome-PRC1-CG-full.cfg`: Full docking workflow using the coarse-grained mode
-* `docking-nucleosome-PRC1-CG-test.cfg`: Test (short) docking workflow using the coarse-grained mode
+* [docking-nucleosome-PRC1-AA-full.cfg](https://github.com/haddocking/haddock3/blob/main/examples/docking-nucleosome-PRC1/docking-nucleosome-PRC1-AA-full.cfg): Full docking workflow in all atom mode
+* [docking-nucleosome-PRC1-CG-full.cfg](https://github.com/haddocking/haddock3/blob/main/examples/docking-nucleosome-PRC1/docking-nucleosome-PRC1-CG-full.cfg): Full docking workflow using the coarse-grained mode
+* [docking-nucleosome-PRC1-CG-test.cfg](https://github.com/haddocking/haddock3/blob/main/examples/docking-nucleosome-PRC1/docking-nucleosome-PRC1-CG-test.cfg): Test (short) docking workflow using the coarse-grained mode
 
 
 The full CG workflow looks like:

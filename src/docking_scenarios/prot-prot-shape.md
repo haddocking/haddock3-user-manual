@@ -48,10 +48,10 @@ The data for the run can be found in the `data` directory, consisting of:
 
 Four HADDOCK3 workflow examples are provided, for both all-atoms and coarse-grained docking scenarios, and a full run or test run with limited sampling:
 
-* `docking-protein-protein-shape-CG-full.cfg`: Coarse-grained shaped-restrained docking - full run
-* `docking-protein-protein-shape-CG-test.cfg`: Coarse-grained shaped-restrained docking - test run
-* `docking-protein-protein-shape-full.cfg`: All atoms shaped-restrained docking - full run
-* `docking-protein-protein-shape-test.cfg`: All atoms shaped-restrained docking - test run
+* [docking-protein-protein-shape-CG-full.cfg](https://github.com/haddocking/haddock3/blob/main/examples/docking-protein-protein-shape/docking-protein-protein-shape-CG-full.cfg): Coarse-grained shaped-restrained docking - full run
+* [docking-protein-protein-shape-CG-test.cfg](https://github.com/haddocking/haddock3/blob/main/examples/docking-protein-protein-shape/docking-protein-protein-shape-CG-test.cfg): Coarse-grained shaped-restrained docking - test run
+* [docking-protein-protein-shape-full.cfg](https://github.com/haddocking/haddock3/blob/main/examples/docking-protein-protein-shape/docking-protein-protein-shape-full.cfg): All atoms shaped-restrained docking - full run
+* [docking-protein-protein-shape-test.cfg](https://github.com/haddocking/haddock3/blob/main/examples/docking-protein-protein-shape/docking-protein-protein-shape-test.cfg): All atoms shaped-restrained docking - test run
 
 
 The docking workflows are standard HADDOCK runs with rigidbody docking, flexible refinement, energy minimisation and clustering.
