@@ -1,7 +1,6 @@
 # Topology modules
 
 - [`[topoaa]` module](#topoaa-module)
-- [`[topoaa]` module](#topoaa-module)
 - [`[topocg]` module](#topocg-module)
 
 ## `[topoaa]` module

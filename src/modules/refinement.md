@@ -4,7 +4,6 @@
 - [`[flexref]` module](#flexref-module)
 - [`[mdref]` module](#mdref-module)
 - [`[openmm]` module](#openmm-module)
-- [`[openmm]` module](#openmm-module)
 - [`[cgtoaa]` module](#cgtoaa-module)
 
 
@@ -167,9 +166,9 @@ During the initial CG mapping stage in `[topocg]`, atoms-to-bead restraints are 
 These restraints are used to morph the starting respective AA single structures onto the CG modelled complex. 
 
 This back-mapping protocol consists of three main steps: 
-- (i) An initial fitting of the single AA structures onto their CG counterparts by restrained energy minimisation using the atoms-to-bead distance restraints, downscaling the intermolecular interactions to avoid high energies due to clashes between molecules;  
-- (ii) short cycles of restrained minimization and molecular dynamics introducing conformational changes into the AA structures to match the conformation of the CG model, gradually increasing the interaction strength between molecules and; 
-- (iii) final optimisation and clash removal through additional rounds of minimization and brief MD. 
+1. An initial fitting of the single AA structures onto their CG counterparts by restrained energy minimisation using the atoms-to-bead distance restraints, downscaling the intermolecular interactions to avoid high energies due to clashes between molecules;  
+2. short cycles of restrained minimization and molecular dynamics introducing conformational changes into the AA structures to match the conformation of the CG model, gradually increasing the interaction strength between molecules and; 
+3. final optimisation and clash removal through additional rounds of minimization and brief MD. 
 
 During all those steps, the CG model is kept rigid and fixed in space. Both AA and CG models co-exist, but don’t see each other except through the effect of the CG to AA distance restraints.
 At the end of the protocol, the CG model is deleted.
