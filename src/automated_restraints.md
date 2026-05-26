@@ -164,7 +164,7 @@ c3sym_seg3_2 = "C"
 
 It is also possible to tune the force constant for the C**N** symmetries using the `ksym` parameter.
 
-We are providing an example of protein-homotrimer docking using haddock3 [here](/software/haddock3/manual/docking_scenarios#protein-homotrimer).
+We are providing an example of protein-homotrimer docking using haddock3 [here](./docking_scenarios.md#protein-homotrimer).
 
 #### S3 symmetry
 

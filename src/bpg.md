@@ -67,7 +67,7 @@ table, th, td {
       </a>
     </td>
     <td>
-      <a href="dna"
+      <a href="./bpg/dna.md"
          alt="Docking of nucleotides"
          title="Docking of nucleotides">
          <img src="./bpg/dna.png" style="border-radius: 50%; border: dashed 2px black;">
