@@ -4,7 +4,9 @@ Haddock3 is not only a tool, but also a set of training materials, allowing new 
 
 The list of tutorials is available from our [BonvinLab website -> education -> haddock3 -> tutorials](https://www.bonvinlab.org/education/HADDOCK3/)
 
-We have now also added a Jupyter notebooks directory to the source code. Those can be directly started on Google Colab or on your own resource. Visit the [haddock3 repository](https://github.com/haddocking/haddock3/tree/main/notebooks) for instructions.
+We have now also added a Jupyter notebooks directory to the source code. The Jupter notebooks can be directly started on Google Colab or on your own resource. Visit the [haddock3 repository](https://github.com/haddocking/haddock3/tree/main/notebooks) for instructions.
+
+Another notobook, `HADDOCK3-interface-analysis.py` based on [marimo](https://marimo.io) is provided that allows to upload a complex and analyse the interface of the complex.
 
 Please note that we are constantly adding new tutorials, and therefore new ones may appear from time to time.
 
