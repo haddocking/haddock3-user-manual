@@ -2,7 +2,6 @@
 
 - [`[rigidbody]` module](#rigidbody-module)
 - [`[lightdock]` module](#lightdock-module)
-- [`[gdock]` module](#gdock-module)
 
 ## `[rigidbody]` module
 
@@ -10,7 +9,7 @@ The `[rigidbody]` module does a **randomization of orientations and rigid-body m
 It corresponds to the classical `it0` step in the HADDOCK2.x series.
 
 In this module, the interacting partners are treated as rigid bodies, meaning that all geometrical parameters such as bond lengths, bond angles, and dihedral angles are frozen.
-The partners are first separated in space and randomly rotated around their respective centers of mass.
+The partners are first separated in space and randomly rotated around their respective centers of mass. This is controlled by two parameters which, by default, are true: `separate` for separating the molecules and `randrot` for the random rotations about the center of mass.
 Afterward, the molecules are brought together by rigid-body energy minimisation with rotations and translation as the only degrees of freedom.
 
 The driving force for this energy minimization is the energy function, which consists of the intermolecular van der Waals and electrostatic energy terms and the restraints defined to guide the docking.
@@ -92,8 +91,3 @@ sampling = 2000 # higher sampling if information is limited
 ## `[lightdock]` module
 
 <hr>
-
-## `[gdock]` module
-
-<hr>
-

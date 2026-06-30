@@ -45,7 +45,7 @@ This is used to set default parameters when they are not specified in the config
 
 The `defaults.yaml` file is not only used to check if the parameter name exists at execution time, but also as reference to know if the configuration file provided by the use respects the allowed value for a given parameter.
 
-*Note for **advanced** users*: If you feel that the parameter range is not suited for your research, you can always tune the defaults values or the maximum values that can be adopted by this parameter, by editing the `defaults.yaml` file inside the module directory (at your own risk).
+_Note for **advanced** users_: If you feel that the parameter range is not suited for your research, you can always tune the defaults values or the maximum values that can be adopted by this parameter, by editing the `defaults.yaml` file inside the module directory (at your own risk).
 
 ## Set of available modules
 
@@ -56,12 +56,11 @@ You can also use the `haddock3-cfg` command line to get information on each modu
 ### Topology modules
 
 - [`[topoaa]`](./modules/topology.md#topoaa-module): Builds missing atoms and generates the all-atom topologies for the CNS engine.
-- [`[topocg]`](./modules/topology.md#topology-modules): *coming soon*
+- [`[topocg]`](./modules/topology.md#topology-modules): _coming soon_
 
 ### Sampling modules
 
 - [`[rigidbody]`](./modules/sampling.md#rigidbody-module): Rigid body energy minimization with CNS (previously known as `it0` in HADDOCK2.X series).
-- [`[gdock]`](./modules/sampling.md#gdock-module): Third-party genetic algorithm-based docking software.
 - [`[lightdock]`](./modules/sampling.md#lightdock-module): Third-party Glow-worm Swarm Optimisation (GSO) docking software.
 
 ### Refinement modules

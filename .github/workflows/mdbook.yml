@@ -3,6 +3,8 @@ name: deploy book
 on:
   push:
     branches: [main]
+    paths:
+      - "*.md"
   workflow_dispatch: ~
 
 permissions:

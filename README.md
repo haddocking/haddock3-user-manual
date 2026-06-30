@@ -1,40 +1,41 @@
-# Haddock3 user manual
+# HADDOCK3 User Manual
 
 [![build](https://github.com/haddocking/haddock3-user-manual/actions/workflows/build.yml/badge.svg)](https://github.com/haddocking/haddock3-user-manual/actions/workflows/build.yml)
 [![deploy book](https://github.com/haddocking/haddock3-user-manual/actions/workflows/mdbook.yml/badge.svg)](https://github.com/haddocking/haddock3-user-manual/actions/workflows/mdbook.yml)
 [![links](https://github.com/haddocking/haddock3-user-manual/actions/workflows/link-checker.yml/badge.svg)](https://github.com/haddocking/haddock3-user-manual/actions/workflows/link-checker.yml)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/ec845bd05cbc4e499df24e70ebe6c6d9)](https://app.codacy.com/gh/haddocking/haddock3-user-manual/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
-This repository holds the MarkDown files and assets used to compile the Haddock3 user manual !
+This repository contains the source files for the HADDOCK3 user manual, built with [mdbook](https://rust-lang.github.io/mdBook/).
 
-Thanks to github actions, this book is compiled on pull request and directly published online, accessible at: [https://www.bonvinlab.org/haddock3-user-manual](https://www.bonvinlab.org/haddock3-user-manual)
+**📖 Read the manual online:** [https://www.bonvinlab.org/haddock3-user-manual](https://www.bonvinlab.org/haddock3-user-manual)
 
-## Contribute to the book
+## Building Locally
 
-The book source code is located in `src/`.
-From here, consider only relative paths for things to be functional.
+To build and preview the manual locally:
 
-## Structure of the book
+1. Install mdbook following the [installation guide](https://rust-lang.github.io/mdBook/index.html)
+2. Run from the repository root:
+   ```bash
+   mdbook build .
+   ```
+3. Open `doc/index.html` in your browser
 
-Three major files/directory are used here:
+## Repository Structure
 
-- `book.toml`: File containing data such as name of the book, list of authors and where to find the source code. This file must be named `book.toml` for `mdbook` to work with default arguments.
-- `src/`: Hold all the pages / subdirectories of the book content.
-- `src/SUMMARY.md`: The table of content of the book. It is used to create the TOC and define the order in which files will be added.
-- `theme/`: Holds extra files such as icons, spcific css files and other allowing to fine tune the appearance of the final book.
+- `book.toml` - Book configuration (title, authors, output settings)
+- `src/` - Markdown content and assets
+- `src/SUMMARY.md` - Table of contents
+- `theme/` - Custom styling and assets
 
-# Compile the book
+## Contributing
 
-This manual is ment to be compiled by `mdbook`.
+Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to contribute to this manual.
 
-To generate it, mdbook must be installed (see [how to install mdbook](https://rust-lang.github.io/mdBook/index.html)).
+## Automated Workflows
 
-Then run the following command, from the root directory:
-
-```bash
-mdbook build .
-```
-
-Once built, the book index can be found at `doc/index.html`
+GitHub Actions automatically:
+- Build and validate the book on pull requests
+- Deploy to GitHub Pages on merge to main
+- Check for broken links
 
 
