@@ -94,7 +94,6 @@ The most important parameters for the ``[caprieval]`` module are:
 - `receptor_chain`: the chain to be considered as the receptor (default: A)
 - `ligand_chains`: the chains to be considered as the ligands (default: all but the receptor chain)
 - `keep_hetatm`: when set to `true`, this parameter allows to keep HETATM from the input reference file. Otherwise they are removed.
-- `alig_fname`: if the automatic alignment fails (extremely rare for proteins, occasionally possible for nucleic acids), you can provide a custom izone alignment file. Use the HADDOCK output file `blosum62.izone` (found in any `caprieval` folder) as an example. The 1st column corresponds to the model chain-residue pairs, the 2ns to the reference.
 
 More information about `[caprieval]` parameters can be accessed [here](https://bonvinlab.org/haddock3/modules/analysis/haddock.modules.analysis.caprieval.html#default-parameters) or retrieved by running
 ```bash
