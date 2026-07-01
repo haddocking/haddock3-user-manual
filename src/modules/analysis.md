@@ -5,7 +5,8 @@
 - [`[clustfcc]` module](#clustfcc-module)
 - [`[clustrmsd]` module](#clustrmsd-module)
 - [`[contactmap]` module](#contactmap-module)
-- [`[filter]` module](#filter-module) 
+- [`[filter]` module](#filter-module)
+- [`[caprifilter]` module](#caprifilter-module) 
 - [`[ilrmsdmatrix]` module](#ilrmsdmatrix-module)
 - [`[rmsdmatrix]` module](#rmsdmatrix-module)
 - [`[seletop]` module](#seletop-module)
@@ -218,6 +219,44 @@ next module, the workflow will stop with an error message.
 The most important parameters for the `[filter]` module is:
 
 - `threshold`: The score threshold value above which models will be filtered out. Models with score equal or lower than the threshold value will be forwarded to the next module. (default: 0.0).
+
+<hr>
+
+## `[caprifilter]` module
+
+Filter models based on any combination of CAPRI metrics, calculated with respect to the reference structure. 
+
+This module calculates docking quality metrics (RMSD, iRMSD, lRMSD,
+ilRMSD, Fnat and DockQ) for each input model using provided by user structure as
+a reference, then discards models that do not meet the specified thresholds.
+All active filters are applied simultaneously, i.e. a model must pass every one
+of them to be kept (AND logic). By default, models are filered using RMDS with threshold of 10A. 
+
+If no models survive filtering, the workflow will stop with an error message.
+
+If models were clustered before using `[caprifilter]`, cluster information 
+is stripped away. 
+
+The following files will appear in the module's folder among the others: 
+* caprifilter.tsv, the primary results table that lists every model that survived filtering with its score and the metrics that were used for filtering. 
+* caprifilter_ss.tsv, a caprieval-style ranked table covering ALL input models regardless of filter outcome. 
+
+#### Notable parameters
+
+* `reference_fname`: Path to the reference PDB structure - mandatory! 
+* `filter_by`: List of metrics to filter on. Valid values: `rmsd`, `irmsd`,
+  `lrmsd`, `ilrmsd`, `fnat`, `dockq`. (default: `["rmsd"]`).
+* `{metric}_filter_cutoff`: Threshold value for the corresponding metric,
+  e.g. `rmsd_filter_cutoff` (default: `10.0` Å), `fnat_filter_cutoff`
+  (default: `0.3`), `dockq_filter_cutoff` (default: `0.23`).
+* `{metric}_filter_out`: Direction of filtering — `above` removes models
+  exceeding the cutoff (used for RMSD-type metrics), `below` removes models
+  falling under the cutoff (used for Fnat/DockQ). Defaults match convention.
+* `caprifilter_full`: Set to `true` to write `caprifilter_all_models.tsv`
+  containing every model with a `kept`/`filtered` status column (default:
+  `false`).
+
+One use case for this module is within the scoring pipeline, namely, removing AI-generated models that violate known structural pattern for a given type of a molecule. For example, when modelling antibody-antigen complexes, AI methods occasionally place the antigen between the heavy and light chains of the Fv domain, effectively breaking the antibody structure. By providing a reference antibody model and filtering on RMSD, such structurally invalid poses can be discarded automatically.
 
 <hr>
 
