@@ -18,7 +18,7 @@ Therefore this is the reason why the module `[topoaa]` is often used as first mo
 
 Note that for non-standard bio-molecules (apart from standard amino-acids, some modified ones, DNA, RNA, ions and carbohydrates ... see [detailed list of supported molecules](https://wenmr.science.uu.nl/haddock2.4/library)), such as small-molecules, parameters and topology must be obtained and provided by the user, as there is currently no built-in solution to generate them on the fly.
 
-More information about `[topoaa]` parameters can be accessed [here](https://bonvinlab.org/haddock3/modules/topology/haddock.modules.topology.topoaa.html#default-parameters) or retrieved by running:
+More information about `[topoaa]` parameters can be accessed [here](https://bonvinlab.org/haddock3/src/modules/topology/haddock.modules.topology.topoaa.html#default-parameters) or retrieved by running:
 
 ```bash
 haddock3-cfg -m topoaa
@@ -101,7 +101,7 @@ The topologies built are necessary for the subsequent sampling and refinement mo
 
 **Note** that currently, apart from standard amino-acids, DNA, RNA,  **the module does not support non-standard biomolecules**, such as small-molecules and carbohydrates. Those are ignored in CG mode, but will re-appear if present in the initial AA structure after the back-mapping stage (`[cgtoaa]` module) (provided parameters and topologies for the ligand have been provided or automatically generated).
 
-More information about `[topocg]` parameters can be accessed [here](https://bonvinlab.org/haddock3/modules/topology/haddock.modules.topology.topocg.html#default-parameters) or retrieved by running:
+More information about `[topocg]` parameters can be accessed [here](https://bonvinlab.org/haddock3/src/modules/topology/haddock.modules.topology.topocg.html#default-parameters) or retrieved by running:
 
 ```bash
 haddock3-cfg -m topocg

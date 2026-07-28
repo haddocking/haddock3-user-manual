@@ -48,7 +48,7 @@ Also, two optional arguments can be used:
 
 Another very interesting CLI is `haddock3-cfg`.
 This CLI allows you to list the parameter names, their description, and default values for each available module.
-Used without any option, the command `haddock3-cfg` will return all [Global parameters](/software/haddock3/manual/global_parameters).
+Used without any option, the command `haddock3-cfg` will return all [Global parameters](global_parameters.md).
 
 To access the list of parameters for a given module, you should use the optional argument `-m <module_name>`.
 As an example, to list available parameters for the module `seletopclusts`, you should run the following command:
@@ -57,7 +57,7 @@ As an example, to list available parameters for the module `seletopclusts`, you 
 haddock3-cfg -m seletopclusts
 ```
 
-Please note that all the parameters for each module are also available in the [online documentation](https://www.bonvinlab.org/haddock3/modules/index.html).
+Please note that all the parameters for each module are also available in the [online documentation](https://www.bonvinlab.org/haddock3/pages/modules/index.html).
 
 <hr>
 
