@@ -27,7 +27,7 @@ The most important parameters for the `[emscoring]` module are:
 - `per_interface_scoring`: output per interface scores in the PDB header (default: False)
 
 
-More information about `[emscoring]` parameters can be accessed [here](https://bonvinlab.org/haddock3/modules/scoring/haddock.modules.scoring.emscoring.html#default-parameters) or retrieved by running:
+More information about `[emscoring]` parameters can be accessed [here](https://bonvinlab.org/haddock3/src/modules/scoring/haddock.modules.scoring.emscoring.html#default-parameters) or retrieved by running:
 
 ```bash
 haddock3-cfg -m emscoring
@@ -56,7 +56,7 @@ The most important parameters for the `[mdscoring]` module are:
 - `watersteps`: number of MD steps at 300K
 - `watercoolsteps` : number of MD steps for cooling down the system
 
-More information about `[mdscoring]` parameters can be accessed [here](https://bonvinlab.org/haddock3/modules/scoring/haddock.modules.scoring.mdscoring.html#default-parameters) or retrieved by running:
+More information about `[mdscoring]` parameters can be accessed [here](https://bonvinlab.org/haddock3/src/modules/scoring/haddock.modules.scoring.mdscoring.html#default-parameters) or retrieved by running:
 
 ```bash
 haddock3-cfg -m mdscoring
@@ -98,7 +98,7 @@ The most important parameters for the `[prodigyprotein]` module are:
 - `to_pkd`: Converts predicted binding affinity values to pKd values.
 
 
-More information about `[prodigyprotein]` parameters can be accessed [here](https://bonvinlab.org/haddock3/modules/scoring/haddock.modules.scoring.prodigyprotein.html#default-parameters) or retrieved by running:
+More information about `[prodigyprotein]` parameters can be accessed [here](https://bonvinlab.org/haddock3/src/modules/scoring/haddock.modules.scoring.prodigyprotein.html#default-parameters) or retrieved by running:
 
 ```bash
 haddock3-cfg -m prodigyprotein
@@ -129,7 +129,7 @@ The most important parameters for the `[prodigyligand]` module are:
 - `to_pkd`: Converts predicted binding affinity values to pKd values.
 
 
-More information about `[prodigyligand]` parameters can be accessed [here](https://bonvinlab.org/haddock3/modules/scoring/haddock.modules.scoring.prodigyligand.html#default-parameters) or retrieved by running:
+More information about `[prodigyligand]` parameters can be accessed [here](https://bonvinlab.org/haddock3/src/modules/scoring/haddock.modules.scoring.prodigyligand.html#default-parameters) or retrieved by running:
 
 ```bash
 haddock3-cfg -m prodigyligand

@@ -35,7 +35,7 @@ The most important parameters for the ``[alascan]`` module are:
 - `resdic_`: list of residues to be mutated (by default all the interface residues). For example, to mutate only residues 2 and 3 of chain A, add resdic_A = [2,3]
 - `plot`: plot scanning data (default: False)
 
-More information about ``[alascan]`` parameters can be accessed [here](https://bonvinlab.org/haddock3/modules/analysis/haddock.modules.analysis.alascan.html#default-parameters) or retrieved by running
+More information about ``[alascan]`` parameters can be accessed [here](https://bonvinlab.org/haddock3/src/modules/analysis/haddock.modules.analysis.alascan.html#default-parameters) or retrieved by running
 ```bash
 haddock3-cfg -m alascan
 ```
@@ -95,7 +95,7 @@ The most important parameters for the ``[caprieval]`` module are:
 - `ligand_chains`: the chains to be considered as the ligands (default: all but the receptor chain)
 - `keep_hetatm`: when set to `true`, this parameter allows to keep HETATM from the input reference file. Otherwise they are removed.
 
-More information about `[caprieval]` parameters can be accessed [here](https://bonvinlab.org/haddock3/modules/analysis/haddock.modules.analysis.caprieval.html#default-parameters) or retrieved by running
+More information about `[caprieval]` parameters can be accessed [here](https://bonvinlab.org/haddock3/src/modules/analysis/haddock.modules.analysis.caprieval.html#default-parameters) or retrieved by running
 ```bash
 haddock3-cfg -m caprieval
 ```
@@ -287,7 +287,7 @@ The most important parameters for the ``[ilrmsdmatrix]`` module are:
 - `receptor_chain`: the chain to be considered as the receptor (default: A)
 - `ligand_chains`: the chains to be considered as the ligands (default: all but the receptor chain)
 
-More information about ``[ilrmsdmatrix]`` parameters can be accessed [here](https://bonvinlab.org/haddock3/modules/analysis/haddock.modules.analysis.ilrmsdmatrix.html#default-parameters) or retrieved by running
+More information about ``[ilrmsdmatrix]`` parameters can be accessed [here](https://bonvinlab.org/haddock3/src/modules/analysis/haddock.modules.analysis.ilrmsdmatrix.html#default-parameters) or retrieved by running
 ```bash
 haddock3-cfg -m ilrmsdmatrix
 ```
@@ -340,7 +340,7 @@ resdic_B = [2,3,4]
 thus telling the module to consider residues from 1 to 4 of chain A and from 2
 to 4 of chain B for the alignment and RMSD calculation.
 
-More information about ``[rmsdmatrix]`` parameters can be accessed [here](https://bonvinlab.org/haddock3/modules/analysis/haddock.modules.analysis.rmsdmatrix.html#default-parameters) or retrieved by running
+More information about ``[rmsdmatrix]`` parameters can be accessed [here](https://bonvinlab.org/haddock3/src/modules/analysis/haddock.modules.analysis.rmsdmatrix.html#default-parameters) or retrieved by running
 ```bash
 haddock3-cfg -m rmsdmatrix
 ```

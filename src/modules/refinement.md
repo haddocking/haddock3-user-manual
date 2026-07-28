@@ -30,7 +30,7 @@ The most important parameters for the `[emref]` module are:
 - `randremoval`: whether or not to activate the random removal of restraints (default: True)
 - `nemsteps`: number of energy minimization steps (default: 200) 
 
-More information about the `[emref]` parameters is available [here](https://bonvinlab.org/haddock3/modules/refinement/haddock.modules.refinement.emref.html#default-parameters) or retrieved by running:
+More information about the `[emref]` parameters is available [here](https://bonvinlab.org/haddock3/src/modules/refinement/haddock.modules.refinement.emref.html#default-parameters) or retrieved by running:
 
 ```bash
 haddock3-cfg -m emref
@@ -89,7 +89,7 @@ The most important parameters for the `[flexref]` module are:
 - `seg_*_X_Y`: for the definition of semi-flexible segments (see [flexibility section](../flexibility.md#custom-definition-of-semi-flexible-segments) for more information)
 - `fle_*_Y`: for the definition of fully flexible segments (see [flexibility section](../flexibility.md#manual-definition-of-fully-flexible-segments) for more information)
 
-More information about the `[flexref]` parameters is available [here](https://bonvinlab.org/haddock3/modules/refinement/haddock.modules.refinement.flexref.html#default-parameters) or retrieved by running:
+More information about the `[flexref]` parameters is available [here](https://bonvinlab.org/haddock3/src/modules/refinement/haddock.modules.refinement.flexref.html#default-parameters) or retrieved by running:
 
 ```bash
 haddock3-cfg -m flexref
@@ -148,7 +148,7 @@ The most important parameters for the `[mdref]` module are:
 
 - `watercoolsteps` : number of MD steps for cooling down the system (default: 500)
 
-More information about `[mdref]` parameters is available [here](https://bonvinlab.org/haddock3/modules/refinement/haddock.modules.refinement.mdref.html#default-parameters) or retrieved by running:
+More information about `[mdref]` parameters is available [here](https://bonvinlab.org/haddock3/src/modules/refinement/haddock.modules.refinement.mdref.html#default-parameters) or retrieved by running:
 
 ```bash
 haddock3-cfg -m mdref
@@ -173,7 +173,7 @@ This back-mapping protocol consists of three main steps:
 During all those steps, the CG model is kept rigid and fixed in space. Both AA and CG models co-exist, but don’t see each other except through the effect of the CG to AA distance restraints.
 At the end of the protocol, the CG model is deleted.
 
-More information about the `[cgtoaa]` parameters is available [here](https://bonvinlab.org/haddock3/modules/refinement/haddock.modules.refinement.cgtoaa.html#default-parameters) or retrieved by running:
+More information about the `[cgtoaa]` parameters is available [here](https://bonvinlab.org/haddock3/src/modules/refinement/haddock.modules.refinement.cgtoaa.html#default-parameters) or retrieved by running:
 
 ```bash
 haddock3-cfg -m cgtoaa
@@ -228,7 +228,7 @@ The most important parameters for the `[openmm]` module are:
 - `sampling_factor`: Number of simulation replicas for each input structure.
 
 
-More information about `[openmm]` parameters is available [here](https://bonvinlab.org/haddock3/modules/refinement/haddock.modules.refinement.openmm.html#default-parameters) or retrieved by running:
+More information about `[openmm]` parameters is available [here](https://bonvinlab.org/haddock3/src/modules/refinement/haddock.modules.refinement.openmm.html#default-parameters) or retrieved by running:
 
 ```bash
 haddock3-cfg -m openmm
