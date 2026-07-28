@@ -72,7 +72,7 @@ To input molecules, use the [global parameter](./global_parameters.md) `molecule
 A chain is defined by a letter in the 22<sup>nd</sup> position in the PDB file format.
 Within the same file, two chains must be separated by a `TER` statement.
 Do not worry if you have gaps (missing resiudes) in your chain, it will be automatically detected by HADDOCK.
-To make sure the structure do not fall appart during molecular dynamics steps, you can add [`body-restraints`](/software/haddock3/manual/restraints_cli.md#body-restraints) ensuring the constant distance originally observed in the input file.
+To make sure the structure do not fall appart during molecular dynamics steps, you can add [`body-restraints`](restraints_cli.md#restrain-bodies) ensuring the constant distance originally observed in the input file.
 
 ## Conformational ensemble
 
@@ -84,7 +84,7 @@ Note that if in your ensemble, we detect two types of `REMARK` statements when p
 
 ## Dealing with non-standard molecules
 
-If you wish to work with a molecule type that is not present in the [list of supported molecules](https://rascar.science.uu.nl/haddock2.4/library), do not worry, as you will still be able to use HADDOCK.
+If you wish to work with a molecule type that is not present in the [list of supported molecules](https://wenmr.science.uu.nl/haddock2.4/library), do not worry, as you will still be able to use HADDOCK.
 To properly function, HADDOCK requires to have access to the topology and parameters of a molecule to run the molecular dynamics protocols.
 The force field must therefore be updated by user-provided topology and parameter files.
 

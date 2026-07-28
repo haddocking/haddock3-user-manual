@@ -100,4 +100,4 @@ Haddock3 is a collaborative project, and researchers can contribute to it, incre
 Information on how to contribute and setup a proper development environment is available on the GitHub repository:
 
 - [**CONTRIBUTING.md**](https://github.com/haddocking/haddock3/blob/main/CONTRIBUTING.md), contains information on how to contribute.
-- [**DEVELOPMENT.md**](https://github.com/haddocking/haddock3/blob/main/DEVELOPMENT.md), contains information on how to set up an adequate development environment.
+- [**DEVELOPMENT.md**](https://github.com/haddocking/haddock3/blob/main/docs/pages/DEVELOPMENT.md), contains information on how to set up an adequate development environment.
