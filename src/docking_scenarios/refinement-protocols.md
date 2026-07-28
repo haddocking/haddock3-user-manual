@@ -63,7 +63,7 @@ molecules = "model_1.pdb"
 [openmm]
 # Define the timesteps
 timestep_ps = 0.002  # default parameter
-# Increase the simulation timesteps (500000 * 0.002 = 10 ns)
+# Increase the simulation timesteps (5000000 * 0.002 ps = 10000 ps = 10 ns)
 simulation_timesteps = 5000000
 # Save 100 intermediate frames
 save_intermediate = 100

@@ -65,4 +65,4 @@ source .haddock3-env/bin/activate
 pip install -e '.[dev,docs]'
 ```
 
-A complete guide on how to setup an adequate development environment can be found here: [DEVELOPMENT.md](https://github.com/haddocking/haddock3/blob/main/DEVELOPMENT.md)
+A complete guide on how to setup an adequate development environment can be found here: [DEVELOPMENT.md](https://github.com/haddocking/haddock3/blob/main/docs/pages/DEVELOPMENT.md)

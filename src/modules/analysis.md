@@ -5,7 +5,8 @@
 - [`[clustfcc]` module](#clustfcc-module)
 - [`[clustrmsd]` module](#clustrmsd-module)
 - [`[contactmap]` module](#contactmap-module)
-- [`[filter]` module](#filter-module) 
+- [`[filter]` module](#filter-module)
+- [`[caprifilter]` module](#caprifilter-module) 
 - [`[ilrmsdmatrix]` module](#ilrmsdmatrix-module)
 - [`[rmsdmatrix]` module](#rmsdmatrix-module)
 - [`[seletop]` module](#seletop-module)
@@ -34,7 +35,7 @@ The most important parameters for the ``[alascan]`` module are:
 - `resdic_`: list of residues to be mutated (by default all the interface residues). For example, to mutate only residues 2 and 3 of chain A, add resdic_A = [2,3]
 - `plot`: plot scanning data (default: False)
 
-More information about ``[alascan]`` parameters can be accessed [here](https://bonvinlab.org/haddock3/modules/analysis/haddock.modules.analysis.alascan.html#default-parameters) or retrieved by running
+More information about ``[alascan]`` parameters can be accessed [here](https://bonvinlab.org/haddock3/src/modules/analysis/haddock.modules.analysis.alascan.html#default-parameters) or retrieved by running
 ```bash
 haddock3-cfg -m alascan
 ```
@@ -94,7 +95,7 @@ The most important parameters for the ``[caprieval]`` module are:
 - `ligand_chains`: the chains to be considered as the ligands (default: all but the receptor chain)
 - `keep_hetatm`: when set to `true`, this parameter allows to keep HETATM from the input reference file. Otherwise they are removed.
 
-More information about `[caprieval]` parameters can be accessed [here](https://bonvinlab.org/haddock3/modules/analysis/haddock.modules.analysis.caprieval.html#default-parameters) or retrieved by running
+More information about `[caprieval]` parameters can be accessed [here](https://bonvinlab.org/haddock3/src/modules/analysis/haddock.modules.analysis.caprieval.html#default-parameters) or retrieved by running
 ```bash
 haddock3-cfg -m caprieval
 ```
@@ -130,7 +131,7 @@ The most important parameters for the ``[clustfcc]`` module are:
 
 RMSD clustering module.
 
-This module takes in input the [RMSD](#rmsdmatrix-module) (or the [ILRMSD](#ilrmsdmatrix-module)) matrix calculated in the previous step and
+This module takes in input the [RMSD](#rmsdmatrix-module) (or the [ILRMSD](#ilrmsdmatrix-module)) matrix **calculated in the previous step** and
 performs a hierarchical clustering procedure on it, leveraging [scipy routines](https://docs.scipy.org/doc/scipy/reference/cluster.hierarchy.html) for this purpose.
 
 Essentially, the procedure amounts at lumping the input models in a
@@ -139,15 +140,21 @@ progressively coarser hierarchy of clusters, called the dendrogram.
 Typically, the module is run at the end of a protein-small molecule docking protocol to cluster the
 models and identify the best clusters. In these workflows, ``[clustrmsd]`` is more appropriate than ``[clustfcc]`` 
 as most models will share a consistent fraction of contacts, while still being structurally different.
-In [this paper](https://www.biorxiv.org/content/10.1101/2024.07.31.605986v1), we show that, in the context of protein-glycan docking, RMSD clustering performed after 
-``[rigidbody]`` docking increases the success rate. A detailed tutorial on this specific case is available [here](https://www.bonvinlab.org/education/HADDOCK3/HADDOCK3-protein-glycan/).
+In [this paper](https://pubs.acs.org/doi/10.1021/acs.jcim.4c01372)([BioRxiv](https://www.biorxiv.org/content/10.1101/2024.07.31.605986v1)),
+we show that, in the context of protein-glycan docking, RMSD clustering performed after ``[rigidbody]`` docking increases the success rate.
+A detailed tutorial on this specific case is available [here](https://www.bonvinlab.org/education/HADDOCK3/HADDOCK3-protein-glycan/).
 
-Example application of the ``[clustrmsd]`` module after rigid-body docking, retrieving 50 clusters:
+Example application of the ``[clustrmsd]`` module:
+- after performing rigid-body docking
+- compute the RMSD matrix, focusing on a particular set of residues from chains A and B
+- apply RMSD-based clustering to the matrix to obtain **50** clusters
+
+Here is the corresponding configuration file example that corresponds to the above sequence of modules:
 
 ```toml
 # ...
 [rigidbody]
-ambig_fname = ambiguous_restraints.tbl
+ambig_fname = "ambiguous_restraints.tbl"
 [rmsdmatrix]
 resdic_A = [1,2,3,4]
 resdic_B = [2,3,4,5]
@@ -215,6 +222,44 @@ The most important parameters for the `[filter]` module is:
 
 <hr>
 
+## `[caprifilter]` module
+
+Filter models based on any combination of CAPRI metrics, calculated with respect to the reference structure. 
+
+This module calculates docking quality metrics (RMSD, iRMSD, lRMSD,
+ilRMSD, Fnat and DockQ) for each input model using provided by user structure as
+a reference, then discards models that do not meet the specified thresholds.
+All active filters are applied simultaneously, i.e. a model must pass every one
+of them to be kept (AND logic). By default, models are filered using RMDS with threshold of 10A. 
+
+If no models survive filtering, the workflow will stop with an error message.
+
+If models were clustered before using `[caprifilter]`, cluster information 
+is stripped away. 
+
+The following files will appear in the module's folder among the others: 
+* caprifilter.tsv, the primary results table that lists every model that survived filtering with its score and the metrics that were used for filtering. 
+* caprifilter_ss.tsv, a caprieval-style ranked table covering ALL input models regardless of filter outcome. 
+
+#### Notable parameters
+
+* `reference_fname`: Path to the reference PDB structure - mandatory! 
+* `filter_by`: List of metrics to filter on. Valid values: `rmsd`, `irmsd`,
+  `lrmsd`, `ilrmsd`, `fnat`, `dockq`. (default: `["rmsd"]`).
+* `{metric}_filter_cutoff`: Threshold value for the corresponding metric,
+  e.g. `rmsd_filter_cutoff` (default: `10.0` Å), `fnat_filter_cutoff`
+  (default: `0.3`), `dockq_filter_cutoff` (default: `0.23`).
+* `{metric}_filter_out`: Direction of filtering — `above` removes models
+  exceeding the cutoff (used for RMSD-type metrics), `below` removes models
+  falling under the cutoff (used for Fnat/DockQ). Defaults match convention.
+* `caprifilter_full`: Set to `true` to write `caprifilter_all_models.tsv`
+  containing every model with a `kept`/`filtered` status column (default:
+  `false`).
+
+One use case for this module is within the scoring pipeline, namely, removing AI-generated models that violate known structural pattern for a given type of a molecule. For example, when modelling antibody-antigen complexes, AI methods occasionally place the antigen between the heavy and light chains of the Fv domain, effectively breaking the antibody structure. By providing a reference antibody model and filtering on RMSD, such structurally invalid poses can be discarded automatically.
+
+<hr>
+
 ## `[ilrmsdmatrix]` module
 
 Calculate the Interface Ligand Root Mean Square Deviation (ILRMSD) matrix.
@@ -225,9 +270,13 @@ the models generated in the previous step.
 As all the pairwise ilRMSD calculations are independent, the module distributes
 them over all the available cores in an optimal way.
 
-**IMPORTANT**: the module assumes coherent numbering for all the receptor and ligand
-chains, as no sequence alignment is performed. The user must ensure that the numbering
-is coherent.
+**IMPORTANT**:
+- the module assumes coherent numbering for all the receptor and ligand chains,
+as no sequence alignment is performed. The user must ensure that the numbering
+is coherent (same chains, same sequences and residue ids accross all models).
+- this module is **only** computing the interface-ligand-RMSD matrix, but does not
+perform any kind of clustering. To perform RMSD clustering, one should first run
+this module, then use the [`[clustrmsd]` module](#clustrmsd-module).
 
 #### Notable parameters
 
@@ -238,7 +287,7 @@ The most important parameters for the ``[ilrmsdmatrix]`` module are:
 - `receptor_chain`: the chain to be considered as the receptor (default: A)
 - `ligand_chains`: the chains to be considered as the ligands (default: all but the receptor chain)
 
-More information about ``[ilrmsdmatrix]`` parameters can be accessed [here](https://bonvinlab.org/haddock3/modules/analysis/haddock.modules.analysis.ilrmsdmatrix.html#default-parameters) or retrieved by running
+More information about ``[ilrmsdmatrix]`` parameters can be accessed [here](https://bonvinlab.org/haddock3/src/modules/analysis/haddock.modules.analysis.ilrmsdmatrix.html#default-parameters) or retrieved by running
 ```bash
 haddock3-cfg -m ilrmsdmatrix
 ```
@@ -267,11 +316,16 @@ generated in the previous step.
 As all the pairwise RMSD calculations are independent, the module distributes
 them over all the available cores in an optimal way.
 
-**IMPORTANT**: the module assumes coherent numbering for all the receptor and ligand
-chains, as no sequence alignment is performed. The user must ensure that the numbering
-is coherent.
+**IMPORTANT**:
+- the module assumes coherent numbering for all the receptor and ligand chains,
+as no sequence alignment is performed. The user must ensure that the numbering
+is coherent (same chains, same sequences and residue ids accross all models).
+- this module is **only** computing the RMSD matrix, but does not
+perform any kind of clustering. To perform RMSD clustering, one should first run
+this module, then use the [`[clustrmsd]` module](#clustrmsd-module).
 
 #### Notable parameters
+
 - `allatoms`: whether to use all the atoms for the ILRMSD calculation (default: False)
 - `resdic_` : an expandable parameter to specify which residues must be
  considered for the alignment and the RMSD calculation. If there are
@@ -286,7 +340,7 @@ resdic_B = [2,3,4]
 thus telling the module to consider residues from 1 to 4 of chain A and from 2
 to 4 of chain B for the alignment and RMSD calculation.
 
-More information about ``[rmsdmatrix]`` parameters can be accessed [here](https://bonvinlab.org/haddock3/modules/analysis/haddock.modules.analysis.rmsdmatrix.html#default-parameters) or retrieved by running
+More information about ``[rmsdmatrix]`` parameters can be accessed [here](https://bonvinlab.org/haddock3/src/modules/analysis/haddock.modules.analysis.rmsdmatrix.html#default-parameters) or retrieved by running
 ```bash
 haddock3-cfg -m rmsdmatrix
 ```

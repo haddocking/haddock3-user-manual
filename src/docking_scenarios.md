@@ -4,6 +4,8 @@ As creating a new workflow can be complex at the beginning, we are providing a s
 These examples are encompassing a wide range of applications, such as:
 
 - [Protein-protein docking](./docking_scenarios/prot-prot.md)
+- [Nucleosome-protein docking - coarse grained](./docking_scenarios/nucleosome-prot-cg.md)
+- [Shape-restrained protein-protein docking](./docking_scenarios/prot-prot-shape.md)
 - [Protein-peptide docking](./docking_scenarios/prot-peptide.md)
 - [Protein-DNA docking](./docking_scenarios/prot-DNA.md)
 - [Antibody-antigen docking](./docking_scenarios/antibody-antigen.md)

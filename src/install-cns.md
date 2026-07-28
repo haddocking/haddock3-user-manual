@@ -15,7 +15,7 @@ For details refer to [the DISCLAIMER file](https://github.com/haddocking/haddock
 
 ### Compiling CNS on your own
 
-Please see the [up-to-date installation procedure of CNS here](https://github.com/haddocking/haddock3/blob/main/docs/CNS.md), where you will find specific guides and troubleshooting sections.
+Please see the [up-to-date installation procedure of CNS here](https://github.com/haddocking/haddock3/blob/main/docs/pages/CNS.md), where you will find specific guides and troubleshooting sections.
 
 Once compiled, you need to replace the executable located in the haddock package in virtual environnement (`haddock/bin/`).
 
