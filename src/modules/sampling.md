@@ -118,7 +118,7 @@ The most important parameters for the `[gdock]` module are:
 - `seed`: random seed, for reproducibility (default: 42)
 - `crossdock`: whether to dock all receptor x ligand combinations of the input ensembles (default: True)
 
-More information about `[gdock]` parameters can be accessed [here](https://www.bonvinlab.org/haddock3/modules/sampling/haddock.modules.sampling.gdock.html#default-parameters) or retrieved by running:
+More information about `[gdock]` parameters can be accessed [here](https://www.bonvinlab.org/haddock3/modules/src/sampling/haddock.modules.sampling.gdock.html#default-parameters) or retrieved by running:
 
 ```bash
 haddock3-cfg -m gdock
