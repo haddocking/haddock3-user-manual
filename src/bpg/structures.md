@@ -19,7 +19,7 @@ This section explains where to find or model input structures, how to edit them,
 In the best-case scenario, there is an experimental structure available.
 All crystallographic, NMR, or cryo-EM structures protein structures are deposited in **protein data banks**:
 
-* Worldwide Protein Data Bank [wwPDB](http://www.wwpdb.org)
+* Worldwide Protein Data Bank [wwPDB](https://www.wwpdb.org)
 
 * Protein Data Bank in Europe [PDBe](https://www.ebi.ac.uk/pdbe)
 
