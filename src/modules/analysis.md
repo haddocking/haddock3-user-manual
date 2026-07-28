@@ -8,6 +8,7 @@
 - [`[filter]` module](#filter-module) 
 - [`[ilrmsdmatrix]` module](#ilrmsdmatrix-module)
 - [`[rmsdmatrix]` module](#rmsdmatrix-module)
+- [`[rnascan]` module](#rnascan-module)
 - [`[seletop]` module](#seletop-module)
 - [`[seletopclusts]` module](#seletopclusts-module)
 
@@ -317,6 +318,48 @@ resdic_A = [1,2,3,4]
 resdic_B = [2,3,4]
 [clustrmsd]
 clust_cutoff = 3.0
+# ...
+```
+
+<hr>
+
+## `[rnascan]` module
+
+HADDOCK3 module for RNA base canning.
+
+This module is responsible for scanning all possible RNA mutations at the interface
+of the models generated in the previous step of the workflow. For each model, the module
+will mutate the interface residues and calculate the energy differences
+between the wild type and the various mutants (all possibilities are tested (A,C,G,U), 
+thus providing a measure of the impact of such mutation.
+
+If cluster information is available, the module will also calculate the
+average energy difference for each cluster of models.
+
+
+
+#### Notable parameters
+
+The most important parameters for the ``[rnsscan]`` module are:
+
+- `scan_residue`: the probe residue used for the scanning (A,C,G,U by default)
+- `resdic_`: list of residues to be mutated (by default all the interface residues). For example, to mutate only residues 2 and 3 of chain A, add resdic_A = [2,3]
+- `plot`: plot scanning data (default: False)
+
+More information about ``[rnascan]`` parameters can be accessed [here](https://bonvinlab.org/haddock3/modules/analysis/haddock.modules.analysis.rnascan.html#default-parameters) or retrieved by running
+```bash
+haddock3-cfg -m rnascan
+```
+
+Here is an example configuration file snapshot performing RNA scanning on all RNA interface residues detected using a 3.9Å distance cutoff.
+In this particular example all minimised, mutated models are saved (`output_mutants = true`).
+
+```toml
+# ...
+[rnascan]
+output_mutants = true
+plot=true
+int_cutoff = 3.9
 # ...
 ```
 

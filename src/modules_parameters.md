@@ -84,6 +84,7 @@ You can also use the `haddock3-cfg` command line to get information on each modu
   - [`[alascan]`](./modules/analysis.md#alascan-module): Performs alanine (or other residue) scanning on the models generated in the previous step.
   - [`[caprieval]`](./modules/analysis.md#caprieval-module): Calculates CAPRI metrics (i-RMDS, l-RMSD, Fnat, DockQ, RMSD) with respect to the top scoring model or reference structure if provided.
   - [`[contactmap]`](./modules/analysis.md#contactmap-module): Calculates the contact maps for the models generated in the previous step.
+  - [`[rnascan]`](./modules/analysis.md#rnascan-module): Performs RNA nucleotides scanning on the models generated in the previous step.
 - Clustering:
   - [`[rmsdmatrix]`](./modules/analysis.md#rmsdmatrix-module): Calculates the pairwise RMSD matrix between all the models generated in the previous step.
   - [`[ilrmsdmatrix]`](./modules/analysis.md#ilrmsdmatrix-module): Calculates the pairwise interface-ligand-RMSD (iLRMSD) matrix between all the models generated in the previous step.
