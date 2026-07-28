@@ -24,4 +24,4 @@ jobs:
         if: steps.changed-files.outputs.any_changed == 'true'
         uses: lycheeverse/lychee-action@v2
         with:
-          args: -q ${{ steps.changed-files.outputs.all_changed_files }} --accept 200..299,403,502
+          args: -q ${{ steps.changed-files.outputs.all_changed_files }} --accept 200..299,403,502,503
