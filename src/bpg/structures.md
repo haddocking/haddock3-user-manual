@@ -73,7 +73,7 @@ To prevent this, try to energy minimize the structure and remove *spaghetti* aro
 #### Modelling of peptides and mutations in proteins
 
 * **Point-mutations in HADDOCK**
- are handled by changing the amino acid name and HADDOCK will fill the missing side chain atoms. This step is further described [here](/software/haddock2.4/faq/#what-about-point-mutations) and can be done using the *pdb_mutate.py* tool in [***haddock-tools***](https://github.com/haddocking/haddock-tools).
+ are handled by changing the amino acid name and HADDOCK will fill the missing side chain atoms. This step is further described [here](https://www.bonvinlab.org/software/haddock2.4/faq/#what-about-point-mutations) and can be done using the *pdb_mutate.py* tool in [***haddock-tools***](https://github.com/haddocking/haddock-tools).
  
 **Note** that *pdb_mutate.py* will not create the new side-chain atoms (this is handled by HADDOCK). But if you prefer to have control of the side-chain conformation rather use tools like [Pymol](https://pymol.org/2/) to introduce the mutation. This is even **recommended in the case of a mutation to Histidine** as the server can not automatically guess the protonation state if the side-chain is missing.
 
@@ -81,7 +81,7 @@ To prevent this, try to energy minimize the structure and remove *spaghetti* aro
     * Pymol offers a lot of handy plugins that extend its usability, for example, peptide-building ,some of them can be found here:  
         * [https://github.com/Pymol-Scripts/Pymol-script-repo](https://github.com/Pymol-Scripts/Pymol-script-repo)
     * Pymol offers an option to mutate residues and choose the side chain conformation manually. 
-    * Modelling of peptides using Pymol modeling scripts is described [here](/education/molmod/simulation/).  
+    * Modelling of peptides using Pymol modeling scripts is described [here](https://www.bonvinlab.org/education/molmod/simulation/).  
 
 * [Rosetta](https://www.rosettacommons.org/docs/latest/application_documentation/utilities/build-peptide)
     * Rosetta, as well as plenty of other online tools have now functionalities with which you can build peptides from their sequences.  
@@ -173,7 +173,7 @@ Tutorials:
 * [Preparation of coarse-grained pdb files](https://www.bonvinlab.org/software/haddock2.4/pdb-cg/)
     * HADDOCK can now handle large complexes containing up to 20 chains. An elegant way to increase the speed of these calculations is to use coarse graining with [Martini](http://cgmartini.nl).    
 
-* [Preparation of pdb files for the local version of HADDOCK2.4](/education/HADDOCK24/HADDOCK24-local-tutorial/#preparing-pdb-files-for-docking)
+* [Preparation of pdb files for the local version of HADDOCK2.4](https://www.bonvinlab.org/education/HADDOCK24/HADDOCK24-local-tutorial/#preparing-pdb-files-for-docking)
 
 * [Haddock tools](https://github.com/haddocking/haddock-tools) are a bunch of useful tools available on [Github](https://github.com/haddocking/haddock-tools for use with local version of HADDOCK) that can be used to modify pdb or restraint files.
 

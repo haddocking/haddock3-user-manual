@@ -61,7 +61,7 @@ The most important parameters for the `[rigidbody]` module are:
 - `cmrest`: whether or not to use center of mass restraints (default: False)
 - `sampling`: number of rigid body models to generate (default: 1000)
 
-More information about `[rigidbody]` parameters can be accessed [here](https://www.bonvinlab.org/haddock3/modules/sampling/haddock.modules.sampling.rigidbody.html#default-parameters) or retrieved by running:
+More information about `[rigidbody]` parameters can be accessed [here](https://www.bonvinlab.org/haddock3/src/modules/sampling/haddock.modules.sampling.rigidbody.html#default-parameters) or retrieved by running:
 
 ```bash
 haddock3-cfg -m rigidbody

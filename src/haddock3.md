@@ -22,7 +22,7 @@ However, there are no constraints on piping modules of different categories.
 
 The main module categories are _“topology”_, _“sampling”_, _“refinement”_, _“scoring”_, and _“analysis”_.
 There is no limit to how many modules can belong to a category. Modules are added as developed, and new categories will be created if/when needed.
-You can access the [HADDOCK3 documentation page](https://www.bonvinlab.org/haddock3/modules/index.html), or read the user manual for the [list of all categories and modules](./modules.md).
+You can access the [HADDOCK3 documentation page](https://www.bonvinlab.org/haddock3/pages/modules/index.html), or read the user manual for the [list of all categories and modules](./modules.md).
 
 <figure style="text-align: center;">
 <img width="95%" src="./images/HADDOCK3-workflow-scheme.png" alt="">
