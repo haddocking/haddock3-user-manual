@@ -11,6 +11,7 @@
   - [Obtaining HADDOCK](./download-haddock3.md)
   - [CNS](./install-cns.md)
   - [Using pre-installed containers](./docker-install.md)
+  - [Building & running with Apptainer/Singularity (HPC)](./usage-container.md)
 
 - [Command Line Interfaces](./clis.md)
 
