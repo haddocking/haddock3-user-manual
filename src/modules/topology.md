@@ -22,7 +22,7 @@ More information about `[topoaa]` parameters can be accessed [here](https://bonv
 haddock3-cfg -m topoaa
 ```
 
-HADDOCK supports a broad range of biomolecules and modified residues, [see Supported particles section](./supported_particles.md) for more details.
+HADDOCK supports a broad range of biomolecules and modified residues, [see Supported particles section](../supported_particles.md) for more details.
 For not supported molecules, HADDOCK will try to automatically generate the topology and parameters using PRODRG, if `autotoppar = true` is set in the `[topoaa]` module.
 Otherwise, you will have to provide the topology and parameters yourself, see [Dealing with non-standard molecules](#dealing-with-non-standard-molecules) section for more details.
 

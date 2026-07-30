@@ -6,7 +6,7 @@
 
 <p style='text-align: right; font-family: "PT Sans"; font-weight: 600;'> <font  size="6" color="RED" >Best practice guide</font></p>
 
-HADDOCK also supports the docking of several carbohydrates.sa A list of glycan residues supported by HADDOCK can be found [here](./supported_particles.md). 
+HADDOCK also supports the docking of several carbohydrates. A list of glycan residues supported by HADDOCK can be found [here](../supported_particles.md). 
 
 This page consists of the following chapters:
 
