@@ -6,7 +6,7 @@
 
 <p style='text-align: right; font-family: "PT Sans"; font-weight: 600;'> <font  size="6" color="RED" >Best practice guide</font></p>
 
-HADDOCK supports the docking of nucleic acids, including both DNA and RNA. Currently, only canonical nucleic acid bases are supported. They are listed [here](https://wenmr.science.uu.nl/haddock2.4/library).
+HADDOCK supports the docking of nucleic acids, including both DNA and RNA. Currently, only canonical nucleic acid bases are supported. They are listed [here](./supported_particles.md#supported-nucleic-acid-bases).
 
 <hr>
 
