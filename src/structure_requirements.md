@@ -86,7 +86,9 @@ Note that if in your ensemble, we detect two types of `REMARK` statements when p
 
 If you wish to work with a molecule type that is not present in the [supported particles list](./supported_particles.md), do not worry, as you will still be able to use HADDOCK.
 One way to do this is to use the `autotoppar` option in the `[topoaa]` module, which will try to automatically generate the topology and parameters using PRODRG.
-If this is not possible, you will have to provide the topology and parameters yourself.To properly function, HADDOCK requires to have access to the topology and parameters of a molecule to run the molecular dynamics protocols. The force field must therefore be updated by user-provided topology and parameter files.
+If this is not possible, you will have to provide the topology and parameters yourself. 
+To properly function, HADDOCK requires to have access to the topology and parameters of a molecule to run the molecular dynamics protocols. 
+The force field must therefore be updated by user-provided topology and parameter files.
 
 In modules that use CNS, you can provide such files with the `ligand_top_fname` (for ligand topology filename) and `ligand_param_fname` (for ligand parameters filename) parameters, specifying the location where to find those two files.
 

@@ -19,7 +19,7 @@ If your problem falls outside of the topics, please see the [Getting support / H
 
 ## What about missing atoms?
 
-Missing atoms will be automatically detected (if residues with these missing atoms is in the list of [supported particles](./supported_particles.md)) and re-generated when running the [`[topoaa]` module](./modules/topology.md#topoaa-module).
+Missing atoms will be automatically detected (if residues with these missing atoms are in the list of [supported particles](./supported_particles.md)) and re-generated when running the [`[topoaa]` module](./modules/topology.md#topoaa-module).
 For this reason, it is always used as the first module in a haddock3 workflow configuration file, not only to generate the topology of the input molecules but also to add and reconstruct missing atoms.
 
 <hr>
@@ -46,7 +46,7 @@ The extra/missing atoms will be automatically detected and the corrected topolog
 It is important to have at least the backbone atoms and at least the CB atom along the side-chain defined since their average position will be used as a starting point to "grow" the missing atoms.
 Always check that the sequence of the various PDB files matches!
 
-**Note** that this approach is only functional for residues supported in the [supported particles list](./supported_particles.md).
+**Note** that this approach is only functional for residues [supported](./supported_particles.md) by HADDOCK.
 
 <hr>
 
@@ -54,7 +54,7 @@ Always check that the sequence of the various PDB files matches!
 
 Some proteins contain ions such as for example calcium.
 Their inclusion might be important for docking purposes, in particular for proper electrostatics!
-In principle, they should be recognized when running the [`[topoaa]` module](./modules/topology.md#topoaa-module), provided their name in the PDB file matches the ion names in the list of [supported ions](./supported_particles.md#supported-ions)..
+In principle, they should be recognized when running the [`[topoaa]` module](./modules/topology.md#topoaa-module), provided their names in the PDB file matches the ion names in the list of [supported ions](./supported_particles.md#supported-ions).
 
 <hr>
 
@@ -298,7 +298,7 @@ This can come from multiple reasons:
 
 If `100.00% of output was not generated`, there is probably an issue with the input molecules:
 
-- unrecognized amino acids or missing parameters/topology for residues outside of the [supported particles list](./supported_particles.md).
+- unrecognized amino acids or missing parameters/topology for residues outside of the [supported particles list](./supported_particles.md)
 - huge sterical clash
 
 If the value is inferior to `100.00%`, it can come from either one of the input conformers or a random error from the molecular dynamic simulation.
