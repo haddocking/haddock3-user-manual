@@ -107,6 +107,8 @@ Each pose is scored with a physics-based energy function combining van der Waals
 
 On the Protein-Protein Docking Benchmark v5, `[gdock]` reaches a 95.9% success rate (DockQ ≥ 0.23) with typical runs completing in a matter of seconds. For a full description of the algorithm, scoring function, and benchmarks, see [gdock.org](https://gdock.org).
 
+`[gdock]` has a narrower scope than `[rigidbody]`: it only supports the 20 standard amino acids, and only two-body docking. Restraints are limited to plain ambiguous/unambiguous distance restraints; dihedral restraints, symmetry restraints, and other NMR-derived restraint types (RDCs, PCSs, etc.) supported by `[rigidbody]` are not available in `[gdock]`.
+
 ### Notable parameters
 
 The most important parameters for the `[gdock]` module are:
