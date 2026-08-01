@@ -371,7 +371,7 @@ of the models generated in the previous step of the workflow. For each model, th
 will mutate the interface residues and calculate the energy differences
 between the wild type and the various mutants (all possibilities are tested (A,C,G,U), 
 thus providing a measure of the impact of such mutation.
-
+User can adjust which residue(s) are scanned and which probe residue(s) are used - see details in "Notable parameter” below.
 If cluster information is available, the module will also calculate the
 average energy difference for each cluster of models.
 
