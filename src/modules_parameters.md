@@ -1,6 +1,6 @@
-# Modules in haddock3
+# Modules in HADDOCK3
 
-Haddock3 has this particularity (compared to the pervious HADDOCK2.X versions), that there is not a single static workflow to be processed, but rather a custom one requiring the user to design their own workflows by placing `[modules]` one after the other, enabling to generate a sequence of events to solve their research question.
+HADDOCK3 has this particularity (compared to the pervious HADDOCK2.X versions), that there is not a single static workflow to be processed, but rather a custom one requiring the user to design their own workflows by placing `[modules]` one after the other, enabling to generate a sequence of events to solve their research question.
 
 <figure align="center">
 <img src="./images/hd3_custom_workflow.png">
@@ -84,6 +84,7 @@ You can also use the `haddock3-cfg` command line to get information on each modu
   - [`[alascan]`](./modules/analysis.md#alascan-module): Performs alanine (or other residue) scanning on the models generated in the previous step.
   - [`[caprieval]`](./modules/analysis.md#caprieval-module): Calculates CAPRI metrics (i-RMDS, l-RMSD, Fnat, DockQ, RMSD) with respect to the top scoring model or reference structure if provided.
   - [`[contactmap]`](./modules/analysis.md#contactmap-module): Calculates the contact maps for the models generated in the previous step.
+  - [`[dnascan]`](./modules/analysis.md#dnascan-module): Performs DNA base pairs scanning on the models generated in the previous step.
   - [`[rnascan]`](./modules/analysis.md#rnascan-module): Performs RNA nucleotides scanning on the models generated in the previous step.
 - Clustering:
   - [`[rmsdmatrix]`](./modules/analysis.md#rmsdmatrix-module): Calculates the pairwise RMSD matrix between all the models generated in the previous step.
@@ -97,7 +98,7 @@ You can also use the `haddock3-cfg` command line to get information on each modu
 
 ## Developing a new module
 
-Haddock3 is a collaborative project, and researchers can contribute to it, increasing the scope and potential of the Haddock3 suite.
+HADDOCK3 is a collaborative project, and researchers can contribute to it, increasing the scope and potential of the Haddock3 suite.
 Information on how to contribute and setup a proper development environment is available on the GitHub repository:
 
 - [**CONTRIBUTING.md**](https://github.com/haddocking/haddock3/blob/main/CONTRIBUTING.md), contains information on how to contribute.
