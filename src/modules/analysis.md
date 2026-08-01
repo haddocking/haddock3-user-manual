@@ -379,7 +379,7 @@ average energy difference for each cluster of models.
 
 #### Notable parameters
 
-The most important parameters for the ``[rnsscan]`` module are:
+The most important parameters for the ``[rnascan]`` module are:
 
 - `scan_residue`: the probe residue used for the scanning (A,C,G,U by default)
 - `resdic_`: list of residues to be mutated (by default all the interface residues). For example, to mutate only residues 2 and 3 of chain A, add resdic_A = [2,3]
