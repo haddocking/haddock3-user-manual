@@ -391,7 +391,7 @@ haddock3-cfg -m rnascan
 ```
 
 Here is an example configuration file snapshot performing RNA scanning on all RNA interface residues detected using a 3.9Å distance cutoff.
-In this particular example all minimised, mutated models are saved (`output_mutants = true`).
+In this particular example, all mutated and minimised models are saved (`output_mutants = true`).
 
 ```toml
 # ...
