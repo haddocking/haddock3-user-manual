@@ -367,7 +367,7 @@ clust_cutoff = 3.0
 HADDOCK3 module for RNA base canning.
 
 This module is responsible for scanning all possible RNA mutations at the interface
-of the models generated in the previous step of the workflow. For each model, the module
+of the models generated in the previous step of the workflow. By default, for each model, the module
 will mutate the interface residues and calculate the energy differences
 between the wild type and the various mutants (all possibilities are tested (A,C,G,U), 
 thus providing a measure of the impact of such mutation.
