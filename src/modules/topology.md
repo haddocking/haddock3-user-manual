@@ -16,13 +16,15 @@ This module is a prerequisite to run any downstream modules using CNS.
 Having access to parameters and topology is mandatory for any kind of EM/MD related tasks.
 Therefore this is the reason why the module `[topoaa]` is often used as first module in a workflow.
 
-Note that for non-standard bio-molecules (apart from standard amino-acids, some modified ones, DNA, RNA, ions and carbohydrates ... see [detailed list of supported molecules](https://wenmr.science.uu.nl/haddock2.4/library)), such as small-molecules, parameters and topology must be obtained and provided by the user, as there is currently no built-in solution to generate them on the fly.
-
 More information about `[topoaa]` parameters can be accessed [here](https://bonvinlab.org/haddock3/src/modules/topology/haddock.modules.topology.topoaa.html#default-parameters) or retrieved by running:
 
 ```bash
 haddock3-cfg -m topoaa
 ```
+
+HADDOCK supports a broad range of biomolecules and modified residues, [see Supported particles section](../supported_particles.md) for more details.
+For not supported molecules, HADDOCK will try to automatically generate the topology and parameters using PRODRG, if `autotoppar = true` is set in the `[topoaa]` module.
+Otherwise, you will have to provide the topology and parameters yourself, see [Dealing with non-standard molecules](#dealing-with-non-standard-molecules) section for more details.
 
 Here an example configuration file snapshot of a typical execution of the
 `[topoaa]` module in which a user specifies the protonation state of the histidine
