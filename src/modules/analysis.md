@@ -262,7 +262,7 @@ The most important parameters for the ``[dnascan]`` module are:
 - `resdic_`: list of residues to be mutated (by default all the interface residues). For example, to mutate only residues 2 and 3 of chain A, add resdic_A = [2,3]
 - `plot`: plot scanning data (default: False)
 
-More information about ``[dnascan]`` parameters can be accessed [here](https://bonvinlab.org/haddock3/modules/analysis/haddock.modules.analysis.dnascan.html#default-parameters) or retrieved by running
+More information about ``[dnascan]`` parameters can be accessed [here](https://www.bonvinlab.org/haddock3/src/modules/analysis/haddock.modules.analysis.dnascan.html#default-parameters) or retrieved by running
 ```bash
 haddock3-cfg -m dnascan
 ```
@@ -430,7 +430,7 @@ The most important parameters for the ``[rnascan]`` module are:
 - `resdic_`: list of residues to be mutated (by default all the interface residues). For example, to mutate only residues 2 and 3 of chain A, add resdic_A = [2,3]
 - `plot`: plot scanning data (default: False)
 
-More information about ``[rnascan]`` parameters can be accessed [here](https://bonvinlab.org/haddock3/modules/analysis/haddock.modules.analysis.rnascan.html#default-parameters) or retrieved by running
+More information about ``[rnascan]`` parameters can be accessed [here](https://www.bonvinlab.org/haddock3/src/modules/analysis/haddock.modules.analysis.rnascan.html#default-parameters) or retrieved by running
 ```bash
 haddock3-cfg -m rnascan
 ```
