@@ -243,7 +243,8 @@ One use case for this module is within the scoring pipeline, namely, removing AI
 HADDOCK3 module for DNA base pair scanning.
 
 This module is responsible for scanning all possible DNA base pairs mutations at the interface
-of the models generated in the previous step of the workflow. For each model, the module
+of the models generated in the previous step of the workflow. The DNA should be defined as a single chain 
+and the interface is detected between the DNA and other molecules. For each model, the module
 will mutate the interface base pairs and calculate the energy differences
 between the wild type and the various mutants (all base pair possibilities are tested (DA-DA,DC-DG,DG-DC,DT-DA), 
 thus providing a measure of the impact of such mutation.
