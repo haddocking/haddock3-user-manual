@@ -408,7 +408,7 @@ clust_cutoff = 3.0
 
 ## `[rnascan]` module
 
-HADDOCK3 module for RNA base canning.
+HADDOCK3 module for RNA base scanning.
 
 This module is responsible for scanning all possible RNA mutations at the interface
 of the models generated in the previous step of the workflow. For each model, the module
