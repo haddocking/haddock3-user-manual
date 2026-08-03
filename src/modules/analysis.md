@@ -240,7 +240,7 @@ One use case for this module is within the scoring pipeline, namely, removing AI
 
 ## `[dnascan]` module
 
-HADDOCK3 module for DNA base pair canning.
+HADDOCK3 module for DNA base pair scanning.
 
 This module is responsible for scanning all possible DNA base pairs mutations at the interface
 of the models generated in the previous step of the workflow. For each model, the module
