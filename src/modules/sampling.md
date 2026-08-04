@@ -2,6 +2,7 @@
 
 - [`[rigidbody]` module](#rigidbody-module)
 - [`[lightdock]` module](#lightdock-module)
+- [`[gdock]` module](#gdock-module)
 
 ## `[rigidbody]` module
 
@@ -89,5 +90,58 @@ sampling = 2000 # higher sampling if information is limited
 <hr>
 
 ## `[lightdock]` module
+
+<hr>
+
+## `[gdock]` module
+
+The `[gdock]` module is a **third-party, genetic algorithm-based rigid-body docking engine**, an alternative to `[rigidbody]` for the initial sampling stage.
+It is written in Rust and exposed to HADDOCK3 through thin Python bindings (`gdock-py`), shipped as a required dependency, so no separate installation step is needed to use it.
+
+Like `[rigidbody]`, `[gdock]` treats the interacting partners as rigid bodies and accepts the same `ambig_fname` ambiguous interaction restraints (AIRs) file, converting it internally into residue-pair restraints (including support for the `OR` logic used in HADDOCK TBL files).
+It also handles ensembles the same way, respecting the `crossdock` setting to dock all receptor-ligand combinations or pair models by index.
+
+Internally, each candidate docking pose is encoded as a chromosome of 6 genes: 3 Euler rotation angles and 3 translation values placing the ligand relative to the receptor.
+A population of these poses is evolved over generations using tournament selection, uniform crossover, Gaussian ("creep") mutation for local refinement, and elitism, with early stopping once the population converges.
+Each pose is scored with a physics-based energy function combining van der Waals, electrostatics, desolvation, and a flat-bottom harmonic AIR restraint term modeled after HADDOCK's own ambiguous restraints.
+
+On the Protein-Protein Docking Benchmark v5, `[gdock]` reaches a 95.9% success rate (DockQ ≥ 0.23) with typical runs completing in a matter of seconds. For a full description of the algorithm, scoring function, and benchmarks, see [gdock.org](https://gdock.org).
+
+`[gdock]` has a narrower scope than `[rigidbody]`: it only supports the 20 standard amino acids, and only two-body docking. Restraints are limited to plain ambiguous/unambiguous distance restraints; dihedral restraints, symmetry restraints, and other NMR-derived restraint types (RDCs, PCSs, etc.) supported by `[rigidbody]` are not available in `[gdock]`.
+
+### Notable parameters
+
+The most important parameters for the `[gdock]` module are:
+
+- `ambig_fname`: file containing the ambiguous interaction restraints (AIRs), converted to residue pairs for `gdock`
+- `max_generations`: maximum number of genetic algorithm generations (default: 250)
+- `number_of_individuals`: genetic algorithm population size (default: 150)
+- `sampling`: maximum number of unique models collected per input pair, i.e. the Hall-of-Fame capacity (default: 1000)
+- `seed`: random seed, for reproducibility (default: 42)
+- `crossdock`: whether to dock all receptor x ligand combinations of the input ensembles (default: True)
+
+More information about `[gdock]` parameters can be accessed [here](https://www.bonvinlab.org/haddock3/src/modules/sampling/haddock.modules.sampling.gdock.html#default-parameters) or retrieved by running:
+
+```bash
+haddock3-cfg -m gdock
+```
+
+Here an example configuration file snapshot of a typical execution of the
+`[gdock]` module, used as a drop-in replacement for `[rigidbody]`:
+
+```toml
+# ...
+molecules = [
+ "e2aP_1F3G.pdb",
+ "hpr_ensemble.pdb"
+]
+
+[topoaa]
+[gdock]
+ambig_fname = "e2a-hpr_air.tbl"
+sampling = 1000
+[caprieval]
+# ...
+```
 
 <hr>
