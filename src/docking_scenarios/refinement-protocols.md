@@ -93,7 +93,7 @@ This protocol has been used during CAPRI round 55 for target 231, to validate th
 This example illustrates the refinement of a complex using an all atom to coarse grained representation and back scenario.
 In this case (workflow `refine-complex-CG-test.cfg`) the molecules are kept in their original positions, transformed to coarse-grained representation (`topocg` module) and then back to all atoms (`cgtoaa` module) with a sampling factor of 5 to generate various refined models (each model uses a different random seed). The resulting models are then energy minimised.
 
-**Note** the `emref` step after the `topocg` step which is required to generate the complex. If not present, the cgtoaa module will transform back to all atoms each molecule separately.
+**Note** the `emref` step after the `topocg` step which is required to generate the complex. If not present, the `cgtoaa` module will transform back to all atoms each molecule separately.
 
 
 Here is an example configuration file:
