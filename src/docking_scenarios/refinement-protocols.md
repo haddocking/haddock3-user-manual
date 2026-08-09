@@ -102,7 +102,7 @@ Here is an example configuration file:
 # Refinement of a complex example
 
 # directory in which the scoring will be done
-run_dir = "run1-CG-test"
+run_dir = "run1-CG-refinement"
 
 # execution mode
 mode = "local"
