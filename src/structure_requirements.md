@@ -1,9 +1,9 @@
 # Input files
 
 Over the years, HADDOCK was updated to increase the range of biomolecular entities to deal with.
-Currently, we support a broad range of molecular types, such as protein, DNA, RNA, glycans, cyclic-peptides and small-molecules.
-In addition, several modified residues/nucleotides are also available.
-For the full list of supported molecules, please refer to [https://wenmr.science.uu.nl/haddock2.4/library](https://wenmr.science.uu.nl/haddock2.4/library).
+Currently, we support a broad range of molecular types, such as protein, DNA, RNA, glycans, cyclic-peptides and small molecules.
+In addition, several modified amino acids are supported.
+For the full list of supported biomolecular entities, please refer to the [Supported particles section](./supported_particles.md).
 If you wish to work with a molecule type that is not present in this list, please refer to the [Dealing with non-standard molecules section](#dealing-with-non-standard-molecules).
 
 In the following sections, we will tackle the variety and specificity of each of the molecule types.
@@ -43,12 +43,12 @@ There are a few points to pay attention to when preparing the PDBs for HADDOCK.
  Its default behavior is to only keep the first (`A`) conformation, but you can select other conformations if wanted.
 
 * HADDOCK can deal with ions.
- You will have however to make sure that the ion naming is consistent with the ion [topologies provided in HADDOCK](https://wenmr.science.uu.nl/haddock2.4/library).
+ You will have however to make sure that the ion naming is consistent with the ion [topologies provided in HADDOCK](./supported_particles.md#supported-ions).
  For example, a CA heteroatom with a residue name CA will be interpreted as a neutral calcium atom.
  A doubly charged calcium ion should be named CA+2 with CA2 as residue name to be properly recognized by HADDOCK.
  (See also the [FAQ](./faq.md) for docking in the presence of ions).
 
-A list of [supported modified amino acids and ions is available online](https://wenmr.science.uu.nl/haddock2.4/library).
+A full list of supported ions can be found [here](./supported_particles.md#supported-ions).
 
 **Note:** Most of the tasks mentioned above can also be performed using our PDB-tools python scripts ([Rodrigues et al. *F1000 Research* (2018)](https://doi.org/10.12688/f1000research.17456.1)) to manipulate PDB files, select and rename chains and segids, renumber residues... and much more!
 It should be installed by default in your haddock3 environment.
@@ -84,8 +84,10 @@ Note that if in your ensemble, we detect two types of `REMARK` statements when p
 
 ## Dealing with non-standard molecules
 
-If you wish to work with a molecule type that is not present in the [list of supported molecules](https://wenmr.science.uu.nl/haddock2.4/library), do not worry, as you will still be able to use HADDOCK.
-To properly function, HADDOCK requires to have access to the topology and parameters of a molecule to run the molecular dynamics protocols.
+If you wish to work with a molecule type that is not present in the [supported particles list](./supported_particles.md), do not worry, as you will still be able to use HADDOCK.
+One way to do this is to use the `autotoppar` option in the `[topoaa]` module, which will try to automatically generate the topology and parameters using PRODRG.
+If this is not possible, you will have to provide the topology and parameters yourself. 
+To properly function, HADDOCK requires to have access to the topology and parameters of a molecule to run the molecular dynamics protocols. 
 The force field must therefore be updated by user-provided topology and parameter files.
 
 In modules that use CNS, you can provide such files with the `ligand_top_fname` (for ligand topology filename) and `ligand_param_fname` (for ligand parameters filename) parameters, specifying the location where to find those two files.

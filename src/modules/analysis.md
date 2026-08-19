@@ -5,10 +5,12 @@
 - [`[clustfcc]` module](#clustfcc-module)
 - [`[clustrmsd]` module](#clustrmsd-module)
 - [`[contactmap]` module](#contactmap-module)
+- [`[dnascan]` module](#dnascan-module)
 - [`[filter]` module](#filter-module)
 - [`[caprifilter]` module](#caprifilter-module) 
 - [`[ilrmsdmatrix]` module](#ilrmsdmatrix-module)
 - [`[rmsdmatrix]` module](#rmsdmatrix-module)
+- [`[rnascan]` module](#rnascan-module)
 - [`[seletop]` module](#seletop-module)
 - [`[seletopclusts]` module](#seletopclusts-module)
 
@@ -198,6 +200,87 @@ connecting with *chords* the two residues that are contacting.
 
 <hr>
 
+## `[caprifilter]` module
+
+Filter models based on any combination of CAPRI metrics, calculated with respect to the reference structure. 
+
+This module calculates docking quality metrics (RMSD, iRMSD, lRMSD,
+ilRMSD, Fnat and DockQ) for each input model using provided by user structure as
+a reference, then discards models that do not meet the specified thresholds.
+All active filters are applied simultaneously, i.e. a model must pass every one
+of them to be kept (AND logic). By default, models are filered using RMDS with threshold of 10A. 
+
+If no models survive filtering, the workflow will stop with an error message.
+
+If models were clustered before using `[caprifilter]`, cluster information 
+is stripped away. 
+
+The following files will appear in the module\'s folder among the others: 
+* caprifilter.tsv, the primary results table that lists every model that survived filtering with its score and the metrics that were used for filtering. 
+* caprifilter_ss.tsv, a caprieval-style ranked table covering ALL input models regardless of filter outcome. 
+
+#### Notable parameters
+
+* `reference_fname`: Path to the reference PDB structure - mandatory! 
+* `filter_by`: List of metrics to filter on. Valid values: `rmsd`, `irmsd`,
+  `lrmsd`, `ilrmsd`, `fnat`, `dockq`. (default: `["rmsd"]`).
+* `{metric}_filter_cutoff`: Threshold value for the corresponding metric,
+  e.g. `rmsd_filter_cutoff` (default: `10.0` Å), `fnat_filter_cutoff`
+  (default: `0.3`), `dockq_filter_cutoff` (default: `0.23`).
+* `{metric}_filter_out`: Direction of filtering — `above` removes models
+  exceeding the cutoff (used for RMSD-type metrics), `below` removes models
+  falling under the cutoff (used for Fnat/DockQ). Defaults match convention.
+* `caprifilter_full`: Set to `true` to write `caprifilter_all_models.tsv`
+  containing every model with a `kept`/`filtered` status column (default:
+  `false`).
+
+One use case for this module is within the scoring pipeline, namely, removing AI-generated models that violate known structural pattern for a given type of a molecule. For example, when modelling antibody-antigen complexes, AI methods occasionally place the antigen between the heavy and light chains of the Fv domain, effectively breaking the antibody structure. By providing a reference antibody model and filtering on RMSD, such structurally invalid poses can be discarded automatically.
+
+<hr>
+
+## `[dnascan]` module
+
+HADDOCK3 module for DNA base pair scanning.
+
+This module is responsible for scanning all possible DNA base pairs mutations at the interface
+of the models generated in the previous step of the workflow. The DNA is assumed to be double helix, defined as a single chain 
+and the interface is detected between the DNA and other molecules. For each model, the module
+will mutate the interface base pairs and calculate the energy differences
+between the wild type and the various mutants (all base pair possibilities are tested (DA-DA,DC-DG,DG-DC,DT-DA), 
+thus providing a measure of the impact of such mutation.
+
+If cluster information is available, the module will also calculate the
+average energy difference for each cluster of models.
+
+
+
+#### Notable parameters
+
+The most important parameters for the ``[dnascan]`` module are:
+
+- `scan_residue`: the probe residue used for the scanning (A,C,G,U by default)
+- `resdic_`: list of residues to be mutated (by default all the interface residues). For example, to mutate only residues 2 and 3 of chain A, add resdic_A = [2,3]
+- `plot`: plot scanning data (default: False)
+
+More information about ``[dnascan]`` parameters can be accessed [here](https://www.bonvinlab.org/haddock3/src/modules/analysis/haddock.modules.analysis.dnascan.html#default-parameters) or retrieved by running
+```bash
+haddock3-cfg -m dnascan
+```
+
+Here is an example configuration file snapshot performing RNA scanning on all RNA interface residues detected using a 3.9Å distance cutoff.
+In this particular example all minimised, mutated models are saved (`output_mutants = true`).
+
+```toml
+# ...
+[dnascan]
+output_mutants = true
+plot=true
+int_cutoff = 3.9
+# ...
+```
+
+<hr>
+
 ## `[filter]` module
 
 Filter models based on their score.
@@ -220,43 +303,6 @@ The most important parameters for the `[filter]` module is:
 
 - `threshold`: The score threshold value above which models will be filtered out. Models with score equal or lower than the threshold value will be forwarded to the next module. (default: 0.0).
 
-<hr>
-
-## `[caprifilter]` module
-
-Filter models based on any combination of CAPRI metrics, calculated with respect to the reference structure. 
-
-This module calculates docking quality metrics (RMSD, iRMSD, lRMSD,
-ilRMSD, Fnat and DockQ) for each input model using provided by user structure as
-a reference, then discards models that do not meet the specified thresholds.
-All active filters are applied simultaneously, i.e. a model must pass every one
-of them to be kept (AND logic). By default, models are filered using RMDS with threshold of 10A. 
-
-If no models survive filtering, the workflow will stop with an error message.
-
-If models were clustered before using `[caprifilter]`, cluster information 
-is stripped away. 
-
-The following files will appear in the module's folder among the others: 
-* caprifilter.tsv, the primary results table that lists every model that survived filtering with its score and the metrics that were used for filtering. 
-* caprifilter_ss.tsv, a caprieval-style ranked table covering ALL input models regardless of filter outcome. 
-
-#### Notable parameters
-
-* `reference_fname`: Path to the reference PDB structure - mandatory! 
-* `filter_by`: List of metrics to filter on. Valid values: `rmsd`, `irmsd`,
-  `lrmsd`, `ilrmsd`, `fnat`, `dockq`. (default: `["rmsd"]`).
-* `{metric}_filter_cutoff`: Threshold value for the corresponding metric,
-  e.g. `rmsd_filter_cutoff` (default: `10.0` Å), `fnat_filter_cutoff`
-  (default: `0.3`), `dockq_filter_cutoff` (default: `0.23`).
-* `{metric}_filter_out`: Direction of filtering — `above` removes models
-  exceeding the cutoff (used for RMSD-type metrics), `below` removes models
-  falling under the cutoff (used for Fnat/DockQ). Defaults match convention.
-* `caprifilter_full`: Set to `true` to write `caprifilter_all_models.tsv`
-  containing every model with a `kept`/`filtered` status column (default:
-  `false`).
-
-One use case for this module is within the scoring pipeline, namely, removing AI-generated models that violate known structural pattern for a given type of a molecule. For example, when modelling antibody-antigen complexes, AI methods occasionally place the antigen between the heavy and light chains of the Fv domain, effectively breaking the antibody structure. By providing a reference antibody model and filtering on RMSD, such structurally invalid poses can be discarded automatically.
 
 <hr>
 
@@ -356,6 +402,48 @@ resdic_A = [1,2,3,4]
 resdic_B = [2,3,4]
 [clustrmsd]
 clust_cutoff = 3.0
+# ...
+```
+
+<hr>
+
+## `[rnascan]` module
+
+HADDOCK3 module for RNA base scanning.
+
+This module is responsible for scanning all possible RNA mutations at the interface
+of the models generated in the previous step of the workflow. By default, for each model, the module
+will mutate the interface residues and calculate the energy differences
+between the wild type and the various mutants (all possibilities are tested (A,C,G,U), 
+thus providing a measure of the impact of such mutation.
+User can adjust which residue(s) are scanned and which probe residue(s) are used - see details in "Notable parameter” below.
+If cluster information is available, the module will also calculate the
+average energy difference for each cluster of models.
+
+
+
+#### Notable parameters
+
+The most important parameters for the ``[rnascan]`` module are:
+
+- `scan_residue`: the probe residue used for the scanning (A,C,G,U by default)
+- `resdic_`: list of residues to be mutated (by default all the interface residues). For example, to mutate only residues 2 and 3 of chain A, add resdic_A = [2,3]
+- `plot`: plot scanning data (default: False)
+
+More information about ``[rnascan]`` parameters can be accessed [here](https://bonvinlab.org/haddock3/src/modules/analysis/haddock.modules.analysis.rnascan.html#default-parameters) or retrieved by running:
+```bash
+haddock3-cfg -m rnascan
+```
+
+Here is an example configuration file snapshot performing RNA scanning on all RNA interface residues detected using a 3.9Å distance cutoff.
+In this particular example, all mutated and minimised models are saved (`output_mutants = true`).
+
+```toml
+# ...
+[rnascan]
+output_mutants = true
+plot=true
+int_cutoff = 3.9
 # ...
 ```
 

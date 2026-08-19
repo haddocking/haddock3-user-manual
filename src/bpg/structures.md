@@ -86,7 +86,7 @@ To prevent this, try to energy minimize the structure and remove *spaghetti* aro
 * [Rosetta](https://www.rosettacommons.org/docs/latest/application_documentation/utilities/build-peptide)
     * Rosetta, as well as plenty of other online tools have now functionalities with which you can build peptides from their sequences.  
 
-* A list of modified amino acids supported by HADDOCK can be found [here](https://wenmr.science.uu.nl/haddock2.4/library).
+* A list of modified amino acids supported by HADDOCK can be found [here](../supported_particles.md#supported-modified-amino-acids).
 
 
 #### Modeling of small molecules 
@@ -177,7 +177,7 @@ Tutorials:
 
 * [Haddock tools](https://github.com/haddocking/haddock-tools) are a bunch of useful tools available on [Github](https://github.com/haddocking/haddock-tools for use with local version of HADDOCK) that can be used to modify pdb or restraint files.
 
-* A list of modified amino acids and other molecule types supported by HADDOCK can be found [here](https://wenmr.science.uu.nl/haddock2.4/library).
+* A list of modified amino acids and other particle types supported by HADDOCK can be found [here](../supported_particles.md).
 
 
 <hr>
