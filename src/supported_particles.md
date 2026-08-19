@@ -1,7 +1,7 @@
 # List of supported particles
 Haddock3 supports (i.e., can process automatically including topology generation, rebuilding of the missing atoms, and point mutations) various carbohydrates, ions, co-factors and a plethora of the modified amino acids - you can check a complete list below.
 
-### Supported carbohydrates
+## Supported carbohydrates
 * A2G: 2-N-acetyl-alpha-D-glucopyranose, different stereochemistry at C4
 * ABE: alpha-D-Abequopyranose
 * BDP: beta-D-glucoronic acid
@@ -36,16 +36,16 @@ Carbohydrates should be provided with record **HETAM**, e.g.:
 HETATM    9  C1  NAG B 102     171.992  99.750 236.168  1.00 10.00           C
 ```
 
-### Supported ions
+## Supported ions
 | | | |
 | --- | --- | --- |
 | AG: Silver | AL: Aluminium | AU: Gold |
 | BR: Bromine | CA: Calcium | CD: Cadmium |
-| CL: Chlore | CO: Cobalt | CR: Chromium |
-| CS: Cesium | CU: Copper | F: Fluor |
+| CL: Chlorine | CO: Cobalt | CR: Chromium |
+| CS: Cesium | CU: Copper | F: Fluorine |
 | FE: Iron | HG: Mercury | HO: Holmium |
-| I: Iodine | IR: IridiumP | K: Potassium |
-| KR: Krypton | LI: Adenine | MG: Magnesium |
+| I: Iodine | IR: Iridium | K: Potassium |
+| KR: Krypton | LI: Lithium | MG: Magnesium |
 | MN: Manganese | MO: Molybdenum | NA: Sodium |
 | NI: Nickel | OS: Osmium | PB: Lead |
 | PT: Platinum | SR: Strontium | U: Uranium |

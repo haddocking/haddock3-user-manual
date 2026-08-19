@@ -18,6 +18,7 @@
 - [Preparing input files](./structure_requirements.md)
 
   - [Haddock3 requirements](./structure_requirements.md)
+  - [Supported particles](./supported_particles.md)
   - [Tools to manipulate structures](./pdbtools.md)
 
 - [Generating restraints for HADDOCK](./intro_restraints.md)
