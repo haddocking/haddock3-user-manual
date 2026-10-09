@@ -76,11 +76,11 @@ Notes:
 | --- | --- | --- |
 | AG: Silver | AL: Aluminium | AU: Gold |
 | BR: Bromine | CA: Calcium | CD: Cadmium |
-| CL: Chlore | CO: Cobalt | CR: Chromium |
-| CS: Cesium | CU: Copper | F: Fluor |
+| CL: Chlorine | CO: Cobalt | CR: Chromium |
+| CS: Cesium | CU: Copper | F: Fluorine |
 | FE: Iron | HG: Mercury | HO: Holmium |
-| I: Iodine | IR: IridiumP | K: Potassium |
-| KR: Krypton | LI: Adenine | MG: Magnesium |
+| I: Iodine | IR: Iridium | K: Potassium |
+| KR: Krypton | LI: Lithium | MG: Magnesium |
 | MN: Manganese | MO: Molybdenum | NA: Sodium |
 | NI: Nickel | OS: Osmium | PB: Lead |
 | PT: Platinum | SR: Strontium | U: Uranium |
