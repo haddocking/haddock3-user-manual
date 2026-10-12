@@ -5,7 +5,7 @@ In this scenario, it is important to adjust the values of the following paramete
 - keep the dielectric constant constant: `dielec = "cdie"`
 - set the dielectric constant to a higher value: `epsilon = 78`
 - remove the desolvation term from the scoring function (as otherwise this term exerts an excessively strong influence due to the presence of phosphate groups): `w_desolv = 0`.
-- automatically generate restraints allowing to keep the double-stranded DNA 3' and 5' ends together: `dnarest_on = true`.
+- automatically generate restraints keeping the DNA base pairs and conformation (see [DNA & RNA restraints](../automated_restraints.md#dna--rna-restraints)): `dnarest_on = true`.
 
 
 Here are some examples of configuration files specifically designed for protein-DNA docking:

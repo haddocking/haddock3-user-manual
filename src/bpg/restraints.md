@@ -84,7 +84,7 @@ Using ambiguous restraints for docking is described in several tutorials:
 
 - [Hydrogen bonds restraints](../intro_restraints.md#hydrogen-distance-restraints): Another type of restraint not subject to random removal (accessed using `hbond_fname` parameter).
 
-- [DNA/RNA restraints](../automated_restraints.md#dna--rna-restraints): Automatically generated base-pair restraints using the `dnarest = true` parameter.
+- [DNA/RNA restraints](../automated_restraints.md#dna--rna-restraints): Automatically generated base-pair (Watson-Crick and Hoogsteen) and conformational restraints using the `dnarest_on = true` parameter.
 
 HADDOCK can utilize plenty of experimental information.
 Here we describe other types of restraints supported by HADDOCK:
