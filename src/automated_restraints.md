@@ -178,7 +178,21 @@ Often, you will want to keep DNA / RNA base-pairing fixed during a simulation.
 Without any restraints, the pairing can fall apart when running semi-flexible refinements or molecular dynamics simulations.
 
 A dedicated parameter can be turned **on** to automatically discover base pairs and generate restraints between nucleotides to keep them together.
-For this, simply set the `dnarest_on` to true (`dnarest_on = true`) in the corresponding CNS modules (mainly `[flexref]` and `[mdref]`).
+For this, simply set the `dnarest_on` to true (`dnarest_on = true`) in the corresponding CNS modules (`[flexref]`, `[emref]`, `[mdref]` and `[mdscoring]`).
+
+The following restraints are then defined, based on the input structure:
+
+- planarity of each base;
+- sugar pucker and phosphate backbone dihedral angles;
+- hydrogen-bond distances of **Watson-Crick** base pairs (A-T/U and G-C);
+- hydrogen-bond distances of **Hoogsteen** base pairs (A-T/U and G-C+), which use the N7 edge of the purine, as found for example in triple helices or in drug-DNA complexes.
+
+Base pairs are recognised from their hydrogen-bond distances and from the distance between the C1' atoms of the two nucleotides, which differs between Watson-Crick and Hoogsteen pairs.
+This avoids restraining stacked or cross-strand neighbours that happen to be close.
+A purine can be paired both to a Watson-Crick and to a Hoogsteen partner, as in a base triple.
+
+Base-pair detection works for both all-atom and coarse-grained (Martini) models, the latter using the corresponding base beads.
+For coarse-grained models, only the base pairs and the planarity of purine bases are restrained, since the sugar and backbone atoms defining the dihedral angles are not present.
 
 _Note_ that while the parameter name only contains DNA in its name, it is also functional for RNA!
 
