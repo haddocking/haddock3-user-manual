@@ -225,7 +225,7 @@ molecules = ["ensemble-of-all-runs.pdb"]
 [caprieval]
 ```
 
-**Note** that scores can only be compared between runs using the same restraints, since the restraint energy is part of the HADDOCK score.
+**Note** that scores from individual runs can only be compared between runs using the same restraints, since the restraint energy is part of the HADDOCK score. No restraints are used when running a scoring scenario like the one above.
 
 <hr>
 
