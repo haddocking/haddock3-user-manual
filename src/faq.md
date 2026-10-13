@@ -284,7 +284,7 @@ See the [ab-initio docking](./abinitio_docking.md) section if you do not have in
 
 ## How can I make my runs faster?
 
-The computational cost of a run mostly depends on the number of models generated and refined. To reduce it:
+The computational cost of a run mostly depends on the number of models generated and refined and the number of restraints defined and their ambiguity level (the more ambiguous the more costly). To reduce it:
 
 - increase the number of cores used with the `ncores` parameter;
 - provide meaningful restraints, which allows to safely reduce the sampling in `[rigidbody]` (default: 1000 models);
