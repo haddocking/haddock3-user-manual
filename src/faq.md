@@ -3,14 +3,15 @@
 We collected here a list of frequently occurring problems and their solutions.
 The following topics are currently available:
 
-- [What about missing atoms or chain breaks?](#what-about-missing-atoms-or-chain-breaks)
+- [What about missing atoms?](#what-about-missing-atoms)
+- [What about chain breaks?](#what-about-chain-breaks)
 - [What about point mutations?](#what-about-point-mutations)
 - [What about ions?](#what-about-ions)
 - [Domain definition for docking](#domain-definition-for-docking)
 - [Clustering issues](#clustering-issues)
 - [Running HADDOCK on a cluster using a queuing system (e.g. Torque or Slurm)](#running-haddock-on-a-cluster-using-a-queuing-system-eg-torque-or-slurm)
 - [Small ligand docking with HADDOCK](#cofactors--small-ligand-docking-with-haddock)
-- [Usage of dummy atoms/beads with HADDOCK](#beads-dummy-atoms-docking-with-haddock)
+- [Usage of dummy atoms/beads with HADDOCK](#beads-dummy-atoms-docking-with-haddock3)
 - [Typical error messages](#typical-haddock3-error-messages)
 
 If your problem falls outside of the topics, please see the [Getting support / How to ask for help](./info.md) section.

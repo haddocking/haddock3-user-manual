@@ -88,8 +88,8 @@ The most important parameters for the `[flexref]` module are:
 
 - `ambig_fname`: file containing the ambiguous interaction restraints (AIRs, optional)
 - `unambig_fname`: file containing the unambiguous interaction restraints (optional)
-- `seg_*_X_Y`: for the definition of semi-flexible segments (see [flexibility section](../flexibility.md#custom-definition-of-semi-flexible-segments) for more information)
-- `fle_*_Y`: for the definition of fully flexible segments (see [flexibility section](../flexibility.md#manual-definition-of-fully-flexible-segments) for more information)
+- `seg_*_X_Y`: for the definition of semi-flexible segments (see [flexibility section](../flexibility.md#semi-flexible-segment) for more information)
+- `fle_*_Y`: for the definition of fully flexible segments (see [flexibility section](../flexibility.md#fully-flexible-segment) for more information)
 - `ssdihed` and `error_dih`: automatic definition of backbone dihedral angle restraints to maintain secondary structure elements (see [Backbone dihedral angle restraints](../automated_restraints.md#backbone-dihedral-angle-restraints))
 - `sampling_factor`: number of refinement replicas for each input model, each replica using a different random seed (default: 1)
 
