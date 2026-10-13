@@ -165,7 +165,7 @@ It's possible to dock small ligands or cofactor using haddock3, but for that top
 
 Several sources exist to find such files:
 
-- **ccp4-prodrg**: [`ccp4-prodrg`](https://www.ccp4.ac.uk/html/index.html).
+- **ccp4-prodrg**: [`ccp4-prodrg`](https://www.ccp4.ac.uk/).
 
 - the **PRODRG** server was maintained by Daan van Aalten at Dundee University.
   This server allows you to draw your molecule or paste coordinates and will return topologies and parameter files in various formats, including CNS.

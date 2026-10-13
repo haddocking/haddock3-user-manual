@@ -96,7 +96,7 @@ In modules that use CNS, you can provide such files with the `ligand_top_fname` 
 ### How to generate topology and parameters for my ligand
 
 Generating topology and parameters for your ligand is not trivial.
-For this, you will need to use dedicated tools, such as `acpype` or [`ccp4-prodrg`](https://www.ccp4.ac.uk/html/index.html), or dedicated libraries such as [`BioBB`](https://mmb.irbbarcelona.org/biobb/).
+For this, you will need to use dedicated tools, such as `acpype` or [`ccp4-prodrg`](https://www.ccp4.ac.uk/), or dedicated libraries such as [`BioBB`](https://mmb.irbbarcelona.org/biobb/).
 
 Here are some useful resources on how to generate those:
 

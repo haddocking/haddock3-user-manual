@@ -106,7 +106,7 @@ To prevent this, try to energy minimize the structure and remove *spaghetti* aro
 
 * to prepare topology and parameter files for the ligand in CNS format one can use:
 
-    * **ccp4-prodrg**: [`ccp4-prodrg`](https://www.ccp4.ac.uk/html/index.html)
+    * **ccp4-prodrg**: [`ccp4-prodrg`](https://www.ccp4.ac.uk/)
 
     * the **Automated Topology Builder (ATB)** and Repository developed in the group of Prof. Alan Mark at the University of Queensland in Brisbane: [https://atb.uq.edu.au/](https://atb.uq.edu.au/)
 
