@@ -14,7 +14,8 @@ HADDOCK3 has therefore developed to truthfully work like a puzzle of many pieces
 To this end, the “old” HADDOCK machinery has been modularized, and several new modules added, including third-party software additions.
 As a result, the modularization achieved in HADDOCK3 allows users to duplicate steps within one workflow (e.g., to repeat twice the it1 stage of the HADDOCK2.x rigid workflow).
 
-Note that, for simplification purposes, at this time, not all functionalities of HADDOCK2.x have been ported to HADDOCK3, which does not (yet) support NMR RDC, PCS and diffusion anisotropy restraints, cryo-EM restraints and coarse-graining.
+Note that, for simplification purposes, at this time, not all functionalities of HADDOCK2.x have been ported to HADDOCK3, which does not (yet) support NMR RDC, PCS and diffusion anisotropy restraints and cryo-EM restraints.
+Coarse-graining is supported with the MARTINI2 force field, through the [`[topocg]`](./modules/topology.md#topocg-module) and [`[cgtoaa]`](./modules/refinement.md#cgtoaa-module) modules (see the [coarse-grained nucleosome docking example](./docking_scenarios/nucleosome-prot-cg.md)).
 Any type of information that can be converted into ambiguous interaction restraints can, however, be used in HADDOCK3, which also supports the ab initio docking modes of HADDOCK.
 
 To keep HADDOCK3 modules organized, we cataloged them into several categories.
