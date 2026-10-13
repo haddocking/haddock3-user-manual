@@ -90,6 +90,7 @@ The `haddock3-score` is a CLI made for scoring a single complex.
 The topologies are created and a small energy minimization is performed on the complex before the evaluation of the haddock score components.
 It is dedicated to the scoring of it and only returns the computed haddock score and its components.
 It is a shortcut to a full configuration file that would contain the `topoaa` and `emscoring` modules.
+The topology generation is run with `autotoppar = true`, so that topologies and parameters for unknown ligands are automatically generated using PRODRG (see [Dealing with non-standard molecules](./structure_requirements.md#dealing-with-non-standard-molecules)).
 
 To use it, provide the path to the complex to be scored:
 
