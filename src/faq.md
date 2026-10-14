@@ -287,7 +287,7 @@ See the [ab-initio docking](./abinitio_docking.md) section if you do not have in
 The computational cost of a run mostly depends on the number of models generated and refined and the number of restraints defined and their ambiguity level (the more ambiguous the more costly). To reduce it:
 
 - increase the number of cores used with the `ncores` parameter;
-- provide meaningful restraints, which allows to safely reduce the sampling in `[rigidbody]` (default: 1000 models);
+- provide meaningful restraints, which allows to safely reduce the sampling in [`[rigidbody]`](./modules/sampling.md#rigidbody-module) (default: 1000 models);
 - reduce the number of models selected for refinement (`select` parameter in `[seletop]`, default: 200);
 - cluster the models (`[clustfcc]`) and refine only the best models of each cluster (`[seletopclusts]`);
 - in ab-initio docking, do not combine `cmrest` and `surfrest`, as this increases the computational time without benefit.
