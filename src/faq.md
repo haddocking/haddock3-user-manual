@@ -203,7 +203,7 @@ A few points to keep in mind:
 
 - the scoring modules expect each complex as **one** PDB file, containing all chains, and not one file per chain;
 - the models are energy minimised before the scoring. If a model contains severe clashes, the minimisation can fail and no score is reported (`None`);
-- the HADDOCK score covers all interfaces of the complex. Set `per_interface_scoring = true` in `[emscoring]` to also obtain the scores of each interface.
+- the HADDOCK score covers all interfaces of the complex. Set `per_interface_scoring = true` in `[emscoring]` to also obtain the HADDOCK score of each individual interface.
 
 More examples are available in the [scoring workflows](./docking_scenarios/scorings.md) section.
 
