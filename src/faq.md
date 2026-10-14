@@ -261,7 +261,7 @@ w_air = 1
 
 ## Using `[caprieval]` without a reference structure
 
-The `[caprieval]` module can be used without a reference structure: simply do not define `reference_fname`.
+The [`[caprieval]`](./modules/analysis.md#caprieval-module) module can be used without a reference structure: simply do not define `reference_fname`.
 In that case, the best scoring model of the previous step is used as reference.
 
 ```toml
