@@ -109,7 +109,7 @@ To do so:
 - merge them into a single chain, using [`pdb_chain`](./pdbtools.md#pdb_chain) and [`pdb_merge`](./pdbtools.md#pdb_merge), followed by [`pdb_tidy`](./pdbtools.md#pdb_tidy);
 - keep the chains together during the refinement by defining distance restraints between them, using the [`haddock3-restraints restrain_bodies`](./restraints_cli.md#restrain-bodies) subcommand, and provide them as unambiguous restraints (`unambig_fname`).
 
-Do not use `pdb_reres` on such a file if the total number of residues exceeds 9999, as PDB files cannot hold larger residue numbers.
+Do not use [`pdb_reres`](./pdbtools.md#pdb_reres) on such a file if the total number of residues exceeds 9999, as PDB files cannot hold larger residue numbers.
 The [antibody-antigen tutorial](https://www.bonvinlab.org/education/HADDOCK3/HADDOCK3-antibody-antigen/) illustrates this procedure step by step.
 
 <hr>
