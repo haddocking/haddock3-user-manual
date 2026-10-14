@@ -24,7 +24,7 @@ haddock3-cfg -m topoaa
 
 HADDOCK supports a broad range of biomolecules and modified residues, [see Supported particles section](../supported_particles.md) for more details.
 For not supported molecules, HADDOCK will try to automatically generate the topology and parameters using PRODRG, if `autotoppar = true` is set in the `[topoaa]` module.
-Only the unknown residues are passed to PRODRG, so this also works for ligands that are part of a larger system (e.g. a ligand bound to a protein, or lipids in a membrane). A ligand present in multiple copies is parametrised only once, and when several different ligands are present, each of them is parametrised separately and the resulting topology and parameter files are combined.
+Only the unknown residues are passed to PRODRG, so this also works for ligands that are part of a larger system (e.g. a ligand bound to a protein, or lipids in a membrane). A ligand present in multiple copies is parameterised only once, and when several different ligands are present, each of them is parameterised separately and the resulting topology and parameter files are combined.
 Otherwise, you will have to provide the topology and parameters yourself, see [Dealing with non-standard molecules](../structure_requirements.md#dealing-with-non-standard-molecules) section for more details.
 
 Here an example configuration file snapshot of a typical execution of the
