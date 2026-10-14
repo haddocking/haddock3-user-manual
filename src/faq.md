@@ -355,7 +355,7 @@ haddock3 haddock_run.cfg
 It's possible to dock small ligands or cofactor using haddock3, but for that topology and parameter files for the ligand are required in CNS format.
 Residues for which no topology is available are not kept in the models, which is why a ligand present in an input file can disappear from the output models.
 
-The simplest option is to let haddock3 generate them automatically with PRODRG, by setting `autotoppar = true` in the `[topoaa]` module.
+The simplest option is to let haddock3 generate them automatically with PRODRG, by setting `autotoppar = true` in the [`[topoaa]`](./modules/topology.md#topoaa-module) module.
 This also works for ligands bound to a protein, and for several different ligands in the same system (see [Dealing with non-standard molecules](./structure_requirements.md#dealing-with-non-standard-molecules)).
 
 **Note** that the ligand will not be included if coarse-graining is used. They will however be present after the back conversion from CG to AA models (the `cgtoaa` module).
