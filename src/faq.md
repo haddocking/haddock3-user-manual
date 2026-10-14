@@ -135,7 +135,7 @@ A linkage is only created between [supported carbohydrates](./supported_particle
 If your glycan is split into separate monosaccharides:
 
 - check that all residue names match the supported carbohydrate codes (glycans built with other tools, e.g. GLYCAM, may use different names);
-- check that the linkage is one of the [supported linkages](./supported_particles.md#supported-carbohydrates) and that the geometry of the input is chemically sensible.
+- check that the linkage(s) in your glycan are part to the [supported glycan linkages](./supported_particles.md#supported-carbohydrates) and that the geometry of the input is chemically sensible.
 
 Chemically modified sugars are not supported: in that case the whole glycan should be treated as a ligand, providing its own topology and parameters (see [Cofactors / Small-ligand docking with HADDOCK](#cofactors--small-ligand-docking-with-haddock)).
 
