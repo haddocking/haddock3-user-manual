@@ -358,7 +358,7 @@ Residues for which no topology is available are not kept in the models, which is
 The simplest option is to let haddock3 generate them automatically with PRODRG, by setting `autotoppar = true` in the [`[topoaa]`](./modules/topology.md#topoaa-module) module.
 This also works for ligands bound to a protein, and for several different ligands in the same system (see [Dealing with non-standard molecules](./structure_requirements.md#dealing-with-non-standard-molecules)).
 
-**Note** that the ligand will not be included if coarse-graining is used. They will however be present after the back conversion from CG to AA models (the `cgtoaa` module).
+**Note** that the ligand will not be included if coarse-graining is used. They will however be present after the back conversion from CG to AA models (the [`[cgtoaa]`](./modules/refinement.md#cgtoaa-module) module).
 
 Alternatively, the topology and parameter files can be generated with other tools. Several sources exist to find such files:
 
