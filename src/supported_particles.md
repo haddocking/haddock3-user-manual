@@ -108,7 +108,7 @@ Co-factors should be provided with record **HETAM**, e.g.:
 ```
 HETATM    1  FE  HEB   500       3.565   0.487   0.949  1.00 15.00          
 ```
-For the other co-factors, HADDOCK3 will try to generate the topology and parameters automatically, using the PRODRG server - do add `autotoppar = true` to the `[topoaa]` to enable this option. This works with co-factors bound to a protein, and with several different co-factors in the same structure.
+For the other co-factors, HADDOCK3 will try to generate the topology and parameters automatically, using the PRODRG server - do add `autotoppar = true` to the [`[topoaa]`](./modules/topology.md#topoaa-module) to enable this option. This works with co-factors bound to a protein, and with several different co-factors in the same structure.
 If the co-factor is not available in PRODRG, you will have to [generate and provide the topology and parameters yourself](./structure_requirements.md#dealing-with-non-standard-molecules).
 
 ## Supported nucleic acid bases
