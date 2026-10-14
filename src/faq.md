@@ -510,7 +510,7 @@ Note that you could also restart the workflow from the next module (e.g.: `haddo
 
 To find the origin of the problem:
 
-- set `debug = true` in the global parameters of the configuration file, so that the input and output files of the CNS jobs are kept;
+- set `debug = true` in the [global parameters](global_parameters.md) of the configuration file, so that the input and output files of the CNS jobs are kept;
 - check the `.out` files in the directory of the failing module (and in `0_topoaa`) for error messages;
 - run one of the examples provided with haddock3, to make sure that the installation is working.
 
