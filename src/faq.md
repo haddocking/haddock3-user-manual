@@ -289,7 +289,7 @@ The computational cost of a run mostly depends on the number of models generated
 - increase the number of cores used with the `ncores` parameter;
 - provide meaningful restraints, which allows to safely reduce the sampling in [`[rigidbody]`](./modules/sampling.md#rigidbody-module) (default: 1000 models);
 - reduce the number of models selected for refinement (`select` parameter in [`[seletop]`](./modules/analysis.md#seletop-module), default: 200);
-- cluster the models (`[clustfcc]`) and refine only the best models of each cluster (`[seletopclusts]`);
+- cluster the models ([`[clustfcc]`](./modules/analysis.md#clustfcc-module)) and refine only the best models of each cluster ([`[seletopclusts]`](./modules/analysis.md#seletopclusts-module));
 - in ab-initio docking, do not combine `cmrest` and `surfrest`, as this increases the computational time without benefit.
 
 <hr>
