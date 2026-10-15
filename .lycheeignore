@@ -1,0 +1,5 @@
+# URLs skipped by the lychee link checker (one regular expression per line).
+# Only list links that work for readers but cannot be reached from GitHub Actions.
+
+# Online OpenBabel converter: connections from GitHub runners fail.
+^https://www\.cheminfo\.org/

@@ -12,9 +12,9 @@ By default, no segments are defined as fully flexible.
 Flexibility can be defined in any of the CNS model refinement modules, namely: `[emref]`, `[flexref]`, and `[mdref]`.
 Check out schematic images of the refinement protocols employed in different [refinements modules](./modules/refinement.md):
 
-* [`[flexref]`](./modules/refinement.md#flexref-module-simulated-annealing-protocol-scheme)
-* [`[mdref]`](./modules/refinement.md#mdref-module-scheme)
-* [`[emref]`](./modules/refinement.md#emref-module-scheme)
+* [`[flexref]`](./modules/refinement.md#flexref-module)
+* [`[mdref]`](./modules/refinement.md#mdref-module)
+* [`[emref]`](./modules/refinement.md#emref-module)
 
 Below you can find explanations and examples on the definition of different types of segments:
 
@@ -111,9 +111,9 @@ seg_end_1_2 = 39
 ```
 
 Check out schematic images of the refinement protocols employed in different [refinements modules](./modules/refinement.md):
-* [`[flexref]`](./modules/refinement.md#flexref-module-simulated-annealing-protocol-scheme)
-* [`[mdref]`](./modules/refinement.md#mdref-module-scheme)
-* [`[emref]`](./modules/refinement.md#emref-module-scheme)
+* [`[flexref]`](./modules/refinement.md#flexref-module)
+* [`[mdref]`](./modules/refinement.md#mdref-module)
+* [`[emref]`](./modules/refinement.md#emref-module)
 
 ### Fully flexible Segment
 
@@ -157,6 +157,6 @@ fle_end_1 = 4
 ```
 
 Check out schematic images of the refinement protocols employed in different [refinements modules](./modules/refinement.md):
-* [`[flexref]`](./modules/refinement.md#flexref-module-simulated-annealing-protocol-scheme)
-* [`[mdref]`](./modules/refinement.md#mdref-module-scheme)
-* [`[emref]`](./modules/refinement.md#emref-module-scheme)
+* [`[flexref]`](./modules/refinement.md#flexref-module)
+* [`[mdref]`](./modules/refinement.md#mdref-module)
+* [`[emref]`](./modules/refinement.md#emref-module)

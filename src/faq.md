@@ -3,14 +3,26 @@
 We collected here a list of frequently occurring problems and their solutions.
 The following topics are currently available:
 
-- [What about missing atoms or chain breaks?](#what-about-missing-atoms-or-chain-breaks)
+- [What about missing atoms?](#what-about-missing-atoms)
+- [What about chain breaks?](#what-about-chain-breaks)
 - [What about point mutations?](#what-about-point-mutations)
 - [What about ions?](#what-about-ions)
+- [What about disulfide bonds?](#what-about-disulfide-bonds)
 - [Domain definition for docking](#domain-definition-for-docking)
+- [Docking a molecule made of several chains](#docking-a-molecule-made-of-several-chains)
+- [Docking nucleic acids](#docking-nucleic-acids)
+- [My glycan falls apart after `[topoaa]`](#my-glycan-falls-apart-after-topoaa)
 - [Clustering issues](#clustering-issues)
+- [Scoring existing models of complexes](#scoring-existing-models-of-complexes)
+- [Comparing or clustering models from several runs](#comparing-or-clustering-models-from-several-runs)
+- [What does the HADDOCK score mean?](#what-does-the-haddock-score-mean)
+- [Ranking models based on restraints only](#ranking-models-based-on-restraints-only)
+- [Using `[caprieval]` without a reference structure](#using-caprieval-without-a-reference-structure)
+- [Nothing seems to be docked](#nothing-seems-to-be-docked)
+- [How can I make my runs faster?](#how-can-i-make-my-runs-faster)
 - [Running HADDOCK on a cluster using a queuing system (e.g. Torque or Slurm)](#running-haddock-on-a-cluster-using-a-queuing-system-eg-torque-or-slurm)
 - [Small ligand docking with HADDOCK](#cofactors--small-ligand-docking-with-haddock)
-- [Usage of dummy atoms/beads with HADDOCK](#beads-dummy-atoms-docking-with-haddock)
+- [Usage of dummy atoms/beads with HADDOCK](#beads-dummy-atoms-docking-with-haddock3)
 - [Typical error messages](#typical-haddock3-error-messages)
 
 If your problem falls outside of the topics, please see the [Getting support / How to ask for help](./info.md) section.
@@ -58,6 +70,22 @@ In principle, they should be recognized when running the [`[topoaa]` module](./m
 
 <hr>
 
+## What about disulfide bonds?
+
+Disulfide bonds within a molecule are automatically detected by the [`[topoaa]` module](./modules/topology.md#topoaa-module): a bond is created between two cysteines whose SG atoms are closer than `disulphide_dist` (default: 2.2 Å).
+There is no option to select specific cysteines, but cysteines that are not close in space will not be bonded.
+If a disulfide bond is not detected because of a poor geometry of the input structure, you can increase `disulphide_dist`; setting it to `0` turns the detection off.
+
+```toml
+[topoaa]
+disulphide_dist = 2.5
+```
+
+Since each input molecule is processed separately, no disulfide bond is created between two different molecules.
+To bring two cysteines from different molecules together, define a few distance restraints between their SG atoms (for example in the `unambig_fname` file).
+
+<hr>
+
 ## Domain definition for docking
 
 In general, it is recommended to remove any part of your system such as flexible linkers that are not involved in the interaction with the partner for docking.
@@ -67,6 +95,49 @@ For example, such a linker can make contact with the partner molecule, resulting
 The same applies to AlphaFold2 _spaghetti_ like disordered regions that often surround the domain of interest.
 Indeed, these regions may induce van der Walls forces due to sterical clashes before the two domains of interest could even interact.
 Removing regions with low pLDDT (~< 60) can be an appropriate solution so use AlphaFold2 models for docking.
+
+<hr>
+
+## Docking a molecule made of several chains
+
+When one of the partners consists of several chains (e.g. the heavy and light chains of an antibody, a homotrimer or a multimeric receptor), it is best to define it as a single molecule with a single chain.
+This is also important for the scoring, since the HADDOCK score is calculated over all interfaces, including those between the chains of the same partner.
+
+To do so:
+
+- shift the residue numbering of the chains so that they do not overlap, using [`pdb_shiftres`](./pdbtools.md#pdb_shiftres);
+- merge them into a single chain, using [`pdb_chain`](./pdbtools.md#pdb_chain) and [`pdb_merge`](./pdbtools.md#pdb_merge), followed by [`pdb_tidy`](./pdbtools.md#pdb_tidy);
+- keep the chains together during the refinement by defining distance restraints between them, using the [`haddock3-restraints restrain_bodies`](./restraints_cli.md#restrain-bodies) subcommand, and provide them as unambiguous restraints (`unambig_fname`).
+
+Do not use [`pdb_reres`](./pdbtools.md#pdb_reres) on such a file if the total number of residues exceeds 9999, as PDB files cannot hold larger residue numbers.
+The [antibody-antigen tutorial](https://www.bonvinlab.org/education/HADDOCK3/HADDOCK3-antibody-antigen/) illustrates this procedure step by step.
+
+<hr>
+
+## Docking nucleic acids
+
+A few settings are recommended when docking DNA or RNA:
+
+- to keep the base pairing and the conformation of the nucleic acids during the refinement, set `dnarest_on = true` in the refinement modules (see [DNA & RNA restraints](./automated_restraints.md#dna--rna-restraints));
+- to account for the screening of the charged phosphate backbone, use a constant dielectric with a higher dielectric constant: `dielec = "cdie"` and `epsilon = 78`. Note that these settings apply to all interfaces of the system, including protein-protein ones;
+- the state of the 5' end of the nucleic acids is defined per molecule in the [`[topoaa]` module](./modules/topology.md#topoaa-module), e.g. `5_phosphate = true` under `[topoaa.mol1]`.
+
+See the [protein-DNA docking scenario](./docking_scenarios/prot-DNA.md) for a complete example.
+
+**Note** that modified nucleotides are currently not supported: if defined as HETATM, they will not be connected to the rest of the strand.
+
+<hr>
+
+## My glycan falls apart after `[topoaa]`
+
+Glycosidic linkages are not read from the input file, but detected from the coordinates by the [`[topoaa]` module](./modules/topology.md#topoaa-module).
+A linkage is only created between [supported carbohydrates](./supported_particles.md#supported-carbohydrates) when the anomeric carbon of the donor lies within 2 Å of the acceptor oxygen.
+If your glycan is split into separate monosaccharides:
+
+- check that all residue names match the supported carbohydrate codes (glycans built with other tools, e.g. GLYCAM, may use different names);
+- check that the linkage(s) in your glycan are part to the [supported glycan linkages](./supported_particles.md#supported-carbohydrates) and that the geometry of the input is chemically sensible.
+
+Chemically modified sugars are not supported: in that case the whole glycan should be treated as a ligand, providing its own topology and parameters (see [Cofactors / Small-ligand docking with HADDOCK](#cofactors--small-ligand-docking-with-haddock)).
 
 <hr>
 
@@ -100,6 +171,126 @@ This selection is then used to perform later structural alignment and RMSD compu
 
 Those two modules must be followed by the `[clustrmsd]` module, otherwise, only the pair-wise RMSD matrix will be computed, and clustering not performed.
 **Note** that this is not an issue if fractions of common contact (FCC) clustering ([`clustfcc`] module) is used as the matrix is computed within the clustering module directly (_as much faster_).
+
+<hr>
+
+## Scoring existing models of complexes
+
+To compute the HADDOCK score of a single complex, obtained with HADDOCK or any other method, use the [`haddock3-score`](./clis.md#haddock3-score) command line:
+
+```bash
+haddock3-score complex.pdb
+```
+
+To score many models, merge them into a single ensemble file (the number of input files is limited to 20, but an ensemble can contain any number of models):
+
+```bash
+pdb_mkensemble model_*.pdb | pdb_tidy > ensemble.pdb
+```
+
+and score them with a short workflow:
+
+```toml
+run_dir = "scoring"
+molecules = ["ensemble.pdb"]
+
+[topoaa]
+[emscoring]
+[caprieval]
+```
+
+A few points to keep in mind:
+
+- the scoring modules expect each complex as **one** PDB file, containing all chains, and not one file per chain;
+- the models are energy minimised before the scoring. If a model contains severe clashes, the minimisation can fail and no score is reported (`None`);
+- the HADDOCK score covers all interfaces of the complex. Set `per_interface_scoring = true` in `[emscoring]` to also obtain the HADDOCK score of each individual interface.
+
+More examples are available in the [scoring workflows](./docking_scenarios/scorings.md) section.
+
+<hr>
+
+## Comparing or clustering models from several runs
+
+Each run is analysed separately.
+To compare or cluster models coming from several runs (e.g. docking runs with different conformations of the partners), merge them into a single ensemble and run a scoring workflow on it:
+
+```toml
+run_dir = "rescore-and-cluster"
+molecules = ["ensemble-of-all-runs.pdb"]
+
+[topoaa]
+[emscoring]
+[clustfcc]
+[seletopclusts]
+[caprieval]
+```
+
+**Note** that scores from individual runs can only be compared between runs using the same restraints, since the restraint energy is part of the HADDOCK score. No restraints are used when running a scoring scenario like the one above.
+
+<hr>
+
+## What does the HADDOCK score mean?
+
+The HADDOCK score is a weighted sum of energy terms and restraint violations (see the [scoring modules](./modules/scoring.md)).
+It is expressed in arbitrary units: it is meant to rank models of the same complex, and is neither a binding free energy nor a dissociation constant.
+For this reason, scores should not be used to compare the affinity of different complexes (see the [Dos and Don'ts of the analysis](./bpg/analysis.md#dos-and-donts)).
+To predict binding affinities, use the [`[prodigyprotein]` and `[prodigyligand]` modules](./modules/scoring.md).
+
+A positive HADDOCK score usually means that many restraints are not satisfied, resulting in a large restraint energy.
+This can be the case when many restraints were defined that cannot be satisfied at the same time, or when unambiguous restraints have incorrect distances.
+
+**Note** that the Z-score reported by HADDOCK2.4 is not provided by haddock3: it is the number of standard deviations of the cluster score from the mean, and can easily be calculated from the cluster statistics.
+
+<hr>
+
+## Ranking models based on restraints only
+
+To rank models based only on how well they satisfy a set of restraints (e.g. to filter the models of an ab-initio run with uncertain data), use a scoring module in which all weights are set to 0, except the one of the restraints:
+
+```toml
+[emscoring]
+ambig_fname = "restraints.tbl"
+w_vdw = 0
+w_elec = 0
+w_desolv = 0
+w_bsa = 0
+w_air = 1
+```
+
+<hr>
+
+## Using `[caprieval]` without a reference structure
+
+The [`[caprieval]`](./modules/analysis.md#caprieval-module) module can be used without a reference structure: simply do not define `reference_fname`.
+In that case, the best scoring model of the previous step is used as reference.
+
+```toml
+[caprieval]
+```
+
+Even without a reference, it is useful to add it to the workflow, as it reports the scores and their components, and generates the plots of the [analysis](./docking_scenarios/analyses.md).
+
+<hr>
+
+## Nothing seems to be docked
+
+If the molecules remain apart, or are not brought into contact, check that the docking is driven by some information.
+Without restraints (`ambig_fname` or `unambig_fname`) and without an ab-initio option (`cmrest`, `surfrest` or `ranair`), nothing brings the molecules together.
+See the [ab-initio docking](./abinitio_docking.md) section if you do not have information about the interface.
+
+**Note** that restraint files must be provided to each module using them (e.g. `[rigidbody]`, `[flexref]` and `[emref]`), and not only to the first one.
+
+<hr>
+
+## How can I make my runs faster?
+
+The computational cost of a run mostly depends on the number of models generated and refined and the number of restraints defined and their ambiguity level (the more ambiguous the more costly). To reduce it:
+
+- increase the number of cores used with the `ncores` parameter;
+- provide meaningful restraints, which allows to safely reduce the sampling in [`[rigidbody]`](./modules/sampling.md#rigidbody-module) (default: 1000 models);
+- reduce the number of models selected for refinement (`select` parameter in [`[seletop]`](./modules/analysis.md#seletop-module), default: 200);
+- cluster the models ([`[clustfcc]`](./modules/analysis.md#clustfcc-module)) and refine only the best models of each cluster ([`[seletopclusts]`](./modules/analysis.md#seletopclusts-module));
+- in ab-initio docking, do not combine `cmrest` and `surfrest`, as this increases the computational time without benefit.
 
 <hr>
 
@@ -161,11 +352,17 @@ haddock3 haddock_run.cfg
 
 ## Cofactors / Small-ligand docking with HADDOCK
 
-It's possible to dock small ligands or cofactor using haddock3, but for that topology and parameter files for the ligand should be provided in CNS format.
+It's possible to dock small ligands or cofactor using haddock3, but for that topology and parameter files for the ligand are required in CNS format.
+Residues for which no topology is available are not kept in the models, which is why a ligand present in an input file can disappear from the output models.
 
-Several sources exist to find such files:
+The simplest option is to let haddock3 generate them automatically with PRODRG, by setting `autotoppar = true` in the [`[topoaa]`](./modules/topology.md#topoaa-module) module.
+This also works for ligands bound to a protein, and for several different ligands in the same system (see [Dealing with non-standard molecules](./structure_requirements.md#dealing-with-non-standard-molecules)).
 
-- **ccp4-prodrg**: [`ccp4-prodrg`](https://www.ccp4.ac.uk/html/index.html).
+**Note** that the ligand will not be included if coarse-graining is used. They will however be present after the back conversion from CG to AA models (the [`[cgtoaa]`](./modules/refinement.md#cgtoaa-module) module).
+
+Alternatively, the topology and parameter files can be generated with other tools. Several sources exist to find such files:
+
+- **ccp4-prodrg**: [`ccp4-prodrg`](https://www.ccp4.ac.uk/).
 
 - the **PRODRG** server was maintained by Daan van Aalten at Dundee University.
   This server allows you to draw your molecule or paste coordinates and will return topologies and parameter files in various formats, including CNS.
@@ -194,6 +391,11 @@ For docking small ligands with haddock3 using custom-made topology and parameter
 - Define the path to the files in CNS modules (`[topoaa]`, `[flexref]`, `[emref]`, `[mdref]`, `[emscoring]`, `[mdscoring]`)
   - Input the topology file using `ligand_top_fname` parameter.
   - Input the parameter file using `ligand_param_fname` parameter.
+- When using several ligands, combine all their topologies in a single file, and all their parameters in another one.
+  Their residue names and atom types must be unique, and must not overlap with the ones already defined in HADDOCK.
+
+**Note** for D-amino acids: they do not need specific topologies.
+Name them as the corresponding L-amino acid (e.g. `SER` for D-serine): the chirality is taken from the input structure.
 
 Also, we recommend setting the number of MD steps for the first two parts (rigid-body high temperature dynamic and slow cooling annealing) of the [`[flexref] module`](./modules/refinement.md#flexref-module) to 0.  
 This is performed by tuning the `mdsteps_rigid` and `mdsteps_cool1` parameters and setting their values to 0.
@@ -262,6 +464,7 @@ If not, please refer to the [Getting support / How to ask for help](./info.md) s
 Here is a list of the most common errors:
 
 - [tolerance issue](#tolerance-issue)
+- [configuration file syntax errors](#configuration-file-syntax-errors)
 
 ### Tolerance issue
 
@@ -304,3 +507,17 @@ If `100.00% of output was not generated`, there is probably an issue with the in
 If the value is inferior to `100.00%`, it can come from either one of the input conformers or a random error from the molecular dynamic simulation.
 In this case, you could increase the tolerance threshold to a higher value (e.g.: `tolerance = 10`), for the workflow to continue, as missing a few models can be acceptable.
 Note that you could also restart the workflow from the next module (e.g.: `haddock3 workflow.cfg --restart 5` to restart from module 5 if the module did not meet the tolerance threshold), allowing you to save computational resources not having to recompute data from module 0 to 4.
+
+To find the origin of the problem:
+
+- set `debug = true` in the [global parameters](global_parameters.md) of the configuration file, so that the input and output files of the CNS jobs are kept;
+- check the `.out` files in the directory of the failing module (and in `0_topoaa`) for error messages;
+- run one of the examples provided with haddock3, to make sure that the installation is working.
+
+### Configuration file syntax errors
+
+The configuration file follows the [TOML](https://toml.io) syntax, and syntax errors are reported with their position in the file. Common causes are:
+
+- a missing comma between the elements of a list, e.g. in `molecules = ["mol1.pdb", "mol2.pdb"]` (`Found tokens after a closed string`);
+- special characters or "smart" quotes introduced by a text editor or word processor (`Reserved escape sequence used`, or quotes not recognised). Edit configuration files with a plain-text editor.
+

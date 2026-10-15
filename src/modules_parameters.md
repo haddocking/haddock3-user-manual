@@ -56,7 +56,7 @@ You can also use the `haddock3-cfg` command line to get information on each modu
 ### Topology modules
 
 - [`[topoaa]`](./modules/topology.md#topoaa-module): Builds missing atoms and generates the all-atom topologies for the CNS engine.
-- [`[topocg]`](./modules/topology.md#topology-modules): _coming soon_
+- [`[topocg]`](./modules/topology.md#topocg-module): Generates the coarse-grained (Martini) representations and topologies, and the restraints needed to back-map the models to all-atom.
 
 ### Sampling modules
 

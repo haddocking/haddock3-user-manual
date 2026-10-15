@@ -8,6 +8,9 @@ Three types of global parameters are defined:
 - [**Execution**](#execution-global-parameters): The execution parameters are related to the execution mode of haddock3, enabling to either run with local cores, use schedulers (such as slurm or torque) or even spread the workload over multiple nodes using MPI.
 - [**Optional**](#optional-global-parameters): These optional parameters are mostly related to pre- and post-processing of the results.
 
+The values of all global parameters are checked against their allowed types, ranges and choices before the run starts: a configuration file containing an invalid value (e.g. an unknown `mode`) is rejected with an error message.
+Note that the execution parameters can also be defined within a module section, in which case they overwrite the global value for that module only, and are validated in the same way.
+
 ## Mandatory global parameters
 
 Two mandatory parameters are required to perform a haddock3 run:
@@ -19,12 +22,12 @@ Two mandatory parameters are required to perform a haddock3 run:
 
 Various parameters are related to the execution modes:
 
-- `ncores`: Maximum number of cores to be used by the haddock3 run. If set to a higher number of cores than the ones available on the system, it will be tuned down and limited to use all available cores.
-- `max_cpus`: When set to `true`, uses all cores set by the `ncores` parameter. If `false`, remove 1 core from `ncores`, ensuring the computer to still be able to perform tasks outside of haddock3. The default is `true`.
+- `ncores`: Maximum number of cores to be used by the haddock3 run (default: 4, maximum: 9999). If set to a higher number of cores than the ones available on the system, it will be tuned down and limited to use all available cores (or all available cores minus 1 if `max_cpus = false`).
+- `max_cpus`: When set to `true` (default), haddock3 can use all the cores available on the system. If `false`, the maximum number of cores is the number of available cores minus 1, ensuring the computer is still able to perform tasks outside of haddock3.
 - The `mode` parameter allows to define the execution mode of haddock3.
   - Using 'local', allows to run haddock3 using the local resources, bound to the operating system
   - In 'batch' mode, haddock3 will send jobs to the queue of your choice (defined by the `batch_type` and `queue` parameters). Note that when using the 'batch' mode, you should also define parameters such as (`batch_type`, `queue`, `queue_limit`, `concat`)
-  - In 'mpi' mode, haddock3 will spread the workload over the available nodes.
+  - In 'mpi' mode, haddock3 will spread the workload over the available nodes. This requires the optional MPI dependencies to be installed (see [MPI mode](#mpi-mode)).
   - In 'grid' mode, haddock3 will submit the jobs to the DIRAC grid engine
 - `batch_type`: defines which batch submission tool must be used, between 'slurm' and 'torque'. Note that this requires your computing engine to have access to such kind of queuing system.
 - `queue`: name of the queue on which the submission should be performed. This allows to target queues that can process shorter / longer jobs. It requires you to have an estimation of how long your job will last.
@@ -40,7 +43,7 @@ Various parameters are related to the execution modes:
 Often the prefered execution mode if you submit a haddock3 run to a queuing system or run on your own computer.
 The `local` mode (targeted using the global parameter `mode = 'local'`), utilize the operating system device to perform the computations.
 Setting the `ncores` parameter allows to tune the number of CPU cores to use during the run.
-Note that if you set this value too high compared to your system capabilities, this value will be automatically scaled down to the maximum number of cores available on the machine.
+Note that if you set this value too high compared to your system capabilities, this value will be automatically scaled down to the maximum number of cores available on the machine (minus 1 if `max_cpus = false`).
 
 #### Batch mode
 

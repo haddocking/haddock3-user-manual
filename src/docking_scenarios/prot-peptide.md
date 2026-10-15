@@ -12,6 +12,6 @@ Three different workflows are illustrated:
 - 3000 rigidbody docking models, selection of top 400 and flexible refinement followed by a final refinement in explicit solvent (water) of those ([docking-protein-peptide-mdref-full.cfg](https://github.com/haddocking/haddock3/tree/main/examples/docking-protein-peptide/docking-protein-peptide-mdref-full.cfg)
 - 3000 rigidbody docking models, FCC clustering and selection of max 20 models per cluster followed by flexible refinement and energy minimisation ([docking-protein-peptide-cltsel-full.cfg](https://github.com/haddocking/haddock3/tree/main/examples/docking-protein-peptide/docking-protein-peptide-cltsel-full.cfg)).
 
-__Note__ how the peptide is defined as fully flexible for the refinement phase in `[flexref]` (`fle_sta_1`, `fle_end_1`, `fle_seg_1`) and dihedral angle restraints are automatically defined to maintain secondary structure elements (`ssdihed = "alphabeta"`)
+__Note__ how the peptide is defined as fully flexible for the refinement phase in `[flexref]` (`fle_sta_1`, `fle_end_1`, `fle_seg_1`) and dihedral angle restraints are automatically defined to maintain secondary structure elements (`ssdihed = "alphabeta"`, see [Backbone dihedral angle restraints](../automated_restraints.md#backbone-dihedral-angle-restraints))
 
 The `[caprieval]` module is called at various stages during the workflow to assess the quality of the models with respect to the known reference structure.

@@ -86,6 +86,7 @@ Note that if in your ensemble, we detect two types of `REMARK` statements when p
 
 If you wish to work with a molecule type that is not present in the [supported particles list](./supported_particles.md), do not worry, as you will still be able to use HADDOCK.
 One way to do this is to use the `autotoppar` option in the `[topoaa]` module, which will try to automatically generate the topology and parameters using PRODRG.
+Only the unknown residues are passed to PRODRG, so this also works for ligands that are part of a larger system (e.g. a ligand bound to a protein, or lipids in a membrane). A ligand present in multiple copies is parameterised only once, and when several different ligands are present, each of them is parameterised separately and the resulting topology and parameter files are combined.
 If this is not possible, you will have to provide the topology and parameters yourself. 
 To properly function, HADDOCK requires to have access to the topology and parameters of a molecule to run the molecular dynamics protocols. 
 The force field must therefore be updated by user-provided topology and parameter files.
@@ -95,7 +96,7 @@ In modules that use CNS, you can provide such files with the `ligand_top_fname` 
 ### How to generate topology and parameters for my ligand
 
 Generating topology and parameters for your ligand is not trivial.
-For this, you will need to use dedicated tools, such as `acpype` or [`ccp4-prodrg`](https://www.ccp4.ac.uk/html/index.html), or dedicated libraries such as [`BioBB`](https://mmb.irbbarcelona.org/biobb/).
+For this, you will need to use dedicated tools, such as `acpype` or [`ccp4-prodrg`](https://www.ccp4.ac.uk/), or dedicated libraries such as [`BioBB`](https://mmb.irbbarcelona.org/biobb/).
 
 Here are some useful resources on how to generate those:
 

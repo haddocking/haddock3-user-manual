@@ -24,13 +24,13 @@ haddock3-restraints <TASK_NAME> -h
 This CLI holds multiple sub-commands, listed and explained below:
 
 - [calc_accessibility](#surface-accessibility-computation): Compute solvent-accessible residues from an input PDB file.
-- [passive_from_active](#passive-form-active): Generates a list of solvent-accessible residues near a list of residues.
+- [passive_from_active](#passive-from-active): Generates a list of solvent-accessible residues near a list of residues.
 - [active_passive_to_ambig](#active-passive-to-ambig): Generates a ambiguous/unambiguous restraints file from two *active/passive* residue selections.
 - [restrain_bodies](#restrain-bodies): Generates restraints within the same chain. Useful when chain breaks are present or multiple proteins are defined as a single chain.
 - [z_surface_restraints](#z-surface-restraints): Generates surfaces and restraints selected residues to it.
 - [validate_tbl](#validate-tbl): Validate the content of an ambiguous/unambiguous restraints file.
 - [random_removal](#random-removal): Allow to perform random removal from an input ambiguous restraints file.
-- [restrain_ligand](#ligand-restrain): Generate restraints to keep a ligand/cofactor in its place.
+- [restrain_ligand](#ligand-restraints): Generate restraints to keep a ligand/cofactor in its place.
 
 ## Surface accessibility computation
 

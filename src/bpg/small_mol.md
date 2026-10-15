@@ -14,7 +14,7 @@ Several sources exist to find/generate such files:
 * **BioBB using acpype**: The [BioExcel BioBuildingBlock (BioBB)](https://mmb.irbbarcelona.org/biobb/) library is hosting several tutorials on how to perform computations with a variety of different tools.
  Here is a link to the workflow used to parametrize ligands: [https://mmb.irbbarcelona.org/biobb/workflows/tutorials/biobb_wf_ligand_parameterization](https://mmb.irbbarcelona.org/biobb/workflows/tutorials/biobb_wf_ligand_parameterization)
 
-* **ccp4-prodrg**: [`ccp4-prodrg`](https://www.ccp4.ac.uk/html/index.html)
+* **ccp4-prodrg**: [`ccp4-prodrg`](https://www.ccp4.ac.uk/)
 
 * the **PRODGR** server maintained by Daan van Aalten at Dundee University.
  This server allows you to draw your molecule or paste coordinates and will return topologies and parameter files in various formats, including CNS. You should turn on the electrostatic to obtain partial charges.

@@ -5,6 +5,7 @@
   - [Rotational symmetry](#rotational-symmetry)
   - [S3 symmetry](#s3-symmetry)
 - [DNA / RNA restraints](#dna--rna-restraints)
+- [Backbone dihedral angle restraints](#backbone-dihedral-angle-restraints)
 - [Contact restraints](#contact-restraints)
 
 ## Symmetry restraints
@@ -164,7 +165,7 @@ c3sym_seg3_2 = "C"
 
 It is also possible to tune the force constant for the C**N** symmetries using the `ksym` parameter.
 
-We are providing an example of protein-homotrimer docking using haddock3 [here](./docking_scenarios.md#protein-homotrimer).
+We are providing an example of protein-homotrimer docking using haddock3 [here](./docking_scenarios/prot-prot.md#symmetrical-homotrimer-docking).
 
 #### S3 symmetry
 
@@ -195,6 +196,34 @@ Base-pair detection works for both all-atom and coarse-grained (Martini) models,
 For coarse-grained models, only the base pairs and the planarity of purine bases are restrained, since the sugar and backbone atoms defining the dihedral angles are not present.
 
 _Note_ that while the parameter name only contains DNA in its name, it is also functional for RNA!
+
+## Backbone dihedral angle restraints
+
+Flexible refinement and molecular dynamics can partly unfold secondary structure elements, in particular in peptides or in flexible regions.
+To prevent this, HADDOCK can automatically define dihedral angle restraints on the phi and psi backbone angles of amino acids.
+This is controlled by the `ssdihed` parameter, available in the `[flexref]`, `[emref]`, `[mdref]` and `[mdscoring]` modules:
+
+- `ssdihed = "none"` (default): no backbone dihedral angle restraints are defined;
+- `ssdihed = "all"`: the phi and psi angles of all amino acids are restrained;
+- `ssdihed = "alpha"`: only residues detected as alpha helical are restrained;
+- `ssdihed = "alphabeta"`: only residues detected as alpha helical or beta strand are restrained.
+
+The target value of each restraint is the angle measured in the input structure.
+With the `alpha` and `alphabeta` options, a residue is restrained only if both its phi and psi angles fall within the window of a secondary structure element:
+
+| Secondary structure | phi | psi |
+| --- | --- | --- |
+| alpha helix | [-77°, -37°] | [-67°, -27°] |
+| beta strand | [-145°, -105°] | [105°, 145°] |
+
+The `error_dih` parameter (default 10°, range 0-180°) defines the error margin around the target value within which a restraint is satisfied.
+
+```toml
+[flexref]
+# maintain the helical and strand regions during the refinement
+ssdihed = "alphabeta"
+error_dih = 10
+```
 
 ## Contact restraints
 

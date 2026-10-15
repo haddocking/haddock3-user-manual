@@ -24,7 +24,8 @@ haddock3-cfg -m topoaa
 
 HADDOCK supports a broad range of biomolecules and modified residues, [see Supported particles section](../supported_particles.md) for more details.
 For not supported molecules, HADDOCK will try to automatically generate the topology and parameters using PRODRG, if `autotoppar = true` is set in the `[topoaa]` module.
-Otherwise, you will have to provide the topology and parameters yourself, see [Dealing with non-standard molecules](#dealing-with-non-standard-molecules) section for more details.
+Only the unknown residues are passed to PRODRG, so this also works for ligands that are part of a larger system (e.g. a ligand bound to a protein, or lipids in a membrane). A ligand present in multiple copies is parameterised only once, and when several different ligands are present, each of them is parameterised separately and the resulting topology and parameter files are combined.
+Otherwise, you will have to provide the topology and parameters yourself, see [Dealing with non-standard molecules](../structure_requirements.md#dealing-with-non-standard-molecules) section for more details.
 
 Here an example configuration file snapshot of a typical execution of the
 `[topoaa]` module in which a user specifies the protonation state of the histidine
@@ -62,7 +63,7 @@ In this case (`mol1`), the parameters will be applied to the first molecule in t
 ### Notable parameters
 
 - `autohis`: If set to `false`, you will need to specify the protonation states of histidines manually. 
-- `autotoppar`: If set to `true` haddock will try to create automated topologies and paramters for unknown atoms using PRODRG.
+- `autotoppar`: If set to `true` haddock will try to create automated topologies and parameters for unknown residues using PRODRG (one run per distinct unknown residue).
 - `ligand_param_fname` and `ligand_top_fname`: Use these parameters to specify a custom ligand topology and parameters for your small molecules.
 - `hydrogen_build`: Use this parameter to control which hydrogen atoms will be (re)built (`all` (default) or only `unknown`). The `unknown` option might be useful for small ligands, or for very large systems in cases where the molecule already contains all hydrogens. For example, when it has already passed through HADDOCK.
 
