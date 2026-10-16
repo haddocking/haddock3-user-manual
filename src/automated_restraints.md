@@ -230,7 +230,7 @@ error_dih = 10
 Contact restraints can be automatically defined in the `[flexref]`, `[emref]`, `[mdref]` and `[mdscoring]` modules by turning **on** the `contactairs` parameter (`contactairs = true`).
 
 HADDOCK then searches the input model for residues in contact between molecules and defines restraints to retain these contacts during the simulation.
-Each residue with any atom within 5Å of another molecule is restrained by an ambiguous distance restraint (upper bound 2Å) to all residues of the other molecules that are within 5Å of its own molecule.
+Each residue having at least one atom within 5Å of another molecule is restrained by an ambiguous distance restraint (upper bound 2Å) to all residues of that other molecule that likewise have at least one atom within 5Å of the first molecule.
 The force constant of these restraints is set with `kcont` (default 1.0).
 
 This can be useful when complexes were obtained using Center of Mass restraints (`cmrest = true`) or random AIRs (`ranair = true`) at the `[rigidbody]` stage, or in refinement scenarios.
