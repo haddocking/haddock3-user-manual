@@ -227,6 +227,8 @@ error_dih = 10
 
 ## Contact restraints
 
+In some cases (see below), molecules within a modelled complex can drift apart during the refinement stage. To prevent this, the contact restraints parameter 
+automatically generates a set of ambiguous distance restraints that preserve the current interface - no prior knowledge of the interface is required on the user side.
 Contact restraints can be automatically defined in the `[flexref]`, `[emref]`, `[mdref]` and `[mdscoring]` modules by turning **on** the `contactairs` parameter (`contactairs = true`).
 
 HADDOCK then searches the input model for residues in contact between molecules and defines restraints to retain these contacts during the simulation.
