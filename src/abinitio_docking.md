@@ -50,7 +50,7 @@ When ranair is turned on:
 
 `ranair` parameter is limited to the docking of two chains only, and no other type of restraints will be considered, even if specified in the configuration file.
 
-**_Note_** that during the later stages of the docking workflow (e.g., [flexref], [emref], [mdref]), it is advisable to enable the `contactairs = true` parameter to ensure the molecules remain held together at the interface. This setting defines restraints between thwe residues within a 5Å distance between molecules. However, be aware this may generate a large number of restraints, potentially slowing down computations.
+**_Note_** that during the later stages of the docking workflow (e.g., [flexref], [emref], [mdref]), it is advisable to enable the `contactairs = true` parameter to ensure the molecules remain held together at the interface. This setting defines restraints between residues within a 5Å distance between molecules. However, be aware that this may generate a large number of restraints, potentially slowing down computations.
 
 ## Surface restraints
 

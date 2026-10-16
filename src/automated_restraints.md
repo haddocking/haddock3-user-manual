@@ -227,15 +227,18 @@ error_dih = 10
 
 ## Contact restraints
 
-Contact restraints can be automatically defined and set up in CNS modules (mainly `[flexref]` and `[mdref]`).
-Contact restraints can be automatically defined and set up in CNS modules (mainly `[flexref]` and `[mdref]`).
+In some cases (see below), molecules within a modelled complex can drift apart during the refinement stage. To prevent this, the contact restraints parameter 
+automatically generates a set of ambiguous distance restraints that preserve the current interface - no prior knowledge of the interface is required on the user side.
+Contact restraints can be automatically defined in the `[flexref]`, `[emref]`, `[mdref]` and `[mdscoring]` modules by turning **on** the `contactairs` parameter (`contactairs = true`).
 
-By turning **on** the `contactairs` parameter (`contactairs = true`), HADDOCK will first search for current contacts in the input complex and define restraints to make sure to retain the contact during the simulation step.
+HADDOCK then searches the input model for residues in contact between molecules and defines restraints to retain these contacts during the simulation.
+Each residue having at least one atom within 5Å of another molecule is restrained by an ambiguous distance restraint (upper bound 2Å) to all residues of that other molecule that likewise have at least one atom within 5Å of the first molecule.
+The force constant of these restraints is set with `kcont` (default 1.0).
 
-This can be useful when complexes where obtained using Center of Mass restraints (`cmrest = true`) at the `[rigidbody]` stage, or in refinement scenarios.
-By turning **on** the `contactairs` parameter (`contactairs = true`), HADDOCK will first search for current contacts in the input complex and define restraints to make sure to retain the contact during the simulation step.
+This can be useful when complexes were obtained using Center of Mass restraints (`cmrest = true`) or random AIRs (`ranair = true`) at the `[rigidbody]` stage, or in refinement scenarios.
+Note that this can generate a large number of ambiguous restraints and slow down the computations.
 
-This can be useful when complexes where obtained using Center of Mass restraints (`cmrest = true`) at the `[rigidbody]` stage.
+**_Note_**: in HADDOCK3 versions up to 2026.10.0, a bug in the residue selection caused `contactairs` to silently define no restraints (see [issue #1727](https://github.com/haddocking/haddock3/issues/1727)).
 
 # Custom symmetry restraints
 
