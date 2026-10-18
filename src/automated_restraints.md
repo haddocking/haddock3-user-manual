@@ -238,7 +238,7 @@ The force constant of these restraints is set with `kcont` (default 1.0).
 This can be useful when complexes were obtained using Center of Mass restraints (`cmrest = true`) or random AIRs (`ranair = true`) at the `[rigidbody]` stage, or in refinement scenarios.
 Note that this can generate a large number of ambiguous restraints and slow down the computations.
 
-**_Note_**: in HADDOCK3 versions up to 2026.10.0, a bug in the residue selection caused `contactairs` to silently define no restraints (see [issue #1727](https://github.com/haddocking/haddock3/issues/1727)).
+**_Note_**: in HADDOCK3 versions up to 2026.10.0, a bug in the residue selection caused `contactairs` to silently define no restraints (see [issue #1727](https://github.com/haddocking/haddock3/issues/1727)). This is fixed in release 2026.10.1.
 
 # Custom symmetry restraints
 
