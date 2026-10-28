@@ -213,6 +213,7 @@ All supported modified amino acids are in this list and must be defined as **ATO
 
     Atoms: N,CA,C,O,OXT,CB,CG,CD1,CD2,CE1,CE2,CZ,OH,P,O1P,O2P,O3P,1HN,2HN,HA,HXT,1HB,2HB,HD1,HD2,HE1,HE2,PHO2,PHO3
 * **SEC**: Serine with reduced vdw on the OG oxygen for covalent docking.
+  Note that `SEC` is selenocysteine in the PDB. Selenocysteine is not supported: a `SEC` residue containing an `SE` atom is converted on input to cysteine (`CYS`, with `SE` renamed to `SG`), and a warning is given.
 
     Atoms: N,HN,CA,HA,CB,HB1,HB2,OG,C,O
 * **SEP**: phosphorylated SER.
