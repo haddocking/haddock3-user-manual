@@ -86,7 +86,7 @@ Note that if in your ensemble, we detect two types of `REMARK` statements when p
 ## Dealing with non-standard molecules
 
 If you wish to work with a molecule type that is not present in the [supported particles list](./supported_particles.md), do not worry, as you will still be able to use HADDOCK.
-By default (`autotoppar = true` in the `[topoaa]` module), HADDOCK will try to automatically generate the topology and parameters using PRODRG.
+By default (`autotoppar = true` in the `[topoaa]` module), HADDOCK will try to automatically trigger the generation of topology and parameters (using PRODRG) for unknown residues.
 Only the unknown residues are passed to PRODRG, so this also works for ligands that are part of a larger system (e.g. a ligand bound to a protein, or lipids in a membrane). A ligand present in multiple copies is parameterised only once, and when several different ligands are present, each of them is parameterised separately and the resulting topology and parameter files are combined.
 PRODRG treats each residue as a free molecule. Unknown residues that are covalently bound to the rest of the system are therefore not passed to PRODRG, and `[topoaa]` stops with an error listing them:
 * residues inside a polymer chain, such as a modified amino acid within a protein (bonded to the previous or next residue);
