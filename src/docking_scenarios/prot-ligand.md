@@ -5,7 +5,7 @@ It requires the use of custom topology and paramter files for the ligand.
 To generate them, please refere to the section: [How to generate topology and parameters for my ligand ?](../structure_requirements.md#How-to-generate-topology-and-parameters-for-my-ligand)
 
 From release v2026.3.0, HADDOCK3 does have an option to automatically generate the topology and parameter files for ligands using PRODRG.
-This option, `autotoppar` in the [`[topoaa]`](../modules/topology.md#topoaa-module) module, is now turned on by default (`autotoppar = true`).
+This option, `autotoppar` in the [`[topoaa]`](../modules/topology.md#topoaa-module) module, is now turned **on** by default (`autotoppar = true`).
 This also works when the ligand is provided as part of a complex, and when multiple different ligands are present.
 
 Two protocols have been proposed:
