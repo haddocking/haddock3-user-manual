@@ -67,7 +67,17 @@ Always check that the sequence of the various PDB files matches!
 Some proteins contain ions such as for example calcium.
 Their inclusion might be important for docking purposes, in particular for proper electrostatics!
 They are recognized when running the [`[topoaa]` module](./modules/topology.md#topoaa-module), provided their names in the PDB file match the ion names in the list of [supported ions](./supported_particles.md#supported-ions).
-The residue name must contain the absolute charge and the atom name the exact charge, positive or negative: for example residue `ZN2` with atom `ZN+2` for Zn<sup>2+</sup>, or residue `CL1` with atom `CL-1` for Cl<sup>-</sup>.
+The residue name must contain the absolute charge and the atom name the exact charge, positive or negative.
+The residue name must contain the absolute charge and the atom name the exact charge, positive or negative.
+For example:
+- residue `ZN2` with atom `ZN+2` for Zn<sup>2+</sup>:
+
+`HETATM    1 ZN+2 ZN2 A   1      12.345  23.456  34.567  1.00 57.39          Zn  `
+- residue `CL1` with atom `CL-1` for Cl<sup>-</sup>:
+
+`HETATM    2 CL-1 CL1 A   2      12.345  23.456  34.567  1.00 57.39          Cl  `
+
+**Note**: If you are not sure where residue names and atom names are in the PDB format, please refer to [the following online material](https://cupnet.net/pdb-format/).
 Ions named as in most PDB files (e.g. residue and atom `ZN`) are not recognized: `[topoaa]` then stops with an error (or, with `autotoppar = false`, removes them with a warning) that gives the correct names to use.
 
 <hr>
