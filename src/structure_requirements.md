@@ -44,8 +44,9 @@ There are a few points to pay attention to when preparing the PDBs for HADDOCK.
 
 * HADDOCK can deal with ions.
  You will have however to make sure that the ion naming is consistent with the ion [topologies provided in HADDOCK](./supported_particles.md#supported-ions).
- For example, a CA heteroatom with a residue name CA will be interpreted as a neutral calcium atom.
- A doubly charged calcium ion should be named CA+2 with CA2 as residue name to be properly recognized by HADDOCK.
+ The residue name must contain the absolute charge and the atom name the exact charge, positive or negative.
+ For example, a doubly charged calcium ion should be named CA+2 with CA2 as residue name, and a chloride ion CL-1 with CL1 as residue name.
+ An ion without charge in its name (e.g. a CA heteroatom with residue name CA) is not recognized; the error or warning raised by `[topoaa]` then gives the correct names.
  (See also the [FAQ](./faq.md) for docking in the presence of ions).
 
 A full list of supported ions can be found [here](./supported_particles.md#supported-ions).
@@ -85,8 +86,15 @@ Note that if in your ensemble, we detect two types of `REMARK` statements when p
 ## Dealing with non-standard molecules
 
 If you wish to work with a molecule type that is not present in the [supported particles list](./supported_particles.md), do not worry, as you will still be able to use HADDOCK.
-One way to do this is to use the `autotoppar` option in the `[topoaa]` module, which will try to automatically generate the topology and parameters using PRODRG.
+By default (`autotoppar = true` in the `[topoaa]` module), HADDOCK will try to automatically trigger the generation of topology and parameters (using PRODRG) for unknown residues.
 Only the unknown residues are passed to PRODRG, so this also works for ligands that are part of a larger system (e.g. a ligand bound to a protein, or lipids in a membrane). A ligand present in multiple copies is parameterised only once, and when several different ligands are present, each of them is parameterised separately and the resulting topology and parameter files are combined.
+PRODRG treats each residue as a free molecule. Unknown residues that are covalently bound to the rest of the system are therefore not passed to PRODRG, and `[topoaa]` stops with an error listing them:
+* residues inside a polymer chain, such as a modified amino acid within a protein (bonded to the previous or next residue);
+* sugars linked to a protein or to another sugar by a glycosidic bond.
+
+Check whether they are supported under another name (see [Supported particles](./supported_particles.md)), mutate them to their parent residue, remove them, or provide their topology, parameters and links yourself.
+Ions and other residues of fewer than three atoms are not passed to PRODRG either.
+
 If this is not possible, you will have to provide the topology and parameters yourself. 
 To properly function, HADDOCK requires to have access to the topology and parameters of a molecule to run the molecular dynamics protocols. 
 The force field must therefore be updated by user-provided topology and parameter files.
