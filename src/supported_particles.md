@@ -27,7 +27,7 @@ Haddock3 supports (i.e., can process automatically including topology generation
 * NGM: 1-O-methyl-2-N-Acetyl-alpha-D-galactopyranose
 * RAM: alpha-L-rhamnopyranose
 * SIA: alpha-N-acetyl neuraminic acid
-* SIB: beta-N-acetyl neuraminic acid
+* SIB: beta-N-acetyl neuraminic acid (PDB residue name `SLB`, renamed to `SIB` on input)
 * XYP: beta-D-xylopyranose
 * XYS: alpha-D-xylopyranose
 
@@ -72,24 +72,51 @@ Notes:
   SIA alpha(2,6) alpha-GalNAc.
 
 ### Supported ions
-| | | |
-| --- | --- | --- |
-| AG: Silver | AL: Aluminium | AU: Gold |
-| BR: Bromine | CA: Calcium | CD: Cadmium |
-| CL: Chlorine | CO: Cobalt | CR: Chromium |
-| CS: Cesium | CU: Copper | F: Fluorine |
-| FE: Iron | HG: Mercury | HO: Holmium |
-| I: Iodine | IR: Iridium | K: Potassium |
-| KR: Krypton | LI: Lithium | MG: Magnesium |
-| MN: Manganese | MO: Molybdenum | NA: Sodium |
-| NI: Nickel | OS: Osmium | PB: Lead |
-| PT: Platinum | SR: Strontium | U: Uranium |
-| V: Vanadium | YB: Ytterbium | ZN: Zinc |
+| Element | Residue / atom name |
+| --- | --- |
+| Aluminium (AL) | AL3 / AL+3 |
+| Argon (AR) | AR / AR (neutral) |
+| Arsenic (AS) | AS / AS (neutral) |
+| Bromine (BR) | BR1 / BR-1 |
+| Cadmium (CD) | CD2 / CD+2 |
+| Calcium (CA) | CA2 / CA+2 |
+| Cesium (CS) | CS1 / CS+1 |
+| Chlorine (CL) | CL1 / CL-1 |
+| Chromium (CR) | CR2 / CR+2, CR3 / CR+3 |
+| Cobalt (CO) | CO2 / CO+2, CO3 / CO+3 |
+| Copper (CU) | CU1 / CU+1, CU2 / CU+2 |
+| Fluorine (F) | F1 / F-1 |
+| Gold (AU) | AU1 / AU+1, AU3 / AU+3 |
+| Holmium (HO) | HO3 / HO+3 |
+| Iodine (I) | I1 / I-1 |
+| Iridium (IR) | IR3 / IR+3 |
+| Iron (FE) | FE2 / FE+2, FE3 / FE+3 |
+| Krypton (KR) | KR / KR (neutral) |
+| Lead (PB) | PB2 / PB+2 |
+| Lithium (LI) | LI1 / LI+1 |
+| Magnesium (MG) | MG2 / MG+2 |
+| Manganese (MN) | MN2 / MN+2, MN3 / MN+3 |
+| Mercury (HG) | HG1 / HG+1, HG2 / HG+2 |
+| Molybdenum (MO) | MO3 / MO+3 |
+| Nickel (NI) | NI2 / NI+2 |
+| Osmium (OS) | OS4 / OS+4 |
+| Platinum (PT) | PT2 / PT+2 |
+| Potassium (K) | K1 / K+1 |
+| Silver (AG) | AG1 / AG+1 |
+| Sodium (NA) | NA1 / NA+1 |
+| Strontium (SR) | SR2 / SR+2 |
+| Uranium (U) | U3 / U+3, U4 / U+4 |
+| Vanadium (V) | V2 / V+2, V3 / V+3 |
+| Xenon (XE) | XE / XE (neutral) |
+| Ytterbium (YB) | YB2 / YB+2, YB3 / YB+3 |
+| Zinc (ZN) | ZN2 / ZN+2 |
 
-Ions should be provided with their charge and a **HETAM** flag. Residue name should contain the absolute charge (e.g. ZN2) while atom name should have the exact charge (e.g. ZN+2), e.g.:
+Ions should be provided with their charge and a **HETATM** flag. Residue name should contain the absolute charge (e.g. ZN2) while atom name should have the exact charge, positive or negative (e.g. ZN+2, or CL-1 for a chloride ion), e.g.:
 ```
 HETATM 3833 ZN+2 ZN2 A  42      21.391  -8.794  33.944  1.00 24.37          ZN  
 ```
+Ions without charge in their name (e.g. residue and atom `ZN`, as in most PDB files) are not recognized, except for the neutral argon, arsenic, krypton and xenon. `[topoaa]` reports them with the correct names to use.
+The PDB residue name `ARS` (arsenic) is renamed to `AS` on input.
 
 ## Supported multi-atom ions 
 * PO4: Phosphate
@@ -101,14 +128,14 @@ HETATM 3833 ZN+2 ZN2 A  42      21.391  -8.794  33.944  1.00 24.37          ZN
 
 ## Supported co-factors
 The following co-factors are defined using HADDOCK's internal parameters:
-* HEB: Heme B, [open pdb example](https://raw.githubusercontent.com/haddocking/haddock3/refs/heads/main/src/haddock/cns/toppar/hemeB.pdb)
+* HEB: Heme B (PDB residue name `HEM`, renamed to `HEB` on input), [open pdb example](https://raw.githubusercontent.com/haddocking/haddock3/refs/heads/main/src/haddock/cns/toppar/hemeB.pdb)
 * HEC: Heme C, [open pdb example](https://raw.githubusercontent.com/haddocking/haddock3/refs/heads/main/src/haddock/cns/toppar/heme.pdb)
 
 Co-factors should be provided with record **HETAM**, e.g.:
 ```
 HETATM    1  FE  HEB   500       3.565   0.487   0.949  1.00 15.00          
 ```
-For the other co-factors, HADDOCK3 will try to generate the topology and parameters automatically, using the PRODRG server - do add `autotoppar = true` to the [`[topoaa]`](./modules/topology.md#topoaa-module) to enable this option. This works with co-factors bound to a protein, and with several different co-factors in the same structure.
+For the other co-factors, HADDOCK3 will by default try to generate the topology and parameters automatically, using PRODRG (`autotoppar = true` in the [`[topoaa]`](./modules/topology.md#topoaa-module) module). This works with co-factors bound to a protein, and with several different co-factors in the same structure.
 If the co-factor is not available in PRODRG, you will have to [generate and provide the topology and parameters yourself](./structure_requirements.md#dealing-with-non-standard-molecules).
 
 ## Supported nucleic acid bases
@@ -186,12 +213,13 @@ All supported modified amino acids are in this list and must be defined as **ATO
 
     Atoms: N,CA,C,O,OXT,CB,CG,CD1,CD2,CE1,CE2,CZ,OH,P,O1P,O2P,O3P,1HN,2HN,HA,HXT,1HB,2HB,HD1,HD2,HE1,HE2,PHO2,PHO3
 * **SEC**: Serine with reduced vdw on the OG oxygen for covalent docking.
+  Note that `SEC` is selenocysteine in the PDB. Selenocysteine is not supported: a `SEC` residue containing an `SE` atom is converted on input to cysteine (`CYS`, with `SE` renamed to `SG`), and a warning is given.
 
     Atoms: N,HN,CA,HA,CB,HB1,HB2,OG,C,O
 * **SEP**: phosphorylated SER.
 
     Atoms: N,HN,CA,HA,CB,HB1,HB2,OG,P,O1P,O2P,O3P,C,O
-* **TOP**: phosphorylated THR.
+* **TOP**: phosphorylated THR (PDB residue name `TPO`, renamed to `TOP` on input).
 
     Atoms: N,HN,CA,HA,CB,HB1,HB2,OG,P,O1P,O2P,O3P,CG2,HG21,HG22,HG23,C,O
 * **TYP** or **PTR**: phosphorylated TYR.
