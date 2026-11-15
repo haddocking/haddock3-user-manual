@@ -64,7 +64,7 @@ Sends the CNS calculations to the grid through DIRAC (`mode = 'grid'`).
 It requires the `DIRAC` client, with its commands in your `$PATH`, and a valid grid proxy; see the [DIRAC documentation](https://dirac.diracgrid.org) for up-to-date instructions.
 If DIRAC is not reachable, haddock3 falls back to `mode = 'local'`.
 
-- Only the CNS-based modules (`topoaa`, `topocg`, `rigidbody`, `flexref`, `emref`, `mdref`, `cgtoaa`, `emscoring`, `mdscoring`) send jobs to the grid; the analysis modules run on the local machine. The Linux CNS executable shipped with haddock3 is sent with each job.
+- Only the CNS-based modules (`topoaa`, `topocg`, `rigidbody`, `flexref`, `emref`, `mdref`, `cgtoaa`, `emscoring`, `mdscoring`) send jobs to the grid; all other modules run on the local machine. The Linux CNS executable shipped with haddock3 is sent with each job.
 - Models are packed into grid jobs of a fixed size: 10 models per job for `rigidbody` and 2 for the other CNS modules. All jobs of a step are submitted at once. The `concat` and `queue_limit` parameters of the batch mode are not used.
 - The status of all jobs is checked every 30 seconds. A job that fails, or that DIRAC reports as stalled, killed or deleted, is resubmitted. A submission refused by DIRAC is retried after a pause that starts at 30 seconds and doubles up to 5 minutes. Each job gets at most 10 retries in total; after that its models are missing from the step.
 - `ncores` sets how many jobs are prepared and submitted in parallel.
