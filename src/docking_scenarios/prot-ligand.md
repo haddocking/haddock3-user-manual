@@ -5,7 +5,7 @@ It requires the use of custom topology and paramter files for the ligand.
 To generate them, please refere to the section: [How to generate topology and parameters for my ligand ?](../structure_requirements.md#How-to-generate-topology-and-parameters-for-my-ligand)
 
 From release v2026.3.0, HADDOCK3 does have an option to automatically generate the topology and parameter files for ligands using PRODRG.
-To activate this option add the following parameter to the [`[topoaa]`](../modules/topology.md#topoaa-module) module: `autotoppar = true`.
+This option, `autotoppar` in the [`[topoaa]`](../modules/topology.md#topoaa-module) module, is now turned **on** by default (`autotoppar = true`).
 This also works when the ligand is provided as part of a complex, and when multiple different ligands are present.
 
 Two protocols have been proposed:
@@ -15,7 +15,7 @@ Two protocols have been proposed:
 
 ### Template-based shape docking
 
-The use of experimental structure as template for docking have been shown to provide helpful information to guide the conformation of the ligand towards both the binding site and an adequate conformation (see: [D3R Grand Challenge 4](https://doi.org/10.1007/s10822-019-00244-6), [@TOME 3.0](https://www.sciencedirect.com/science/article/pii/S0022283624003139) and CAPRI16 (soon))
+The use of experimental structure as template for docking have been shown to provide helpful information to guide the conformation of the ligand towards both the binding site and an adequate conformation (see: [D3R Grand Challenge 4](https://doi.org/10.1007/s10822-019-00244-6), [@TOME 3.0](https://doi.org/10.1016/j.jmb.2024.168704) and CAPRI16 (soon))
 
 A protein-ligand docking example making use of the knowledge of a template ligand (a ligand similar to the ligand we want to dock and bind to the same receptor).
 The template ligand information is used in the form of shape consisting of dummy beads and positioned within the binding site to which distance restraints are defined.
