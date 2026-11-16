@@ -142,7 +142,7 @@ haddock3-cfg -m prodigyligand
 
 Deep learning scoring of protein-protein interfaces with DeepRank-GNN-ESM.
 
-This module scores the models with DeepRank-GNN-ESM ([GitHub](https://github.com/haddocking/DeepRank-GNN-esm), [PyPI package](https://pypi.org/project/deeprank-gnn-esm/)), a graph neural network that uses protein language model (ESM) embeddings to predict the fraction of native contacts (fnat) of an interface between two chains.
+This module scores the models with DeepRank-GNN-ESM ([GitHub](https://github.com/haddocking/DeepRank-GNN-esm), [PyPI package](https://pypi.org/project/deeprank-gnn-esm/)), a graph neural network that uses protein language model (ESM) embeddings to predict the Fraction of Native contacts (Fnat) of an interface between two chains.
 Every chain pair (interface) of a model is scored, and the models are ranked by their predicted fnat (between 0 and 1, larger is better).
 As HADDOCK3 sorts models by increasing score, the score given to a model is minus its predicted fnat.
 
