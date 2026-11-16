@@ -14,6 +14,8 @@ pip install haddock3
 **Note** that by running `pip install haddock3`, you will be able to use haddock3, but the examples will not be provided.
 To obtain them, you should [install haddock3 from the source code (as described below)](#download-haddock3-source-code).
 
+**Note** that the `[deeprank]` scoring module needs an optional dependency, installed with `pip install 'haddock3[deeprank-gnn-esm]'` (see [its installation instructions](./modules/scoring.md#installation)).
+
 **DISCLAMER**:
 By running this command, you will download a compiled executable of CNS (Crystallographic and NMR System) which is free of use for non-profit applications.
 For commercial use, it is your own responsibility to have a proper license.
