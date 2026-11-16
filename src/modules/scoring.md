@@ -152,7 +152,7 @@ DeepRank-GNN-ESM is an optional dependency, installed with:
 pip install 'haddock3[deeprank-gnn-esm]'
 ```
 
-Only amino acids are used for the prediction: waters, ions and ligands are left out.
+Only the 20 natural amino acids can be used for the prediction: modified AA, nucleotides, waters, ions and ligands are left out.
 
 A detailed explanation about DeepRank-GNN-ESM can be found in:
 
