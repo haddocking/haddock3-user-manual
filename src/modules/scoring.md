@@ -163,12 +163,12 @@ A detailed explanation about DeepRank-GNN-ESM can be found in:
 
 The most important parameters for the `[deeprank]` module are:
 
-- `score_type`: predicted fnat used to rank the models:
-  - `mean` (default): the mean predicted fnat over all interfaces of a model;
-  - `min`: the lowest predicted fnat over all interfaces of a model;
-  - `pair`: the predicted fnat of the interface between `chain_i` and `chain_j`.
+- `score_type`: predicted Fnat used to rank the models:
+  - `mean` (default): the mean predicted Fnat over all interfaces of a model;
+  - `min`: the lowest predicted Fnat over all interfaces of a model;
+  - `pair`: the predicted Fnat of the interface between `chain_i` and `chain_j`.
 
-  An interface without contacts has no prediction. It is left out of `mean` and `min`, and a model without any interface gets a fnat of 0. With `pair`, such an interface counts as 0.
+  An interface without contacts has no prediction. It is left out of `mean` and `min`, and a model without any interface gets a Fnat of 0. With `pair`, such an interface counts as 0.
 - `chain_i` and `chain_j`: chain IDs of the interface used when `score_type = "pair"` (default: `A` and `B`).
 
 #### Output files
