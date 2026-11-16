@@ -5,6 +5,7 @@
 - [prodigy modules](#prodigy-scoring-modules)
   - [`[prodigyprotein]`](#prodigyprotein-module)
   - [`[prodigyligand]`](#prodigyligand-module)
+- [`[deeprank]` module](#deeprank-module)
 
 ## `[emscoring]` module
 
@@ -133,6 +134,54 @@ More information about `[prodigyligand]` parameters can be accessed [here](https
 
 ```bash
 haddock3-cfg -m prodigyligand
+```
+
+<hr>
+
+## `[deeprank]` module
+
+Deep learning scoring of protein-protein interfaces with DeepRank-GNN-ESM.
+
+This module scores the models with DeepRank-GNN-ESM ([GitHub](https://github.com/haddocking/DeepRank-GNN-esm), [PyPI package](https://pypi.org/project/deeprank-gnn-esm/)), a graph neural network that uses protein language model (ESM) embeddings to predict the fraction of native contacts (fnat) of an interface between two chains.
+Every chain pair (interface) of a model is scored, and the models are ranked by their predicted fnat (between 0 and 1, larger is better).
+As HADDOCK3 sorts models by increasing score, the score given to a model is minus its predicted fnat.
+
+DeepRank-GNN-ESM is an optional dependency, installed with:
+
+```bash
+pip install 'haddock3[deeprank-gnn-esm]'
+```
+
+Only amino acids are used for the prediction: waters, ions and ligands are left out.
+
+A detailed explanation about DeepRank-GNN-ESM can be found in:
+
+- Xu X, Bonvin A.M.J.J.: DeepRank-GNN-esm: a graph neural network for scoring protein-protein models using protein language model. Bioinformatics Advances, 4, vbad191 (2024) ([10.1093/bioadv/vbad191](https://doi.org/10.1093/bioadv/vbad191))
+- A detailed protocol: [arXiv:2407.16375](https://arxiv.org/abs/2407.16375)
+
+#### Notable parameters
+
+The most important parameters for the `[deeprank]` module are:
+
+- `score_type`: predicted fnat used to rank the models:
+  - `mean` (default): the mean predicted fnat over all interfaces of a model;
+  - `min`: the lowest predicted fnat over all interfaces of a model;
+  - `pair`: the predicted fnat of the interface between `chain_i` and `chain_j`.
+
+  An interface without contacts has no prediction. It is left out of `mean` and `min`, and a model without any interface gets a fnat of 0. With `pair`, such an interface counts as 0.
+- `chain_i` and `chain_j`: chain IDs of the interface used when `score_type = "pair"` (default: `A` and `B`).
+
+#### Output files
+
+Besides the usual `deeprank.tsv` file with the scores of the models, the module writes two files in its step folder:
+
+- `GNN_esm_prediction.csv`: the predicted fnat of every interface (`pdb_id,chain_i,chain_j,predicted_fnat`), with `NA` for an interface without contacts;
+- `GNN_esm_prediction_summary.csv`: per model, the number of scored interfaces and the mean, standard deviation and minimum of their predicted fnat (`pdb_id,scored_pairs,mean_fnat,std_fnat,min_fnat`).
+
+More information about `[deeprank]` parameters can be retrieved by running:
+
+```bash
+haddock3-cfg -m deeprank
 ```
 
 <hr>
