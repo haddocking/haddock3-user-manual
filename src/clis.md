@@ -210,6 +210,42 @@ python -m http.server --directory path-to-my-run
 In the browser, you can navigate to each analysis subfolder and open the `report.html` file. If you are not interested in
 visualizing the models, you can simply open the `report.html` file in a standard browser. An example report can be visualized [here](https://www.bonvinlab.org/education/HADDOCK3/HADDOCK3-protein-glycan/plots/report.html).
 
+##### The table
+
+The report starts with a table of the best clusters, one column per cluster, or, for models that were not clustered, of the 10 best models, one row per model.
+For clusters, the energy terms and CAPRI metrics are given as the mean ± standard deviation over the best models of the cluster.
+
+To sort the table, click on a row header (cluster table) or a column header (model table).
+The arrows in the headers show the sorting: ⇅ for a header that can be sorted on, ▲ or ▼ for the header the table is sorted on, in ascending or descending order.
+Click again on the same header to reverse the order.
+When the report opens, the table is sorted on the rank.
+
+For each model, `Download` saves the PDB file and `View` opens it in the 3D viewer.
+
+##### The 3D viewer
+
+The models are shown with the [Mol*](https://molstar.org) viewer, also used in the DisVis and PowerFit reports.
+The name of the model at the top of the viewer is a link to download it; close the viewer with `X` or the Escape key.
+The viewer has:
+
+- the sequence on top: click on residues to select them;
+- the structure in the middle: rotate with the left mouse button, zoom with the scroll wheel, and hover over an atom to see its residue;
+- the `Structure Tools` panel on the right, to change how the model is shown:
+  - `Quick Styles` switches between cartoon, spacefill and surface representations;
+  - `Components` → `Preset` applies predefined views, for example with the atomic details of all residues;
+  - `Components` → `Add` adds a representation (e.g. ball & stick for side chains, or a molecular surface) for the current selection or for a part of the model, and the `...` menu of each component changes its colour, transparency or representation;
+  - `Measurements` measures distances and angles between selected atoms.
+- a collapsed panel on the left, with the full state of the viewer and options to save it as a file.
+
+##### The plots
+
+Click on a cluster in the legend on the right of the plots to hide or show it.
+
+##### Viewing the report without internet
+
+By default, the report loads the plotting library and the Mol* viewer from the internet when it is opened.
+Running `haddock3-analyse` with `--offline true` (or a run with [`offline = true`](./global_parameters.md)) copies them in the run folder instead (the plotting library next to each report, the Mol* files in `data/ui`), so that the report can be viewed without an internet connection.
+
 <hr>
 
 ## haddock3-traceback
