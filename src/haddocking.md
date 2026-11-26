@@ -23,7 +23,7 @@ The scoring is performed according to the _weighted sum_ (HADDOCK score) of the 
 * _Evdw_: van der Waals intermolecular energy
 * _Edesol_: desolvation energy
 * _BSA_: buried surface area
-* _Eair_: distance restraints energy (only unambiguous and AIR (ambig) restraints)
+* _Eair_: distance restraints energy (only unambiguous and AIR (ambig) restraints; the automatic [ion restraints](./faq.md#what-about-ions) are not included)
 * _Esym_: symmetry restraints energy (NCS and C2/C3/C5 terms)
 
 <figure style="text-align: center;">

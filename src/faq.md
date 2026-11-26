@@ -80,6 +80,10 @@ For example:
 **Note**: If you are not sure where residue names and atom names are in the PDB format, please refer to [the following online material](https://cupnet.net/pdb-format/).
 Ions named as in most PDB files (e.g. residue and atom `ZN`) are not recognized: `[topoaa]` then stops with an error (or, with `autotoppar = false`, removes them with a warning) that gives the correct names to use.
 
+Ions are kept in place by distance restraints that the refinement and scoring modules (`[flexref]`, `[emref]`, `[mdref]`, `[cgtoaa]`, `[emscoring]` and `[mdscoring]`) define automatically: each ion is restrained to the oxygen, nitrogen and sulfur atoms of the same chain within 4 Å, at their distance in the input structure (± 0.1 Å).
+These restraints are in their own `ions` class and do not use the `unambig_*` scales.
+Their energy is not part of the AIR energy (*Eair*), so it does not count in the HADDOCK score.
+
 <hr>
 
 ## What about disulfide bonds?
