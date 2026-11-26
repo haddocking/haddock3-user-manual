@@ -219,6 +219,9 @@ All supported modified amino acids are in this list and must be defined as **ATO
 * **SEP**: phosphorylated SER.
 
     Atoms: N,HN,CA,HA,CB,HB1,HB2,OG,P,O1P,O2P,O3P,C,O
+* **SLL**: N6-succinyl-LYS (deprotonated carboxylate, charge -1).
+
+    Atoms: N,HN,CA,HA,CB,HB1,HB2,CG,HG1,HG2,CD,HD1,HD2,CE,HE1,HE2,NZ,HZ1,CX,OX,CK,HK1,HK2,CL,HL1,HL2,CP,OP1,OP2,C,O
 * **TOP**: phosphorylated THR (PDB residue name `TPO`, renamed to `TOP` on input).
 
     Atoms: N,HN,CA,HA,CB,HB1,HB2,OG,P,O1P,O2P,O3P,CG2,HG21,HG22,HG23,C,O
