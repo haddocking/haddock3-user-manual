@@ -68,7 +68,6 @@ Some proteins contain ions such as for example calcium.
 Their inclusion might be important for docking purposes, in particular for proper electrostatics!
 They are recognized when running the [`[topoaa]` module](./modules/topology.md#topoaa-module), provided their names in the PDB file match the ion names in the list of [supported ions](./supported_particles.md#supported-ions).
 The residue name must contain the absolute charge and the atom name the exact charge, positive or negative.
-The residue name must contain the absolute charge and the atom name the exact charge, positive or negative.
 For example:
 - residue `ZN2` with atom `ZN+2` for Zn<sup>2+</sup>:
 
